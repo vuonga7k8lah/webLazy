@@ -225,6 +225,7 @@
 </div>
 <!-- Footer Area End Here -->
 <!-- Begin Quick View | Modal Area -->
+
 <div class="modal fade modal-wrapper" id="exampleModalCenter" >
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -232,37 +233,16 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
+                <?php foreach ($row as $value): ?>
                 <div class="modal-inner-area row">
                     <div class="col-lg-5 col-md-6 col-sm-6">
                         <!-- Product Details Left -->
                         <div class="product-details-left">
                             <div class="product-details-images slider-navigation-1">
-                                <div class="lg-image">
-                                    <img src="images/product/large-size/1.jpg" alt="product image">
-                                </div>
-                                <div class="lg-image">
-                                    <img src="images/product/large-size/2.jpg" alt="product image">
-                                </div>
-                                <div class="lg-image">
-                                    <img src="images/product/large-size/3.jpg" alt="product image">
-                                </div>
-                                <div class="lg-image">
-                                    <img src="images/product/large-size/4.jpg" alt="product image">
-                                </div>
-                                <div class="lg-image">
-                                    <img src="images/product/large-size/5.jpg" alt="product image">
-                                </div>
-                                <div class="lg-image">
-                                    <img src="images/product/large-size/6.jpg" alt="product image">
-                                </div>
+                                <?php LoadAnhAjax($value[4]);?>
                             </div>
                             <div class="product-details-thumbs slider-thumbs-1">
-                                <div class="sm-image"><img src="images/product/small-size/1.jpg" alt="product image thumb"></div>
-                                <div class="sm-image"><img src="images/product/small-size/2.jpg" alt="product image thumb"></div>
-                                <div class="sm-image"><img src="images/product/small-size/3.jpg" alt="product image thumb"></div>
-                                <div class="sm-image"><img src="images/product/small-size/4.jpg" alt="product image thumb"></div>
-                                <div class="sm-image"><img src="images/product/small-size/5.jpg" alt="product image thumb"></div>
-                                <div class="sm-image"><img src="images/product/small-size/6.jpg" alt="product image thumb"></div>
+                                <div class="sm-image"><img src="images/product/small-size/1.jpg" alt="product image thumb"></div>k
                             </div>
                         </div>
                         <!--// Product Details Left -->
@@ -331,6 +311,7 @@
                         </div>
                     </div>
                 </div>
+                <?php endforeach;?>
             </div>
         </div>
     </div>

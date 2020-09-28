@@ -7,7 +7,7 @@ namespace webLazy\Controllers;
 use webLazy\Core\Redirect;
 use webLazy\Core\Session;
 use webLazy\Database\DB;
-use webLazy\Moder\SignInModel;
+use webLazy\Model\SignInModel;
 
 class SignInController
 {

@@ -1,3 +1,8 @@
+<?php
+
+use webLazy\Core\URL;
+
+?>
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -6,7 +11,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Admin Area - Khoa Phạm</a>
+        <a class="navbar-brand" href="index.html">Admin</a>
     </div>
     <!-- /.navbar-header -->
 
@@ -14,7 +19,7 @@
         <!-- /.dropdown -->
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-user">
                 <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
@@ -34,40 +39,48 @@
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
-                <li class="sidebar-search">
-                    <div class="input-group custom-search-form">
-                        <input type="text" class="form-control" placeholder="Search...">
-                        <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                    </div>
-                    <!-- /input-group -->
-                </li>
+                <!--                <li class="sidebar-search">-->
+                <!--                    <div class="input-group custom-search-form">-->
+                <!--                        -->
+                <!--                    </div>-->
+                <!--                     /input-group -->
+                <!--                </li>-->
+                <!-- /input-group -->
                 <li>
                     <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Category<span class="fa arrow"></span></a>
+                    <a href="<?= URL::uri('listProduct') ?>"><i class="fa fa-bar-chart-o fa-fw"></i>Product<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="#">List Category</a>
+                            <a href="<?= URL::uri('listProduct') ?>">List Product</a>
                         </li>
                         <li>
-                            <a href="#">Add Category</a>
+                            <a href="<?= URL::uri('addProduct') ?>">Add Product</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-cube fa-fw"></i> Product<span class="fa arrow"></span></a>
+                    <a href="<?= URL::uri('listProducer') ?>"><i class="fa fa-cube fa-fw"></i> Producer<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="#">List Product</a>
+                            <a href="<?= URL::uri('listProducer') ?>">List Producer</a>
                         </li>
                         <li>
-                            <a href="#">Add Product</a>
+                            <a href="<?= URL::uri('addProducer') ?>">Add Producer</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-cube fa-fw"></i> Type Product<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">List Type</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Type</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
@@ -80,6 +93,30 @@
                         </li>
                         <li>
                             <a href="#">Add User</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+
+                <li>
+                    <a href="#"><i class="fa fa-users fa-fw"></i> Tin Tức<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">List Tin Tức</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Tin Tức</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-users fa-fw"></i>Loại Tin Tức<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">List Loại Tin</a>
+                        </li>
+                        <li>
+                            <a href="#">Add Loại Tin</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->

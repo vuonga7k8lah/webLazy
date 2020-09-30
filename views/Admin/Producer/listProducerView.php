@@ -3,7 +3,6 @@
 use webLazy\Core\URL;
 use webLazy\Model\ProducerModel;
 
-
 require_once 'views/Admin/header.php';
 require_once 'views/Admin/navigation.php';
 $row = ProducerModel::selectAll();
@@ -37,9 +36,9 @@ $row = ProducerModel::selectAll();
                             <td><?= $val[2] ?></td>
                             <td style="text-align: center"><?= $val[3] ?></td>
                             <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a
-                                        href="<?= URL::uri('deleteProduct') . '/' . $val[0] ?>"> Delete</a></td>
+                                        href="<?= URL::uri('deleteProducer') . '/' . $val[0] ?>"> Delete</a></td>
                             <td class="center"><i class="fa fa-pencil fa-fw"></i> <a
-                                        href="<?= URL::uri('editProduct') . '/' . $val[0] ?>">Edit</a></td>
+                                        href="<?= URL::uri('editProducer') . '/' . $val[0] ?>">Edit</a></td>
                         </tr>
                         <?php $i++;
                     endforeach; ?>

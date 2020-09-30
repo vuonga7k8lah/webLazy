@@ -4,6 +4,7 @@ use webLazy\Core\Redirect;
 use webLazy\Core\Session;
 use webLazy\Database\DB;
 use webLazy\Model\SignInModel;
+use webLazy\Model\UserModel;
 
 function validateUser($data)
 {
@@ -62,24 +63,48 @@ function LoadAnh($data)
     } else {
         foreach ($adata as $val) {
             ?>
-            <a href="./assets/upload/<?=$val?>"><img src="./assets/upload/<?=$val?>" alt="" style="width: 50px;height: 50px;float: left"></a>
-        <?php
+            <a href="./assets/upload/<?= $val ?>"><img src="./assets/upload/<?= $val ?>" alt=""
+                                                       style="width: 50px;height: 50px;float: left"></a>
+            <?php
         }
     }
 }
-function LoadOneAnh($data){
-    $adata=json_decode($data,true);
+
+function LoadOneAnh($data)
+{
+    $adata = json_decode($data, true);
     return $adata[0];
 }
 
 function LoadAnhAjax($data)
 {
     $adata = json_decode($data, true);
-        foreach ($adata as $val) {
-            ?>
-            <div class="lg-image">
-                <img src="./assets/upload/<?=$val?>" alt="product image">
-            </div>
-            <?php
+    foreach ($adata as $val) {
+        ?>
+        <div class="lg-image">
+            <img src="./assets/upload/<?= $val ?>" alt="product image">
+        </div>
+        <?php
+    }
+}
+
+function EmaiiIsExist($data, $uri)
+{
+
+    if (UserModel::EmailIsExist($data['Email']) > 0) {
+        Session::set('error_addUser', 'Email Đã Tồn Tại');
+        Session::set('data_addUser', $data);
+        Redirect::to($uri);
+    } else {
+        return true;
+    }
+}
+
+function CheckLoginAdmin()
+{
+    if (isset($_SESSION['success_AdminLogin'])) {
+        return true;
+    } else {
+        Redirect::to('login');
     }
 }

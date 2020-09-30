@@ -27,7 +27,7 @@ use webLazy\Core\URL;
                 <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                 </li>
                 <li class="divider"></li>
-                <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                <li><a href="<?=URL::uri('logoutAdmin')?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                 </li>
             </ul>
             <!-- /.dropdown-user -->
@@ -74,29 +74,41 @@ use webLazy\Core\URL;
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-cube fa-fw"></i> Type Product<span class="fa arrow"></span></a>
+                    <a href="<?= URL::uri('listType') ?>"><i class="fa fa-cube fa-fw"></i> Type Product<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="#">List Type</a>
+                            <a href="<?= URL::uri('listType') ?>">List Type</a>
                         </li>
                         <li>
-                            <a href="#">Add Type</a>
+                            <a href="<?= URL::uri('addType') ?>">Add Type</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
+                    <a href="<?= URL::uri('listUser') ?>"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="#">List User</a>
+                            <a href="<?= URL::uri('listUser') ?>">List User</a>
                         </li>
                         <li>
-                            <a href="#">Add User</a>
+                            <a href="<?= URL::uri('addUser') ?>">Add User</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
 
+                <li>
+                    <a href="<?= URL::uri('listBanner') ?>"><i class="fa fa-users fa-fw"></i> Banner<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="<?= URL::uri('listBanner') ?>">List Banner</a>
+                        </li>
+                        <li>
+                            <a href="<?= URL::uri('addBanner') ?>">Add Banner</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
                 <li>
                     <a href="#"><i class="fa fa-users fa-fw"></i> Tin Tức<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">

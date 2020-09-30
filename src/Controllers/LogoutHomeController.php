@@ -14,5 +14,10 @@ class LogoutHomeController
         Session::destroyAll();
         Redirect::to('home');
     }
+    public function logoutAdmin()
+    {
+        Session::destroyAll();
+        Redirect::to('login');
+    }
 
 }

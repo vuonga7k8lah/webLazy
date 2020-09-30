@@ -6,6 +6,7 @@ use webLazy\Model\ProducerModel;
 use webLazy\Model\ProductModel;
 use webLazy\Model\TypeModel;
 
+CheckLoginAdmin();
 require_once 'views/Admin/header.php';
 require_once 'views/Admin/navigation.php';
 $id = Request::uri()[1];

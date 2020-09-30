@@ -2,16 +2,18 @@
 
 use webLazy\Core\URL;
 use webLazy\Model\ProductModel;
+use webLazy\Model\UserModel;
+
 CheckLoginAdmin();
 require_once 'views/Admin/header.php';
 require_once 'views/Admin/navigation.php';
-$row = ProductModel::selectAll();
+$row = UserModel::selectAll();
 ?>
     <div id="page-wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Product
+                    <h1 class="page-header">User
                         <small>List</small>
                     </h1>
                 </div>
@@ -20,10 +22,10 @@ $row = ProductModel::selectAll();
                     <thead>
                     <tr align="center">
                         <th>STT</th>
-                        <th>Tên Sản Phẩm</th>
-                        <th>Giá Bán</th>
-                        <th>Chi tiết</th>
-                        <th>Ảnh</th>
+                        <th>Tên Khách Hàng</th>
+                        <th>Email</th>
+                        <th>Địa Chỉ</th>
+                        <th>SDT</th>
                         <th>Delete</th>
                         <th>Edit</th>
                     </tr>
@@ -35,12 +37,12 @@ $row = ProductModel::selectAll();
                             <td><?= $i ?></td>
                             <td><?= $val[1] ?></td>
                             <td><?= $val[2] ?></td>
-                            <td style="text-align: center"><?= $val[3] ?></td>
-                            <td style="float: left;width: 120px;text-align: center"><?php LoadAnh($val[4]); ?></td>
+                            <td style="text-align: center"><?= $val[4] ?></td>
+                            <td style="text-align: center"><?= $val[5] ?></td>
                             <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a
-                                        href="<?= URL::uri('deleteProduct') . '/' . $val[0] ?>"> Delete</a></td>
+                                        href="<?= URL::uri('deleteUser') . '/' . $val[0] ?>"> Delete</a></td>
                             <td class="center"><i class="fa fa-pencil fa-fw"></i> <a
-                                        href="<?= URL::uri('editProduct') . '/' . $val[0] ?>">Edit</a></td>
+                                        href="<?= URL::uri('editUser') . '/' . $val[0] ?>">Edit</a></td>
                         </tr>
                         <?php $i++;
                     endforeach; ?>

@@ -26,6 +26,7 @@
 
     <!-- DataTables Responsive CSS -->
     <link href="./assets/admin/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/admin/print.css">
 </head>
 
 <body>

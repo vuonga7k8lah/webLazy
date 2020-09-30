@@ -451,7 +451,7 @@ textarea:focus {
 /*----------------------------------------*/
 /*Home One | Slider Background Image*/
 .bg-1, .bg-2, .bg-3 {
-	background-image: url(images/slider/1.jpg);
+
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -538,8 +538,9 @@ textarea:focus {
 /*----------------------------------------*/
 /* Slider Progress Bar */
 .slider-active .owl-item.active .slider-progress {
+	animation-delay:7s;
 	-webkit-animation: 5000ms ease-in-out 0s normal none 1 running timebar;
-	animation: 10000ms ease-in-out 0s normal none 1 running timebar;
+	/*animation: 10000ms ease-in-out 0s normal none 1 running timebar;*/
 	background: rgba(0, 0, 0, .3);
 	height: 5px;
 	left: 0;
@@ -3058,8 +3059,6 @@ text-align: center;
 	font-family: fontawesome;
 }
 .category-heading > h2 > i {
-	float: ;
-	text-align: ;
 	float: right;
 	padding-right: 20px;
 	font-size: 12px;

@@ -7,6 +7,7 @@ $oRoute->get('home', 'webLazy\Controllers\HomeController@loadView');
 $oRoute->get('', 'webLazy\Controllers\HomeController@loadView');
 $oRoute->get('404', 'webLazy\Controllers\PageNotFoundController@loadView');
 $oRoute->get('logout', 'webLazy\Controllers\LogoutHomeController@loadView');
+$oRoute->get('logoutAdmin', 'webLazy\Controllers\LogoutHomeController@logoutAdmin');
 //list san pham
 $oRoute->get('showProduct', 'webLazy\Controllers\ShowProductController@loadView');
 //chi tiet san pham
@@ -26,9 +27,34 @@ $oRoute->post('editProduct', 'webLazy\Controllers\ProductController@editProduct'
 $oRoute->get('listProducer', 'webLazy\Controllers\ProducerController@loadView');
 $oRoute->get('addProducer', 'webLazy\Controllers\ProducerController@loadAddView');
 $oRoute->get('editProducer', 'webLazy\Controllers\ProducerController@loadEditView');
-$oRoute->get('deleteProducer', 'webLazy\Controllers\ProducerController@deleteProduct');
-$oRoute->post('addProducer', 'webLazy\Controllers\ProducerController@addProduct');
-$oRoute->post('editProducer', 'webLazy\Controllers\ProducerController@editProduct');
+$oRoute->get('deleteProducer', 'webLazy\Controllers\ProducerController@deleteProducer');
+$oRoute->post('addProducer', 'webLazy\Controllers\ProducerController@addProducer');
+$oRoute->post('editProducer', 'webLazy\Controllers\ProducerController@editProducer');
+//admin-Type
+$oRoute->get('listType', 'webLazy\Controllers\TypeController@loadView');
+$oRoute->get('addType', 'webLazy\Controllers\TypeController@loadAddView');
+$oRoute->get('editType', 'webLazy\Controllers\TypeController@loadEditView');
+$oRoute->get('deleteType', 'webLazy\Controllers\TypeController@deleteType');
+$oRoute->post('addType', 'webLazy\Controllers\TypeController@addType');
+$oRoute->post('editType', 'webLazy\Controllers\TypeController@editType');
+//admin-users
+$oRoute->get('listUser', 'webLazy\Controllers\UserController@loadView');
+$oRoute->get('addUser', 'webLazy\Controllers\UserController@loadAddView');
+$oRoute->get('editUser', 'webLazy\Controllers\UserController@loadEditView');
+$oRoute->get('deleteUser', 'webLazy\Controllers\UserController@deleteUser');
+$oRoute->post('addUser', 'webLazy\Controllers\UserController@addUser');
+$oRoute->post('editUser', 'webLazy\Controllers\UserController@editUser');
+//admin-Banner
+$oRoute->get('listBanner', 'webLazy\Controllers\BannerController@loadView');
+$oRoute->get('addBanner', 'webLazy\Controllers\BannerController@loadAddView');
+$oRoute->get('deleteBanner', 'webLazy\Controllers\BannerController@deleteBanner');
+$oRoute->post('addBanner', 'webLazy\Controllers\BannerController@addBanner');
+$oRoute->get('show', 'webLazy\Controllers\BannerController@actionShow');
+$oRoute->get('hidden', 'webLazy\Controllers\BannerController@actionShowHidden');
+//Login-admin
+$oRoute->get('login', 'webLazy\Controllers\LoginAdminController@loadView');
+$oRoute->post('login', 'webLazy\Controllers\LoginAdminController@actionLogin');
+
 
 
 

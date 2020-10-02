@@ -72,21 +72,13 @@ $row = ProductModel::selectIdProduct($id);
                                 </p>
                             </div>
                             <div class="product-variants">
-                                <div class="produt-variants-size">
-                                    <label>Dimension</label>
-                                    <select class="nice-select">
-                                        <option value="1" title="S" selected="selected">40x60cm</option>
-                                        <option value="2" title="M">60x90cm</option>
-                                        <option value="3" title="L">80x120cm</option>
-                                    </select>
-                                </div>
                             </div>
                             <div class="single-add-to-cart">
-                                <form action="#" class="cart-quantity">
+                                <form action="<?=\webLazy\Core\URL::uri('cart').'/'.$row['MaSP']?>" method="post" class="cart-quantity">
                                     <div class="quantity">
                                         <label>Quantity</label>
                                         <div class="cart-plus-minus">
-                                            <input class="cart-plus-minus-box" value="1" type="text">
+                                            <input class="cart-plus-minus-box" value="1" name="quantity[<?=$row['MaSP']?>]" type="text">
                                             <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
                                             <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                                         </div>
@@ -95,7 +87,7 @@ $row = ProductModel::selectIdProduct($id);
                                 </form>
                             </div>
                             <div class="product-additional-info pt-25">
-                                <a class="wishlist-btn" href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a>
+<!--                                <a class="wishlist-btn" href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a>-->
                                 <div class="product-social-sharing pt-25">
                                     <ul>
                                         <li class="facebook"><a href="#"><i class="fa fa-facebook"></i>Facebook</a></li>

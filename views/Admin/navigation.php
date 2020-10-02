@@ -110,6 +110,14 @@ use webLazy\Core\URL;
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
+                    <a href="<?=URL::uri('listOrderAdmin')?>"><i class="fa fa-book fa-fw"></i>ĐƠN HÀNG<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="<?=URL::uri('listOrderAdmin')?>">Danh Sách ĐƠN HÀNG</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
                     <a href="#"><i class="fa fa-users fa-fw"></i> Tin Tức<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>

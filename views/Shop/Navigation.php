@@ -33,19 +33,18 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="catmenu-dropdown megamenu-static-holder"><a href="index.html">Pages</a>
-                                <ul class="megamenu hb-megamenu">
-                                    <li><a href="blog-left-sidebar.html">Blog Layouts</a>
-                                        <ul>
-                                            <li><a href="blog-2-column.html">Blog 2 Column</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="about-us.html">About Us</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li><a href="shop-left-sidebar.html">Smartwatch</a></li>
-                            <li><a href="shop-left-sidebar.html">Accessories</a></li>
+<!--                            <li class="catmenu-dropdown megamenu-static-holder"><a href="index.html">Pages</a>-->
+<!--                                <ul class="megamenu hb-megamenu">-->
+<!--                                    <li><a href="blog-left-sidebar.html">Blog Layouts</a>-->
+<!--                                        <ul>-->
+<!--                                            <li><a href="blog-2-column.html">Blog 2 Column</a></li>-->
+<!--                                        </ul>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </li>-->
+                            <li class="catmenu-dropdown megamenu-static-holder"><a href="<?=\webLazy\Core\URL::uri('order')?>">Đơn Hàng</a></li>
+                            <li><a href="<?=\webLazy\Core\URL::uri('about')?>">About Us</a></li>
+                            <li><a href="<?=\webLazy\Core\URL::uri('contact')?>">Contact</a></li>
                         </ul>
                     </nav>
                 </div>

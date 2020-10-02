@@ -215,7 +215,7 @@
             <div class="col-lg-4 col-md-4 text-center">
                 <div class="single-banner">
                     <a href="#">
-                        <img src="images/banner/1_3.jpg" alt="Li's Static Banner">
+                        <img src="./assets/theme/images/banner/1_3.jpg" alt="Li's Static Banner">
                     </a>
                 </div>
             </div>
@@ -224,7 +224,7 @@
             <div class="col-lg-4 col-md-4 text-center pt-xs-30">
                 <div class="single-banner">
                     <a href="#">
-                        <img src="images/banner/1_4.jpg" alt="Li's Static Banner">
+                        <img src="./assets/theme/images/banner/1_4.jpg" alt="Li's Static Banner">
                     </a>
                 </div>
             </div>
@@ -233,7 +233,7 @@
             <div class="col-lg-4 col-md-4 text-center pt-xs-30">
                 <div class="single-banner">
                     <a href="#">
-                        <img src="images/banner/1_5.jpg" alt="Li's Static Banner">
+                        <img src="./assets/theme/images/banner/1_5.jpg" alt="Li's Static Banner">
                     </a>
                 </div>
             </div>

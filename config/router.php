@@ -12,6 +12,18 @@ $oRoute->get('logoutAdmin', 'webLazy\Controllers\LogoutHomeController@logoutAdmi
 $oRoute->get('showProduct', 'webLazy\Controllers\ShowProductController@loadView');
 //chi tiet san pham
 $oRoute->get('ctsp', 'webLazy\Controllers\CTSPController@loadView');
+//contact-shop
+$oRoute->get('contact', 'webLazy\Controllers\ContactController@loadView');
+$oRoute->post('contact', 'webLazy\Controllers\ContactController@actionContact');
+//about us-shop
+$oRoute->get('about', 'webLazy\Controllers\AboutController@loadView');
+//cart-shop
+$oRoute->get('cart', 'webLazy\Controllers\CartController@loadView');
+$oRoute->get('deleteCart', 'webLazy\Controllers\LogoutHomeController@deleteCart');
+$oRoute->post('cart', 'webLazy\Controllers\CartController@loadView');
+$oRoute->post('cartAction', 'webLazy\Controllers\CartController@cartAction');
+//order-shop
+$oRoute->get('order', 'webLazy\Controllers\OrderController@loadView');
 
 
 //admin-shop
@@ -51,6 +63,10 @@ $oRoute->get('deleteBanner', 'webLazy\Controllers\BannerController@deleteBanner'
 $oRoute->post('addBanner', 'webLazy\Controllers\BannerController@addBanner');
 $oRoute->get('show', 'webLazy\Controllers\BannerController@actionShow');
 $oRoute->get('hidden', 'webLazy\Controllers\BannerController@actionShowHidden');
+//Order-admin
+$oRoute->get('listOrderAdmin', 'webLazy\Controllers\OrderAdminController@loadView');
+$oRoute->get('printOrderAdmin', 'webLazy\Controllers\OrderAdminController@printOrderAdmin');
+$oRoute->get('deleteOrderAdmin', 'webLazy\Controllers\OrderAdminController@deleteOrderAdmin');
 //Login-admin
 $oRoute->get('login', 'webLazy\Controllers\LoginAdminController@loadView');
 $oRoute->post('login', 'webLazy\Controllers\LoginAdminController@actionLogin');

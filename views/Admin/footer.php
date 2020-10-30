@@ -1,6 +1,7 @@
 </div>
 <!-- /#wrapper -->
-
+<!-- PAGE SCRIPTS -->
+<script src="./assets/dashboard/dist/js/pages/dashboard2.js"></script>
 <!-- jQuery -->
 <script src="./assets/admin/bower_components/jquery/dist/jquery.min.js"></script>
 

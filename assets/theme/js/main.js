@@ -81,7 +81,7 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
 		nav: true,
 		autoplay: true,
 		items: 1,
-		autoplayTimeout: 10000,
+		autoplayTimeout: 20000,
 		navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
 		dots: true,
 		autoHeight: true,

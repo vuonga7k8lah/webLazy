@@ -361,6 +361,8 @@
 <script src="./assets/theme/js/scrollUp.min.js"></script>
 <!-- Main/Activator js -->
 <script src="./assets/theme/js/main.js"></script>
+<script src="./assets/slide.js"></script>
+
 </body>
 
 <!-- index30:23-->

@@ -11,7 +11,10 @@ use webLazy\Core\URL;
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Admin</a>
+        <a class="navbar-brand" href="<?=URL::uri('dashboard')?>">Admin</a>
+        <ul class="nav navbar-nav navbar-left navbar-top-links">
+            <li><a href="<?=URL::uri('home')?>"><i class="fa fa-home fa-fw"></i> Website </a></li>
+        </ul>
     </div>
     <!-- /.navbar-header -->
 
@@ -47,10 +50,10 @@ use webLazy\Core\URL;
                 <!--                </li>-->
                 <!-- /input-group -->
                 <li>
-                    <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    <a href="<?=URL::uri('dashboard')?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="<?= URL::uri('listProduct') ?>"><i class="fa fa-bar-chart-o fa-fw"></i>Product<span class="fa arrow"></span></a>
+                    <a href="<?= URL::uri('listProduct') ?>"><i class="fa fa-database fa-fw"></i>Product<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="<?= URL::uri('listProduct') ?>">List Product</a>
@@ -62,7 +65,7 @@ use webLazy\Core\URL;
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="<?= URL::uri('listProducer') ?>"><i class="fa fa-cube fa-fw"></i> Producer<span class="fa arrow"></span></a>
+                    <a href="<?= URL::uri('listProducer') ?>"><i class="fa fa-building fa-fw"></i> Producer<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="<?= URL::uri('listProducer') ?>">List Producer</a>
@@ -98,7 +101,7 @@ use webLazy\Core\URL;
                     <!-- /.nav-second-level -->
 
                 <li>
-                    <a href="<?= URL::uri('listBanner') ?>"><i class="fa fa-users fa-fw"></i> Banner<span class="fa arrow"></span></a>
+                    <a href="<?= URL::uri('listBanner') ?>"><i class="fa fa-picture-o fa-fw"></i> Banner<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="<?= URL::uri('listBanner') ?>">List Banner</a>
@@ -118,25 +121,46 @@ use webLazy\Core\URL;
                     </ul>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-users fa-fw"></i> Tin Tức<span class="fa arrow"></span></a>
+                    <a href="<?=URL::uri('listCategory')?>"><i class="fa fa-users fa-fw"></i> Thể Loại<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="#">List Tin Tức</a>
+                            <a href="<?=URL::uri('listCategory')?>">List Thể Loại</a>
                         </li>
                         <li>
-                            <a href="#">Add Tin Tức</a>
+                            <a href="<?=URL::uri('addCategory')?>">Add Thể Loại</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-users fa-fw"></i>Loại Tin Tức<span class="fa arrow"></span></a>
+                    <a href="<?=URL::uri('listTypeNews')?>"><i class="fa fa-users fa-fw"></i>Loại Tin Tức<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="#">List Loại Tin</a>
+                            <a href="<?=URL::uri('listTypeNews')?>">List Loại Tin</a>
                         </li>
                         <li>
-                            <a href="#">Add Loại Tin</a>
+                            <a href="<?=URL::uri('addTypeNews')?>">Add Loại Tin</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="<?=URL::uri('listNews')?>"><i class="fa fa-users fa-fw"></i> Tin Tức<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="<?=URL::uri('listNews')?>">List Tin Tức</a>
+                        </li>
+                        <li>
+                            <a href="<?=URL::uri('addNews')?>">Add Tin Tức</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-users fa-fw"></i>Bình Luận<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">List Bình Luận</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->

@@ -3,6 +3,7 @@
 use webLazy\Core\Redirect;
 use webLazy\Core\Session;
 use webLazy\Database\DB;
+use webLazy\Model\NewsModel;
 use webLazy\Model\SignInModel;
 use webLazy\Model\UserModel;
 
@@ -70,6 +71,36 @@ function LoadAnh($data)
     }
 }
 
+function LoadAnhEditTinTuc($data)
+{
+    $adata = json_decode($data, true);
+    if (count($adata) == 1) {
+        return $adata[0];
+    } else {
+        foreach ($adata as $val) {
+            ?>
+            <a href="./assets/upload/News/<?= $val ?>"><img src="./assets/upload/News/<?= $val ?>" alt=""
+                                                            style="width: 50px;height: 50px;float: left"></a>
+            <?php
+        }
+    }
+}
+
+function LoadAnhTinTuc($data)
+{
+    $adata = json_decode($data, true);
+    if (count($adata) == 1) {
+        return $adata[0];
+    } else {
+        foreach ($adata as $val) {
+            ?>
+            <a href="./assets/upload/News/<?= $val ?>"><img src="./assets/upload/News/<?= $val ?>" alt=""
+                                                            style="width: 50px;height: 50px;float: left"></a>
+            <?php
+        }
+    }
+}
+
 function LoadOneAnh($data)
 {
     $adata = json_decode($data, true);
@@ -108,6 +139,13 @@ function CheckLoginAdmin()
         Redirect::to('login');
     }
 }
+
+function Money($float)
+{
+    $money = (float)$float;
+    return $subtotal = number_format($money, 2, '.', ',');
+}
+
 function captcha()
 {
     $qna = array(
@@ -124,3 +162,75 @@ function captcha()
     $_SESSION['q'] = $qna[$rand_key];
     return $question = $qna[$rand_key]['question'];
 } // END function captcha
+function validateDataRegister($data)
+{
+    $errors = [];
+    if (empty($data['Email']) && isset($data['Email'])) {
+        $errors[] = ['errors' => 'Hãy Nhập Email'];
+    }
+    if (empty($data['Password']) && isset($data['Password'])) {
+        $errors[] = ['errors' => 'Hãy Nhập Password'];
+    }
+    if (empty($data['TenKH']) && isset($data['TenKH'])) {
+        $errors[] = ['errors' => 'Hãy Nhập Đủ Họ Tên'];
+    }
+    if (empty($data['DiaChi']) && isset($data['DiaChi'])) {
+        $errors[] = ['errors' => 'Hãy Nhập Địa Chỉ Vào'];
+    }
+    if (empty($data['SDT']) && isset($data['SDT'])) {
+        $errors[] = ['errors' => 'Hãy Nhập SDT'];
+    }
+    if (empty($data['cPassword']) && isset($data['cPassword'])) {
+        $errors[] = ['errors' => 'Hãy Nhập cPassword'];
+    }
+    if (empty($errors)) {
+        return true;
+    } else {
+        Session::set('error_validateRegister', $errors);
+        Redirect::to('signIn');
+    }
+}
+
+function validateDataLogin($data)
+{
+    $errors = [];
+    if (empty($data['Email']) && isset($data['Email'])) {
+        $errors[] = ['errors1' => 'Hãy Nhập Email'];
+    }
+    if (empty($data['Password']) && isset($data['Password'])) {
+        $errors[] = ['errors1' => 'Hãy Nhập Password'];
+    }
+    if (empty($errors)) {
+        return true;
+    } else {
+        Session::set('error_validateLogin', $errors);
+        Redirect::to('signIn');
+    }
+}
+
+function LoaiKiTuDacBiet($string)
+{
+    return preg_replace('/([^\pL\.\ ]+)/u', '', strip_tags($string));
+}
+
+function validateSDT($data)
+{
+    if (is_numeric($data) && (strlen($data) == 10)) {
+        return true;
+    }
+    Session::set('error_SDT', "Hãy Nhập Đúng Định Dạng SDT");
+    Redirect::to('signIn');
+}
+
+function countView($id)
+{
+    $view = NewsModel::selectView($id);
+    if ($view['views'] == 0) {
+        $view = 1;
+        NewsModel::updateView($view, $id);
+    } else {
+        $countView=$view['views'] +1;
+        NewsModel::updateView($countView, $id);
+    }
+
+}

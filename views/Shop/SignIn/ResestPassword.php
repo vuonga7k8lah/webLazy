@@ -36,7 +36,7 @@
                                 <input class="mb-0" id="cPassword" type="password" name="cPassword" required placeholder="Confirm Password">
                             </div>
                             <div class="col-md-12">
-                                <button class="register-button mt-0">Submit</button>
+                                <button class="register-button mt-0" type="submit">Lưu</button>
                             </div>
                         </div>
                     </div>

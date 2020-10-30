@@ -58,10 +58,10 @@ require_once 'views/Shop/header.php';
                                                 <td class="li-product-price"><span class="amount"><?= $row[2] ?></span>
                                                 </td>
                                                 <td class="quantity">
-                                                        <?=$row[3]?>
+                                                    <?= $row[3] ?>
                                                 </td>
                                                 <td class="product-subtotal"><span
-                                                            class="amount"><?=  $row[4]; ?></span>
+                                                            class="amount"><?= $row[4]; ?></span>
                                                 </td>
                                             </tr>
                                             <?php
@@ -88,9 +88,33 @@ require_once 'views/Shop/header.php';
                                             <div class="coupon2">
                                             </div>
                                             <div><label>Ghi chú: </label><textarea name="note" cols="50"
-                                                                                    rows="7"><?=$sp[0][5]?></textarea></div>
+                                                                                   rows="7"><?= $sp[0][5] ?></textarea>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="col-12">
+                                        <div class="coupon-all">
+                                            <div class="coupon2">
+                                                <label >Thanh Toán Online:</label>
+                                                <!-- PayPal Logo -->
+                                                <table border='0' cellpadding='10' cellspacing='0' align='center'>
+                                                    <tr>
+                                                        <td align='center'></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align='center'><a
+                                                                    href='https://www.paypal.com/vn/webapps/mpp/paypal-popup'
+                                                                    title='How PayPal Works'
+                                                                    onclick="window.open('https://www.paypal.com/vn/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img
+                                                                        src='https://www.paypalobjects.com/marketing/web/vn/manage-my-paypal-account/PP-AcceptanceMarkTray-NoDiscover-243x40-optimised.png'
+                                                                        alt='Khay đánh dấu chấp nhận PayPal | Lớn'/></a>
+                                                        </td>
+                                                    </tr>
+                                                </table><!-- PayPal Logo -->
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </form>
                             <?php

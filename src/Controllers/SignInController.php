@@ -18,6 +18,8 @@ class SignInController
 
     public function actionLogin()
     {
+        unset($_SESSION['error_validateRegister']);
+        validateDataLogin($_POST);
         $data['Email'] = DB::notInjection($_POST['Email']);
         $data['Password'] = md5(DB::notInjection($_POST['Password']));
         if (SignInModel::loginUser($data)[0] > 0) {
@@ -36,6 +38,8 @@ class SignInController
 
     public function actionRegister()
     {
+        unset($_SESSION['error_validateLogin']);
+        validateDataRegister($_POST);
         $data['TenKH'] = DB::notInjection($_POST['TenKH']);
         $data['DiaChi'] = DB::notInjection($_POST['DiaChi']);
         $data['SDT'] = DB::notInjection($_POST['SDT']);
@@ -44,6 +48,7 @@ class SignInController
         $data['cPassword'] = DB::notInjection($_POST['cPassword']);
         validateUser($data);
         Confirm($data);
+        validateSDT($data['SDT']);
         if (SignInModel::emailIsExist($data['Email']) > 0) {
             Session::set('errorEmail', 'Email ĐÃ Tồn Tại');
             Redirect::to('signIn');

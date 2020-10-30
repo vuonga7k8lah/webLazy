@@ -22,7 +22,7 @@ class LoginAdminController
         $data['Password']=DB::makeConnection()->real_escape_string(trim(md5($_POST['Password'])));
         if (LoginAdminModel::loginAdmin($data)>0){
             Session::set('success_AdminLogin','Thành Công');
-            Redirect::to('listProduct');
+            Redirect::to('dashboard');
         }else{
             Session::set('error_adminLogin','Tài Khoản Hoặc Mật Khẩu Không Đúng');
             Redirect::to('login');

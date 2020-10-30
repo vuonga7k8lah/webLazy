@@ -550,36 +550,36 @@ textarea:focus {
 	z-index: 4;
 }
 /* animation-style-01 */
-.owl-item.active .animation-style-01 .slider-content h5,
-.owl-item.active .animation-style-01 .slider-content-2 h5 {
-    -webkit-animation: 800ms ease-in-out 0s normal none 1 running zoomInRight;
-    animation: 800ms ease-in-out 0s normal none 1 running zoomInRight;
-}
+/*.owl-item.active .animation-style-01 .slider-content h5,*/
+/*.owl-item.active .animation-style-01 .slider-content-2 h5 {*/
+/*    -webkit-animation: 800ms ease-in-out 0s normal none 1 running zoomInRight;*/
+/*    animation: 800ms ease-in-out 0s normal none 1 running zoomInRight;*/
+/*}*/
 
-.owl-item.active .animation-style-01 .slider-content h2 {
-    -webkit-animation: 1200ms ease-in-out 0s normal none 1 running zoomInRight;
-    animation: 1200ms ease-in-out 0s normal none 1 running zoomInRight;
-}
+/*.owl-item.active .animation-style-01 .slider-content h2 {*/
+/*    -webkit-animation: 1200ms ease-in-out 0s normal none 1 running zoomInRight;*/
+/*    animation: 1200ms ease-in-out 0s normal none 1 running zoomInRight;*/
+/*}*/
 
-.owl-item.active .animation-style-01 .slider-content h3,
-.owl-item.active .animation-style-01 .slider-content-2 h3 {
-    -webkit-animation: 1600ms ease-in-out 0s normal none 1 running zoomInRight;
-    animation: 1600ms ease-in-out 0s normal none 1 running zoomInRight;
-}
+/*.owl-item.active .animation-style-01 .slider-content h3,*/
+/*.owl-item.active .animation-style-01 .slider-content-2 h3 {*/
+/*    -webkit-animation: 1600ms ease-in-out 0s normal none 1 running zoomInRight;*/
+/*    animation: 1600ms ease-in-out 0s normal none 1 running zoomInRight;*/
+/*}*/
 
-.owl-item.active .animation-style-01 .slider-content .slide-btn,
-.owl-item.active .animation-style-01 .slider-content-2 .slide-btn {
-    -webkit-animation: 2000ms ease-in-out 0s normal none 1 running zoomInRight;
-    animation: 2000ms ease-in-out 0s normal none 1 running zoomInRight;
-}
-.owl-item.active .animation-style-01 .slider-content-2 .img-slide {
-    -webkit-animation: 1000ms ease-in-out 0s normal none 1 running slideInUp;
-    animation: 1000ms ease-in-out 0s normal none 1 running slideInUp;
-}
-.owl-item.active .animation-style-02 .slider-content-2 .img-slide {
-    -webkit-animation: 1000ms ease-in-out 0s normal none 1 running slideInUp;
-    animation: 1000ms ease-in-out 0s normal none 1 running slideInUp;
-}
+/*.owl-item.active .animation-style-01 .slider-content .slide-btn,*/
+/*.owl-item.active .animation-style-01 .slider-content-2 .slide-btn {*/
+/*    -webkit-animation: 2000ms ease-in-out 0s normal none 1 running zoomInRight;*/
+/*    animation: 2000ms ease-in-out 0s normal none 1 running zoomInRight;*/
+/*}*/
+/*.owl-item.active .animation-style-01 .slider-content-2 .img-slide {*/
+/*    -webkit-animation: 1000ms ease-in-out 0s normal none 1 running slideInUp;*/
+/*    animation: 1000ms ease-in-out 0s normal none 1 running slideInUp;*/
+/*}*/
+/*.owl-item.active .animation-style-02 .slider-content-2 .img-slide {*/
+/*    -webkit-animation: 1000ms ease-in-out 0s normal none 1 running slideInUp;*/
+/*    animation: 1000ms ease-in-out 0s normal none 1 running slideInUp;*/
+/*}*/
 
 /* animation-style-02 */
 .owl-item.active .animation-style-02 .slider-content h5,

@@ -19,7 +19,7 @@ class ContactController
     {
         if (isset($_POST['captcha']) && trim($_POST['captcha']) != $_SESSION['q']['answer']) {
             Session::set('error_captcha','Hãy Nhập Đúng Câu Trả Lời');
-            Redirect::to('contact');
+            Redirect::to('comment'.'#comment');
         }
        ?>
         <div style="text-align: center">

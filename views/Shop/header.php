@@ -44,6 +44,7 @@
     <!-- Modernizr js -->
     <script src="./assets/theme/js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/ajax.js"></script>
 </head>
 <body>
 <!--[if lt IE 8]>

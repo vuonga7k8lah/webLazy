@@ -42,6 +42,7 @@ class ForgotPasswordController
             $_SESSION['errors_password'] = 'Mật Khẩu Không Khớp Nhau';
             Redirect::to('repass');
         } else {
+            $_SESSION['success_updatePassword'] = 'Mật Khẩu Đã Được Thay Đổi';
             SignInModel::updatePassword($data);
             Redirect::to('signIn');
         }

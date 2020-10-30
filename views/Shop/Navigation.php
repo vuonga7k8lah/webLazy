@@ -21,7 +21,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="dropdown-holder"><a href="blog-left-sidebar.html">Blog</a>
+                            <li class="dropdown-holder"><a href="<?=\webLazy\Core\URL::uri('homeBlog')?>">Blog</a>
                                 <ul class="hb-dropdown">
                                     <li class="sub-dropdown-holder"><a href="blog-left-sidebar.html">Blog Grid View</a>
                                         <ul class="hb-dropdown hb-sub-dropdown">

@@ -67,7 +67,7 @@ require_once 'views/Shop/header.php';
                             <div class="form-group">
                                 <label for="captcha" style="color: red">Phiền bạn điền vào giá trị số cho câu hỏi sau: <?php echo captcha(); ?><span
                                         class="required">*</span></label>
-                                <input type="text" required name="captcha" id="captcha" value="" size="20" maxlength="5" tabindex="4"/>
+                                <input type="text" required  id="captcha" value="" size="20" maxlength="5" tabindex="4"/>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="li-btn-3" >send</button>

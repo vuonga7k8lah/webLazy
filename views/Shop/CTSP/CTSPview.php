@@ -64,7 +64,7 @@ $row = ProductModel::selectIdProduct($id);
                                 </ul>
                             </div>
                             <div class="price-box pt-20">
-                                <span class="new-price new-price-2"><?=$row['GiaBan']?></span>
+                                <span class="new-price new-price-2"><?=Money($row['GiaBan'])?> vnđ</span>
                             </div>
                             <div class="product-desc">
                                 <p>

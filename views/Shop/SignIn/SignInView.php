@@ -18,8 +18,21 @@
                 <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30">
                     <!-- Login Form s-->
                     <form action="<?=\webLazy\Core\URL::uri('signInLogin')?>" method="post">
+                        <div class="error" style="color:red;">
+                            <?php if (isset($_SESSION['error_validateLogin'])){
+                                foreach ($_SESSION['error_validateLogin'] as $row){
+                                    if(isset($row['errors1'])){
+                                        echo $row['errors1'];
+                                        echo "<br>";
+                                    }
+                                }
+                            }?>
+                        </div>
                         <div class="success" style="color: #4cae4c">
                             <?php if (isset($_SESSION['success_Register'])){echo $_SESSION['success_Register'];}?>
+                        </div>
+                        <div class="success" style="color: #4cae4c">
+                            <?php if (isset($_SESSION['success_updatePassword'])){echo $_SESSION['success_updatePassword'];}?>
                         </div>
                         <div class="login-form">
                             <h4 class="login-title">Login</h4>
@@ -29,11 +42,11 @@
                                 </div>
                                 <div class="col-md-12 col-12 mb-20">
                                     <label>Email Address*</label>
-                                    <input class="mb-0" type="email" name="Email" placeholder="Email Address" required>
+                                    <input class="mb-0" type="email" name="Email" placeholder="Email Address" >
                                 </div>
                                 <div class="col-12 mb-20">
                                     <label>Password</label>
-                                    <input class="mb-0" type="password" name="Password" placeholder="Password" required>
+                                    <input class="mb-0" type="password" name="Password" placeholder="Password" >
                                 </div>
                                 <div class="col-md-8">
                                     <div class="check-box d-inline-block ml-0 ml-md-2 mt-10">
@@ -65,6 +78,19 @@
 
                             } ?>
                             <div class="error" style="color:red;">
+                                <?php if (isset($_SESSION['error_validateRegister'])){
+                                    foreach ($_SESSION['error_validateRegister'] as $row){
+                                        if(isset($row['errors'])){
+                                            echo $row['errors'];
+                                            echo "<br>";
+                                        }
+                                    }
+                                }?>
+                            </div>
+                            <div class="error" style="color:red;">
+                                <?php if (isset($_SESSION['error_SDT'])){echo $_SESSION['error_SDT'];}?>
+                            </div>
+                            <div class="error" style="color:red;">
                             <?php if (isset($_SESSION['cPassword'])){echo $_SESSION['cPassword'];}?>
                             </div>
                             <div class="error" style="color:red;">
@@ -74,27 +100,27 @@
                             <div class="row">
                                 <div class="col-md-12 mb-20">
                                     <label>Full Name</label>
-                                    <input class="mba-0" type="text" name="TenKH" required placeholder="Full Name">
+                                    <input class="mba-0" type="text" name="TenKH"  placeholder="Full Name">
                                 </div>
                                 <div class="col-md-12 mb-20">
                                     <label>Address</label>
-                                    <input class="mb-0" type="text" name="DiaChi" required placeholder="Address">
+                                    <input class="mb-0" type="text" name="DiaChi"  placeholder="Address">
                                 </div>
                                 <div class="col-md-12 mb-20">
                                     <label>Number Phone</label>
-                                    <input class="mb-0" type="text" name="SDT" required placeholder="Number Phone">
+                                    <input class="mb-0" type="text" name="SDT"  placeholder="Number Phone">
                                 </div>
                                 <div class="col-md-12 mb-20">
                                     <label>Email Address*</label>
-                                    <input class="mb-0" type="email" name="Email" required placeholder="Email Address">
+                                    <input class="mb-0" type="email" name="Email"  placeholder="Email Address">
                                 </div>
                                 <div class="col-md-6 mb-20">
                                     <label>Password</label>
-                                    <input class="mb-0" id="Password" type="password"name="Password" required placeholder="Password">
+                                    <input class="mb-0" id="Password" type="password"name="Password"  placeholder="Password">
                                 </div>
                                 <div class="col-md-6 mb-20">
                                     <label>Confirm Password</label><div class="pass"></div>
-                                    <input class="mb-0" id="cPassword" type="password" name="cPassword" required placeholder="Confirm Password">
+                                    <input class="mb-0" id="cPassword" type="password" name="cPassword"  placeholder="Confirm Password">
                                 </div>
                                 <div class="col-12">
                                     <button class="register-button mt-0">Register</button>

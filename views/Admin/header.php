@@ -25,8 +25,13 @@
     <link href="./assets/admin/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
 
     <!-- DataTables Responsive CSS -->
-    <link href="./assets/admin/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="./assets/admin/font-awesome.min.css">
+    <!-- Theme style -->
+    <!-- Google Font: Source Sans Pro -->
+<!--    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">-->
     <link rel="stylesheet" href="./assets/admin/print.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Itim|Lobster|Montserrat:500|Noto+Serif|Nunito|Patrick+Hand|Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i|Roboto+Slab|Saira" rel="stylesheet">
 </head>
 
 <body>

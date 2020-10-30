@@ -71,9 +71,31 @@ $oRoute->get('deleteOrderAdmin', 'webLazy\Controllers\OrderAdminController@delet
 $oRoute->get('login', 'webLazy\Controllers\LoginAdminController@loadView');
 $oRoute->post('login', 'webLazy\Controllers\LoginAdminController@actionLogin');
 
+//admin-thể loại
+$oRoute->get('listCategory', 'webLazy\Controllers\CategoryController@loadView');
+$oRoute->get('addCategory', 'webLazy\Controllers\CategoryController@loadAddView');
+$oRoute->get('editCategory', 'webLazy\Controllers\CategoryController@loadEditView');
+$oRoute->post('addCategory', 'webLazy\Controllers\CategoryController@addCategory');
+$oRoute->post('editCategory', 'webLazy\Controllers\CategoryController@editCategory');
+$oRoute->get('deleteCategory', 'webLazy\Controllers\CategoryController@deleteCategory');
 
+//admin-loai tin tuc
+$oRoute->get('listTypeNews', 'webLazy\Controllers\TypeNewsController@loadView');
+$oRoute->get('addTypeNews', 'webLazy\Controllers\TypeNewsController@loadAddView');
+$oRoute->get('editTypeNews', 'webLazy\Controllers\TypeNewsController@loadEditView');
+$oRoute->post('addTypeNews', 'webLazy\Controllers\TypeNewsController@addTypeNews');
+$oRoute->post('editTypeNews', 'webLazy\Controllers\TypeNewsController@editTypeNews');
+$oRoute->get('deleteTypeNews', 'webLazy\Controllers\TypeNewsController@deleteTypeNews');
+//admin-tin tuc
+$oRoute->get('listNews', 'webLazy\Controllers\NewsController@loadView');
+$oRoute->get('addNews', 'webLazy\Controllers\NewsController@loadAddView');
+$oRoute->get('editNews', 'webLazy\Controllers\NewsController@loadEditView');
+$oRoute->post('addNews', 'webLazy\Controllers\NewsController@addNews');
+$oRoute->post('editNews', 'webLazy\Controllers\NewsController@editNews');
+$oRoute->get('deleteNews', 'webLazy\Controllers\NewsController@deleteNews');
 
-
+//dashboard--admin
+$oRoute->get('dashboard', 'webLazy\Controllers\DashboardController@loadView');
 
 //SignIn
 $oRoute->get('signIn', 'webLazy\Controllers\SignInController@loadView');
@@ -83,5 +105,11 @@ $oRoute->post('repass', 'webLazy\Controllers\ForgotPasswordController@updatePass
 $oRoute->post('forgot', 'webLazy\Controllers\ForgotPasswordController@checkEmail');
 $oRoute->post('signInLogin', 'webLazy\Controllers\SignInController@actionLogin');
 $oRoute->post('signInRegister', 'webLazy\Controllers\SignInController@actionRegister');
-
+//blog
+$oRoute->get('homeBlog', 'webLazy\Controllers\BlogController@loadView');
+$oRoute->get('deleteCMM', 'webLazy\Controllers\BlogController@deleteComment');
+$oRoute->get('singerBlog', 'webLazy\Controllers\BlogController@loadSingerView');
+$oRoute->post('commentCaptcha', 'webLazy\Controllers\BlogController@isCaptchaExits');
+$oRoute->post('commentEmail', 'webLazy\Controllers\BlogController@isEmailExits');
+$oRoute->post('comment', 'webLazy\Controllers\BlogController@actionComment');
 

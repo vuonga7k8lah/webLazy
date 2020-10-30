@@ -105,7 +105,7 @@ $row = ProductModel::selectAll();
                                     </div>
                                     <h4><a class="product_name" href="<?=\webLazy\Core\URL::uri('ctsp').'/'.$value[0]?>"><?= $value[1] ?></a></h4>
                                     <div class="price-box">
-                                        <span class="new-price"><?= $value[2] ?></span>
+                                        <span class="new-price"><?= Money($value[2]); ?> vnđ</span>
                                     </div>
                                 </div>
                                 <div class="add-actions">
@@ -159,7 +159,7 @@ $row = ProductModel::selectAll();
                             </div>
                             <h4><a class="product_name" href="<?=\webLazy\Core\URL::uri('ctsp').'/'.$value[0]?>"><?= $value[1] ?></a></h4>
                             <div class="price-box">
-                                <span class="new-price"><?= $value[2] ?></span>
+                                <span class="new-price"><?= Money($value[2]); ?> vnđ</span>
                             </div>
                             <p><?= the_excerpt($value[3]) ?></p>
                         </div>

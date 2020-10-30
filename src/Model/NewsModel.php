@@ -13,9 +13,14 @@ class NewsModel
         return DB::makeConnection()->query("INSERT INTO `tintuc`(`idTinTuc`, `idLoaiTin`, `TomTat`, `TieuDe`, `NoiDung`, `Anh`,`date_time`) VALUES (null,'" . $data['idLoaiTin'] . "','" . $data['TomTat'] . "','" . $data['TieuDe'] . "','" . $data['NoiDung'] . "','" . $data['Anh'] . "',null)");
     }
 
-    public static function selectAll()
+    public static function countNews()
     {
-        return DB::makeConnection()->query("SELECT * FROM tintuc")->fetch_all();
+        return DB::makeConnection()->query("SELECT * FROM tintuc")->num_rows;
+    }
+
+    public static function selectAll($offset)
+    {
+        return DB::makeConnection()->query("SELECT * FROM tintuc ORDER BY idTinTuc ASC limit " . $offset . ",6 ")->fetch_all();
     }
 
     public static function selectId($id)
@@ -38,8 +43,17 @@ class NewsModel
         return DB::makeConnection()->query("SELECT views FROM `tintuc` WHERE idTinTuc=" . $id . "")->fetch_assoc();
     }
 
-    public static function updateView($view,$id)
+    public static function updateView($view, $id)
     {
-        return DB::makeConnection()->query("UPDATE tintuc SET views=".$view." where idTinTuc=" . $id . "");
+        return DB::makeConnection()->query("UPDATE tintuc SET views=" . $view . " where idTinTuc=" . $id . "");
+    }
+
+    public static function popularPostCouview()
+    {
+        return DB::makeConnection()->query("SELECT * FROM tintuc where date_time BETWEEN date_sub(now(),INTERVAL 1 WEEK) and now() order by views DESC limit 5 ")->fetch_all();
+    }
+    public static function selectCountNew($id)
+    {
+        return DB::makeConnection()->query("SELECT * FROM `tintuc` WHERE idLoaiTin=" . $id . "")->num_rows;
     }
 }

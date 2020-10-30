@@ -4183,13 +4183,14 @@ thead {
 	margin-bottom: 20px;
 }
 .li-blog-sidebar .li-recent-post {
+	border: 1px solid #e1e1e1;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 }
 .li-blog-sidebar .li-recent-post .li-recent-post-thumb {
 	width: 65px;
-	border: 1px solid #e1e1e1;
+
 }
 .li-blog-sidebar .li-recent-post .li-recent-post-des {
 	padding-left: 10px;

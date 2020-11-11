@@ -4,6 +4,7 @@
 namespace webLazy\Controllers;
 
 
+use webLazy\Core\Redirect;
 use webLazy\Core\Session;
 use webLazy\Core\URL;
 use webLazy\Model\CartModel;
@@ -25,6 +26,10 @@ class CartController
             header('location:' . URL::uri('cart'));
         } else {
             if (isset($_SESSION['MaKH'])) {
+                if((empty($_POST['SDT']) || empty($_POST['DiaChiNhan']))){
+                    Session::set('valuesDate',"Hãy Điền Thông Tin Để Xác Nhận");
+                    Redirect::to('cart');
+                }
 
                 if ($_POST['order_click']) { //Đặt hàng sản phẩm
                     if (empty($_POST['quantity'])) {
@@ -52,12 +57,13 @@ class CartController
                         $insertDonHangPhu=CartModel::insertHoaDonphu($adata);
                         $_SESSION['order']=$data['id_donhang'];
                         unset($_SESSION['cart']);
+                        unset($_SESSION['valuesDate']);
                         header('location:'.URL::uri('order'));
                     }
                 }
             } else {
                 Session::set('isLoginCart',"Bạn Hãy Đăng Nhập Tài Khoản Để Đặt Hàng");
-                header('location:' . URL::uri('login'));
+                header('location:' . URL::uri('signIn'));
             }
         }
     }

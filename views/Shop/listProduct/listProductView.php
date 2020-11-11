@@ -9,7 +9,7 @@ $row = ProductModel::selectAll();
         <div class="container">
             <div class="breadcrumb-content">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="">Home</a></li>
                     <li class="active">List Product</li>
                 </ul>
             </div>

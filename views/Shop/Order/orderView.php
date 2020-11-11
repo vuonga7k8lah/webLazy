@@ -26,10 +26,11 @@ require_once 'views/Shop/header.php';
                         if (OrderModel::selectIdDonHang($_SESSION['MaKH']) === null) {
                             echo "<br>";
                             echo "Bạn Chưa Mua Sản Phẩm Nào";
+
                         } else {
                             $_SESSION["order"] = OrderModel::selectIdDonHang($_SESSION['MaKH'])['id'];
                         }
-                        if (isset($_SESSION["order"])) {
+                        if (isset($_SESSION["order"]) && $_SESSION["order"] != '') {
                             ?>
                             <form action="" method="post">
                                 <div class="table-content table-responsive">

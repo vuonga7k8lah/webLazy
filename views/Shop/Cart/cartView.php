@@ -21,6 +21,9 @@ require_once 'views/Shop/header.php';
         <div class="container">
             <div class="row">
                 <div class="col-12">
+                    <div style="color:red;">
+                        <?php if (isset($_SESSION['valuesDate'])){ echo $_SESSION['valuesDate'];} ?>
+                    </div>
                     <?php
                     if (isset(Request::uri()[1])) {
 
@@ -59,7 +62,7 @@ require_once 'views/Shop/header.php';
                                             <img src="./assets/upload/<?= LoadOneAnh($row[6]) ?>" style="width: 150px;height: 150px" alt="Li's Product Image">
                                         </td>
                                         <td class="li-product-name"><?= $row[1] ?></td>
-                                        <td class="li-product-price"><span class="amount"><?= $row[4] ?></span></td>
+                                        <td class="li-product-price"><span class="amount"><?= Money($row[4]) ?> đ</span></td>
                                         <td class="quantity">
                                             <label>Quantity</label>
                                             <div class="cart-plus-minus">
@@ -68,7 +71,7 @@ require_once 'views/Shop/header.php';
                                                 <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                                             </div>
                                         </td>
-                                        <td class="product-subtotal"><span class="amount"><?= $sum1=$_SESSION["cart"][$row[0]]*$row[4]; ?></span></td>
+                                        <td class="product-subtotal"><span class="amount"><?= Money($sum1=$_SESSION["cart"][$row[0]]*$row[4]); ?> đ</span></td>
                                     </tr>
                                     <?php
                                     $sum +=$sum1;
@@ -84,8 +87,8 @@ require_once 'views/Shop/header.php';
                                             <input class="button" name="update_click" value="Update cart" type="submit">
                                         </div>
                                         <br>
-                                        <div><label for="nhan">Số Điện Thoại Nhận:</label><input type="text" name="SDT" required></div>
-                                        <div><label for="nhan">Địa Chỉ Nhận:</label><input type="text" name="DiaChiNhan" required></div>
+                                        <div><label for="nhan">Số Điện Thoại Nhận:</label><input type="text" name="SDT" ></div>
+                                        <div><label for="nhan">Địa Chỉ Nhận:</label><input type="text" name="DiaChiNhan" ></div>
                                         <div><label>Ghi chú: </label><textarea name="note" cols="50" rows="7"></textarea></div>
                                     </div>
                                 </div>
@@ -96,7 +99,7 @@ require_once 'views/Shop/header.php';
                                         <h2>Cart totals</h2>
                                         <ul>
                                             <input type="hidden" name="Total" value="<?=$sum?>">
-                                            <li>Total <span><?=$sum?></span></li>
+                                            <li>Total <span><?=Money($sum)?> đ</span></li>
                                         </ul>
                                     </div>
                                 </div>

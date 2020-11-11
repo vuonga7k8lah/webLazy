@@ -31,6 +31,9 @@
                         <div class="success" style="color: #4cae4c">
                             <?php if (isset($_SESSION['success_Register'])){echo $_SESSION['success_Register'];}?>
                         </div>
+                        <div class="success" style="color: red">
+                            <?php if (isset($_SESSION['isLoginCart'])){echo $_SESSION['isLoginCart'];}?>
+                        </div>
                         <div class="success" style="color: #4cae4c">
                             <?php if (isset($_SESSION['success_updatePassword'])){echo $_SESSION['success_updatePassword'];}?>
                         </div>
@@ -57,7 +60,16 @@
                                 <div class="col-md-4 mt-10 mb-20 text-left text-md-right">
                                     <a href="<?=\webLazy\Core\URL::uri('forgot')?>"> Forgotten pasward?</a>
                                 </div>
-                                <div class="col-md-12">
+<!--                                <div class="col-md-12">-->
+<!--                                    <label>Đăng Nhập Bằng Tài Khoản Xã Hội:</label>-->
+<!--                                    <div class="col-md-6">-->
+<!--                                        <a href="https://www.facebook.com/dialog/outh?client_id=353639432560596&redirect_uri=http://localhost/webLazy/loginFB&scope=public_profile"><img src="./assets/images/facebook.png" alt='facebook login' title="Facebook Login" style="height:50px;width: 250px" /></a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-6">-->
+<!--                                        <a href="--><?php //?><!--"><img src="./assets/images/google.png" alt='Google Login' title="Facebook Login" style="height:50px;width: 250px" /></a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+                                <div class="col-md-12" >
                                     <button class="register-button mt-0">Login</button>
                                 </div>
                             </div>

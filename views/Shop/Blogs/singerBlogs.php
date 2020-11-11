@@ -78,6 +78,7 @@ countView($id);
                             <!-- Begin Li's Blog Comment Section -->
                             <div class="li-comment-section" id="listComment">
                                 <h3><?php echo (CommentModel::countComment($id)[0]==0)?'No Comment':CommentModel::countComment($id)[0].' Comment';?></h3>
+                                <?php if (CommentModel::countComment($id)[0]==0){?> <img src="./assets/cmm.png" alt="" style=""> <?php } ?>
                                 <?php if (CommentModel::countComment($id)[0]>0){
                                     foreach (CommentModel::countComment($id)[1] as $item =>$value):
                                     ?>
@@ -134,7 +135,7 @@ countView($id);
                                                     } ?></textarea>
                                             </div>
                                             <div class="col-lg-6">
-                                                <label>Name</label>
+                                                <label>Last Name</label>
                                                 <input name="TenKH" type="text" class="coment-field"
                                                        value="<?php if (isset($_SESSION['dataCMM']['TenKH'])) {
                                                            echo $_SESSION['dataCMM']['TenKH'];
@@ -151,6 +152,7 @@ countView($id);
                                             </div>
 
                                             <div class="col-lg-12">
+                                                <br>
                                                 <label for="captcha" style="color: red">Phiền bạn điền vào giá trị số
                                                     cho câu hỏi sau: <?php echo captcha(); ?><span
                                                             class="required">*</span></label>

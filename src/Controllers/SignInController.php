@@ -23,11 +23,13 @@ class SignInController
         $data['Email'] = DB::notInjection($_POST['Email']);
         $data['Password'] = md5(DB::notInjection($_POST['Password']));
         if (SignInModel::loginUser($data)[0] > 0) {
-            session_unset();
             Session::set('MaKH', SignInModel::loginUser($data)[1]['MaKH']);
             Session::set('TenKH', SignInModel::loginUser($data)[1]['TenKH']);
             if (isset($_POST['remember_me'])){
                 setcookie('remember', SignInModel::loginUser($data)[1]['MaKH'], time() + 3600);
+            }
+            if (isset($_SESSION["cart"])){
+                Redirect::to('cart');
             }
             Redirect::to('home');
         } else {

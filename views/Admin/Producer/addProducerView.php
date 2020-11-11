@@ -7,6 +7,7 @@ use webLazy\Model\TypeModel;
 CheckLoginAdmin();
 require_once 'views/Admin/header.php';
 require_once 'views/Admin/navigation.php';
+$row_type = TypeModel::selectAll();
 ?>
     <!-- Page Content -->
     <div id="page-wrapper">
@@ -25,6 +26,14 @@ require_once 'views/Admin/navigation.php';
                         <div class="form-group">
                             <label>Tên Nhà Sản Xuất</label>
                             <input class="form-control" name="TenNSX" required/>
+                        </div>
+                        <div class="form-group">
+                            <label>Loại</label>
+                            <select class="form-control" name="MaLoai">
+                                <?php foreach ($row_type as $key=>$value): ?>
+                                    <<option value="<?=$value[0]?>"><?=$value[1]?></option>
+                                <?php endforeach;?>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>Địa Chỉ</label>

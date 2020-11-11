@@ -12,10 +12,14 @@ class ProducerModel
     {
         return DB::makeConnection()->query("SELECT * FROM nhasanxuat")->fetch_all();
     }
+    public static function selectWithIdProducer($id)
+    {
+        return DB::makeConnection()->query("SELECT * FROM nhasanxuat where MaLoai=".$id."")->fetch_all();
+    }
 
     public static function insertData($data)
     {
-        return DB::makeConnection()->query("INSERT INTO `nhasanxuat`(`MaNSX`, `TenNSX`, `DiaChi`, `SDT`, `registration_date`) VALUES (null,'" . $data['TenNSX'] . "','" . $data['DiaChi'] . "','" . $data['SDT'] . "',null)");
+        return DB::makeConnection()->query("INSERT INTO `nhasanxuat`(`MaNSX`, `TenNSX`, `DiaChi`, `SDT`, `registration_date`,`MaLoai`) VALUES (null,'" . $data['TenNSX'] . "','" . $data['DiaChi'] . "','" . $data['SDT'] . "',null,'" . $data['MaLoai'] . "')");
     }
 
     public static function selectId($id)
@@ -24,7 +28,7 @@ class ProducerModel
     }
     public static function updateProducer($data)
     {
-        return DB::makeConnection()->query("UPDATE `nhasanxuat` SET `TenNSX`='".$data['TenNSX']."',`DiaChi`='".$data['DiaChi']."',`SDT`='".$data['SDT']."',`registration_date`=null WHERE MaNSX=".$data['MaNSX']."");
+        return DB::makeConnection()->query("UPDATE `nhasanxuat` SET `TenNSX`='".$data['TenNSX']."',`DiaChi`='".$data['DiaChi']."',`SDT`='".$data['SDT']."',`MaLoai`='" . $data['MaLoai'] . "' WHERE MaNSX=".$data['MaNSX']."");
     }
     public static function deleteProducer($id){
         return DB::makeConnection()->query("DELETE FROM `nhasanxuat` WHERE MaNSX=".$id."");

@@ -67,6 +67,7 @@ $oRoute->get('hidden', 'webLazy\Controllers\BannerController@actionShowHidden');
 $oRoute->get('listOrderAdmin', 'webLazy\Controllers\OrderAdminController@loadView');
 $oRoute->get('printOrderAdmin', 'webLazy\Controllers\OrderAdminController@printOrderAdmin');
 $oRoute->get('deleteOrderAdmin', 'webLazy\Controllers\OrderAdminController@deleteOrderAdmin');
+$oRoute->get('statusOrderAdmin', 'webLazy\Controllers\OrderAdminController@statusOrderAdmin');
 //Login-admin
 $oRoute->get('login', 'webLazy\Controllers\LoginAdminController@loadView');
 $oRoute->post('login', 'webLazy\Controllers\LoginAdminController@actionLogin');
@@ -99,6 +100,7 @@ $oRoute->get('dashboard', 'webLazy\Controllers\DashboardController@loadView');
 
 //SignIn
 $oRoute->get('signIn', 'webLazy\Controllers\SignInController@loadView');
+$oRoute->get('loginFB', 'webLazy\Controllers\LoginFBController@FBcallback');
 $oRoute->get('forgot', 'webLazy\Controllers\ForgotPasswordController@loadView');
 $oRoute->get('repass', 'webLazy\Controllers\ForgotPasswordController@loadViewRepass');
 $oRoute->post('repass', 'webLazy\Controllers\ForgotPasswordController@updatePassword');

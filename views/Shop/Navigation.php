@@ -11,26 +11,35 @@
                                 <!--                                            <li><a href="index.html">Home One</a></li>-->
                                 <!--                                        </ul>-->
                             </li>
-                            <li class="catmenu-dropdown megamenu-holder"><a href="<?=\webLazy\Core\URL::uri('showProduct')?>">Shop</a>
-                                <ul class="megamenu hb-megamenu">
-                                    <li><a href="shop-left-sidebar.html">Shop Page Layout</a>
-                                        <ul>
-                                            <li><a href="shop-3-column.html">LAPTOP</a></li>
-                                            <li><a href="shop-4-column.html">Điện Thoại</a></li>
+                            <li class="dropdown-holder"><a href="<?=\webLazy\Core\URL::uri('showProduct')?>">Shop</a>
+                                <ul class="hb-dropdown">
+                                    <?php $aLoai=\webLazy\Model\TypeModel::selectAll();
+                                    foreach ($aLoai as $value):
+                                    ?>
+                                    <li class="sub-dropdown-holder"><a href=""><?=$value[1]?></a>
+                                        <ul class="hb-dropdown hb-sub-dropdown">
+                                            <?php $aProducer = \webLazy\Model\ProducerModel::selectWithIdProducer($value[0]);?>
+                                            <?php foreach ($aProducer as $aValues): ?>
+                                                <li><a href=""><?= $aValues[1] ?></a></li>
+                                            <?php endforeach; ?>
                                         </ul>
                                     </li>
+                                    <?php endforeach; ?>
                                 </ul>
                             </li>
                             <li class="dropdown-holder"><a href="<?=\webLazy\Core\URL::uri('homeBlog')?>">Blog</a>
                                 <ul class="hb-dropdown">
-                                    <li class="sub-dropdown-holder"><a href="blog-left-sidebar.html">Blog Grid View</a>
+                                    <?php $aCategory = \webLazy\Model\CategoryModel::selectAll();
+                                    foreach ($aCategory as $value):?>
+                                    <li class="sub-dropdown-holder"><a href=""><?= $value[1] ?></a>
+                                        <?php $aTypeNews = \webLazy\Model\TypeNewsModel::selectWithIdCategory($value[0]);?>
                                         <ul class="hb-dropdown hb-sub-dropdown">
-                                            <li><a href="blog-2-column.html">Blog 2 Column</a></li>
-                                            <li><a href="blog-3-column.html">Blog 3 Column</a></li>
-                                            <li><a href="blog-left-sidebar.html">Grid Left Sidebar</a></li>
-                                            <li><a href="blog-right-sidebar.html">Grid Right Sidebar</a></li>
+                                            <?php foreach ($aTypeNews as $aValues): ?>
+                                            <li><a href=""><?= $aValues[2] ?></a></li>
+                                            <?php endforeach; ?>
                                         </ul>
                                     </li>
+                                    <?php endforeach; ?>
                                 </ul>
                             </li>
 <!--                            <li class="catmenu-dropdown megamenu-static-holder"><a href="index.html">Pages</a>-->

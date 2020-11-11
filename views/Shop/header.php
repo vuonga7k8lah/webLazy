@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="./assets/theme/css/magnific-popup.css">
     <!-- Bootstrap V4.1.3 Fremwork CSS -->
     <link rel="stylesheet" href="./assets/theme/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/theme/bootstrap.css">
     <!-- Helper CSS -->
     <link rel="stylesheet" href="./assets/theme/css/helper.css">
     <!-- Main Style CSS -->

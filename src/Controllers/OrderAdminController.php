@@ -18,15 +18,29 @@ class OrderAdminController
 
     public function deleteOrderAdmin()
     {
-        $id=Request::uri()[1];
-        if (OrderAdminModel::deleteOrder($id)){
-            Session::set('success_delete','Xóa Thành Công');
+        $id = Request::uri()[1];
+        if (OrderAdminModel::deleteOrder($id)) {
+            Session::set('success_delete', 'Xóa Thành Công');
             Redirect::to('listOrderAdmin');
         }
     }
+
     public function printOrderAdmin()
     {
         require_once 'views/Admin/Order/printOrder.php';
+    }
+
+    public function statusOrderAdmin()
+    {
+        $id = Request::uri()[1];
+        if (OrderAdminModel::updateStatus($id)) {
+            Redirect::to('listOrderAdmin');
+            ?>
+            <script>
+                alert('Đơn Hàng Đã Dc Cập Nhật');
+            </script>
+            <?php
+        }
     }
 
 }

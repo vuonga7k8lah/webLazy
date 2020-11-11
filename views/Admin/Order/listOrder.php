@@ -28,9 +28,11 @@ $row = OrderAdminModel::selectAllOrder();
                         <th>Tên Khách Hàng</th>
                         <th>Địa Chỉ</th>
                         <th>SDT</th>
+                        <th>Trạng Thái</th>
                         <th>Ngày Tạo Đơn</th>
                         <th>Delete</th>
                         <th>In Đơn</th>
+                        <th>Đã Giao</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -41,6 +43,7 @@ $row = OrderAdminModel::selectAllOrder();
                             <td><?php echo $item[1]; ?></td>
                             <td><?php echo $item[2]; ?></td>
                             <td><?php echo $item[3]; ?></td>
+                            <td><?php echo empty( $item[5])?'Đang Giao':$item[5]; ?></td>
                             <td><?php echo $item[4]; ?></td>
                             <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a
                                         href="<?php echo URL::uri('deleteOrderAdmin'); ?>/<?= $item[0]; ?>">Delete</a>
@@ -48,6 +51,9 @@ $row = OrderAdminModel::selectAllOrder();
                             <td class="center"><i class="fa fa fa-print fa-fw"></i> <a
                                         href="<?php echo URL::uri('printOrderAdmin'); ?>/<?= $item[0]; ?>">In
                                     ĐƠN</a>
+                            </td>
+                            <td class="center"><i class="fa fa fa-print fa-fw"></i> <a
+                                        href="<?php echo URL::uri('statusOrderAdmin'); ?>/<?= $item[0]; ?>">Giao Thành Công</a>
                             </td>
                         </tr>
                     <?php $i++;

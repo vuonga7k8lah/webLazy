@@ -39,7 +39,7 @@ $orders = OrderModel::selectPrintId($id);
                             ?>
                         </ul>
                         <hr/>
-                        <label>Tổng SL:</label> <?= $totalQuantity ?> - <label>Tổng tiền:</label> <?= $orders[0][5] ?> đ
+                        <label>Tổng SL:</label> <?= $totalQuantity ?> - <label>Tổng tiền:</label> <?= Money($orders[0][5]) ?> vnd
                         <p><label>Ghi chú: </label><?= $orders[0][6] ?></p>
                     </div>
                 </div>

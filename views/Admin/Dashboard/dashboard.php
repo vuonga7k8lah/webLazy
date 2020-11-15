@@ -1,7 +1,7 @@
 <?php
+CheckLoginAdmin();
 require_once 'views/Admin/header.php';
 require_once 'views/Admin/navigation.php';
-CheckLoginAdmin();
 ?>
     <div id="page-wrapper">
         <div class="container-fluid">
@@ -117,15 +117,15 @@ CheckLoginAdmin();
                                     <i class="fa fa-comments fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">26</div>
-                                    <div>New Comments!</div>
+                                    <div class="huge"><?=\webLazy\Model\DashboardModel::countNews()['SoTin'];?></div>
+                                    <div>Tin Tức</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="<?=\webLazy\Core\URL::uri('listNews')?>">
                             <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <span class="pull-left">View Tin Tức</span>
+                                <span class="pull-right"><i class="fas fa-newspaper"></i></span>
 
                                 <div class="clearfix"></div>
                             </div>
@@ -140,14 +140,14 @@ CheckLoginAdmin();
                                     <i class="fa fa-tasks fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">12</div>
-                                    <div>New Tasks!</div>
+                                    <div class="huge"><?=\webLazy\Model\DashboardModel::countTypeNews()['LoaiTin'];?></div>
+                                    <div>Loại Tin</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="<?=\webLazy\Core\URL::uri('listTypeNews')?>">
                             <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
+                                <span class="pull-left">View Loại Tin</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 
                                 <div class="clearfix"></div>
@@ -163,14 +163,14 @@ CheckLoginAdmin();
                                     <i class="fa fa-shopping-cart fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">124</div>
-                                    <div>New Orders!</div>
+                                    <div class="huge"><?=\webLazy\Model\DashboardModel::countCMM()['cmm'];?></div>
+                                    <div>Số Comment</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="<?=\webLazy\Core\URL::uri('listCMM')?>">
                             <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
+                                <span class="pull-left">View Comment</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 
                                 <div class="clearfix"></div>

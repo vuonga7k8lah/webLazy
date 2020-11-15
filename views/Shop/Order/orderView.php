@@ -56,13 +56,13 @@ require_once 'views/Shop/header.php';
                                                          style="width: 150px;height: 150px" alt="Li's Product Image">
                                                 </td>
                                                 <td class="li-product-name"><?= $row[0] ?></td>
-                                                <td class="li-product-price"><span class="amount"><?= $row[2] ?></span>
+                                                <td class="li-product-price"><span class="amount"><?= Money($row[2]) ?> đ</span>
                                                 </td>
                                                 <td class="quantity">
                                                     <?= $row[3] ?>
                                                 </td>
                                                 <td class="product-subtotal"><span
-                                                            class="amount"><?= $row[4]; ?></span>
+                                                            class="amount"><?=Money($row[4]=$row[2]*$row[3])?> đ</span>
                                                 </td>
                                             </tr>
                                             <?php
@@ -78,7 +78,7 @@ require_once 'views/Shop/header.php';
                                             <h2>Cart totals</h2>
                                             <ul>
                                                 <input type="hidden" name="Total" value="<?= $sum ?>">
-                                                <li>Total <span><?= $sum ?></span></li>
+                                                <li>Total <span><?=Money($sum)?> đ</span></li>
                                             </ul>
                                         </div>
                                     </div>

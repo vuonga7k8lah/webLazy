@@ -17,6 +17,10 @@ class NewsModel
     {
         return DB::makeConnection()->query("SELECT * FROM tintuc")->num_rows;
     }
+    public static function selectAllAdmin()
+    {
+        return DB::makeConnection()->query("SELECT * FROM tintuc")->fetch_all();
+    }
 
     public static function selectAll($offset)
     {
@@ -50,7 +54,7 @@ class NewsModel
 
     public static function popularPostCouview()
     {
-        return DB::makeConnection()->query("SELECT * FROM tintuc where date_time BETWEEN date_sub(now(),INTERVAL 1 WEEK) and now() order by views DESC limit 5 ")->fetch_all();
+        return DB::makeConnection()->query("SELECT * FROM tintuc order by views DESC limit 5 ")->fetch_all();
     }
     public static function selectCountNew($id)
     {

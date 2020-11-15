@@ -157,10 +157,10 @@ use webLazy\Core\URL;
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-users fa-fw"></i>Bình Luận<span class="fa arrow"></span></a>
+                    <a href="<?=URL::uri('listCMM')?>"><i class="fa fa-users fa-fw"></i>Bình Luận<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="#">List Bình Luận</a>
+                            <a href="<?=URL::uri('listCMM')?>">List Bình Luận</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->

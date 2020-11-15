@@ -229,8 +229,9 @@ function countView($id)
         $view = 1;
         NewsModel::updateView($view, $id);
     } else {
-        $countView=$view['views'] +1;
+        $countView = $view['views'] + 1;
         NewsModel::updateView($countView, $id);
     }
 
 }
+

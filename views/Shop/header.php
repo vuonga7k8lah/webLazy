@@ -119,12 +119,8 @@
                     <!-- Begin Header Middle Right Area -->
                     <div class="col-lg-9 pl-0 ml-sm-15 ml-xs-15">
                         <!-- Begin Header Middle Searchbox Area -->
-                        <form action="#" class="hm-searchbox">
-                            <select class="nice-select select-search-category">
-                                <option value="0">All</option>
-                                <option value="10">Laptops</option>
-                            </select>
-                            <input type="text" placeholder="Enter your search key ...">
+                        <form action="<?=\webLazy\Core\URL::uri('search')?>" class="hm-searchbox" method="post">
+                            <input type="text" name="Search" placeholder="Enter your search key ...">
                             <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
                         </form>
                         <!-- Header Middle Searchbox Area End Here -->
@@ -132,12 +128,12 @@
                         <div class="header-middle-right">
                             <ul class="hm-menu">
                                 <!-- Begin Header Middle Wishlist Area -->
-<!--                                <li class="hm-wishlist">-->
-<!--                                    <a href="wishlist.html">-->
-<!--                                        <span class="cart-item-count wishlist-item-count">0</span>-->
-<!--                                        <i class="fa fa-heart-o"></i>-->
-<!--                                    </a>-->
-<!--                                </li>-->
+                                <li class="hm-wishlist">
+                                    <a href="<?=\webLazy\Core\URL::uri('wishList')?>">
+                                        <span class="cart-item-count wishlist-item-count"></span>
+                                        <i class="fa fa-heart-o"></i>
+                                    </a>
+                                </li>
                                 <!-- Header Middle Wishlist Area End Here -->
                                 <!-- Begin Header Mini Cart Area -->
                                 <li class="hm-minicart">

@@ -12,6 +12,14 @@ class ProductModel
     {
         return DB::makeConnection()->query("SELECT MaSP,TenSP,GiaBan,ChiTiet,Anh FROM sanpham ")->fetch_all();
     }
+    public static function selectAllHome($offset)
+    {
+        return DB::makeConnection()->query("SELECT MaSP,TenSP,GiaBan,ChiTiet,Anh FROM sanpham order by MaSP ASC limit " . $offset . ",8 ")->fetch_all();
+    }
+    public static function countProduct()
+    {
+        return DB::makeConnection()->query("SELECT * FROM sanpham ")->num_rows;
+    }
 
     public static function insertProduct($data)
     {

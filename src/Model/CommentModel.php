@@ -23,4 +23,8 @@ class CommentModel
     {
         return DB::makeConnection()->query("DELETE FROM comments where idCMM=" . $id . "");
     }
+    public static function sellectAll()
+    {
+        return DB::makeConnection()->query("SELECT * FROM comments")->fetch_all();
+    }
 }

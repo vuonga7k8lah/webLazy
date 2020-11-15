@@ -27,7 +27,7 @@
             </div>
         <?php endforeach; ?>
         <div class="li-blog-sidebar">
-            <h4 class="li-blog-sidebar-title">Popular View Last Week</h4>
+            <h4 class="li-blog-sidebar-title">Top 5 Bài Viết Được Xem Nhiều Nhất:</h4>
             <?php foreach (NewsModel::popularPostCouview() as $value): ?>
                 <div class="li-recent-post pb-30">
                     <div class="li-recent-post-thumb" style="width: 100px;height: 120px; ">

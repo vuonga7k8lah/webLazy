@@ -5,6 +5,7 @@ namespace webLazy\Controllers;
 
 
 use webLazy\Core\Redirect;
+use webLazy\Core\Request;
 use webLazy\Core\Session;
 use webLazy\Core\URL;
 use webLazy\Model\CartModel;
@@ -15,6 +16,14 @@ class CartController
     {
         require_once 'views/Shop/Cart/cartView.php';
     }
+
+    public function ajaxCart()
+    {
+        $id=Request::uri()[1];
+        $_SESSION["cart"][$id] = 1;
+        Redirect::to('showProduct');
+    }
+
     public function cartAction()
     {
         if (isset($_POST['update_click'])) {
@@ -26,8 +35,8 @@ class CartController
             header('location:' . URL::uri('cart'));
         } else {
             if (isset($_SESSION['MaKH'])) {
-                if((empty($_POST['SDT']) || empty($_POST['DiaChiNhan']))){
-                    Session::set('valuesDate',"Hãy Điền Thông Tin Để Xác Nhận");
+                if ((empty($_POST['SDT']) || empty($_POST['DiaChiNhan']))) {
+                    Session::set('valuesDate', "Hãy Điền Thông Tin Để Xác Nhận");
                     Redirect::to('cart');
                 }
 
@@ -44,25 +53,25 @@ class CartController
                         $adata = array();
                         foreach ($data['quantity'] as $key => $value) {
                             $data['price'] = CartModel::selectGiaSanPham($key)['GiaBan'];
-                            $data['MaSP']=(string) $key;
-                            $data['quantity']=$value;
+                            $data['MaSP'] = (string)$key;
+                            $data['quantity'] = $value;
                             unset($data['order_click']);
                             unset($data['Total']);
                             unset($data['note']);
                             unset($data['MaKH']);
                             unset($data['DiaChiNhan']);
                             unset($data['SDT']);
-                            $adata[]=$data;
+                            $adata[] = $data;
                         }
-                        $insertDonHangPhu=CartModel::insertHoaDonphu($adata);
-                        $_SESSION['order']=$data['id_donhang'];
+                        $insertDonHangPhu = CartModel::insertHoaDonphu($adata);
+                        $_SESSION['order'] = $data['id_donhang'];
                         unset($_SESSION['cart']);
                         unset($_SESSION['valuesDate']);
-                        header('location:'.URL::uri('order'));
+                        header('location:' . URL::uri('order'));
                     }
                 }
             } else {
-                Session::set('isLoginCart',"Bạn Hãy Đăng Nhập Tài Khoản Để Đặt Hàng");
+                Session::set('isLoginCart', "Bạn Hãy Đăng Nhập Tài Khoản Để Đặt Hàng");
                 header('location:' . URL::uri('signIn'));
             }
         }

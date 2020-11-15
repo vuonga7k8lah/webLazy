@@ -49,19 +49,19 @@ $row_producer = ProducerModel::selectAll();
                             <div id="displayImg" class="anh" ></div>
                         </div>
                         <div class="form-group">
+                            <label>Loại</label>
+                            <select class="form-control" name="MaLoai" id="MaLoai">
+                                <?php foreach ($row_type as $key=>$value): ?>
+                                    <<option value="<?=$value[0]?>"><?=$value[1]?></option>
+                                <?php endforeach;?>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label>Nhà Sản Xuất</label>
                             <select class="form-control" name="MaNSX">
                                 <?php foreach ($row_producer as $key=>$value) : ?>
                                 <option value="<?=$value[0]?>"><?=$value[1]?></option>
                                 <?php endforeach;?>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Loại</label>
-                            <select class="form-control" name="MaLoai">
-                            <?php foreach ($row_type as $key=>$value): ?>
-                                    <<option value="<?=$value[0]?>"><?=$value[1]?></option>
-                            <?php endforeach;?>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-default">Thêm Sản Phẩm</button>

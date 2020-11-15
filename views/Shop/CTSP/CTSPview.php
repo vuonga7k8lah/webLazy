@@ -83,7 +83,7 @@ $row = ProductModel::selectIdProduct($id);
                                             <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                                         </div>
                                     </div>
-                                    <button class="add-to-cart" type="submit">Add to cart</button>
+                                    <button class="add-to-cart" type="submit" >Add to cart</button>
                                 </form>
                             </div>
                             <div class="product-additional-info pt-25">

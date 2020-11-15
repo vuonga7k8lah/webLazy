@@ -7,7 +7,7 @@ use webLazy\Model\NewsModel;
 CheckLoginAdmin();
 require_once 'views/Admin/header.php';
 require_once 'views/Admin/navigation.php';
-$row = NewsModel::selectAll();
+$row = NewsModel::selectAllAdmin();
 ?>
     <div id="page-wrapper">
         <div class="container-fluid">
@@ -35,7 +35,7 @@ $row = NewsModel::selectAll();
                         <tr class="odd gradeX" align="center">
                             <td><?= $i ?></td>
                             <td><?= $val[2] ?></td>
-                            <td><?= $val[4] ?></td>
+                            <td><?= the_excerpt($val[4]) ?></td>
                             <td style="float: left;width: 120px;text-align: center"><?php LoadAnhTinTuc($val[5]); ?></td>
                             <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a
                                         href="<?= URL::uri('deleteNews') . '/' . $val[0] ?>"> Delete</a></td>

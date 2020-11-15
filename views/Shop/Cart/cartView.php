@@ -34,7 +34,7 @@ require_once 'views/Shop/header.php';
                             $_SESSION["cart"][$id] = $quantity;
                         }
                     }
-                    if (isset($_SESSION["cart"])) {
+                    if (isset($_SESSION["cart"]) && !empty($_SESSION["cart"])) {
                         ?>
                         <form action="<?=\webLazy\Core\URL::uri('cartAction')?>" method="post">
                             <div class="table-content table-responsive">

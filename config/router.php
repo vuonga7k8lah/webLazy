@@ -19,11 +19,16 @@ $oRoute->post('contact', 'webLazy\Controllers\ContactController@actionContact');
 $oRoute->get('about', 'webLazy\Controllers\AboutController@loadView');
 //cart-shop
 $oRoute->get('cart', 'webLazy\Controllers\CartController@loadView');
+$oRoute->get('ajaxCart', 'webLazy\Controllers\CartController@ajaxCart');
 $oRoute->get('deleteCart', 'webLazy\Controllers\LogoutHomeController@deleteCart');
 $oRoute->post('cart', 'webLazy\Controllers\CartController@loadView');
 $oRoute->post('cartAction', 'webLazy\Controllers\CartController@cartAction');
 //order-shop
 $oRoute->get('order', 'webLazy\Controllers\OrderController@loadView');
+//Search-Shop
+$oRoute->post('search', 'webLazy\Controllers\SearchController@loadView');
+$oRoute->get('search', 'webLazy\Controllers\SearchController@menuView');
+$oRoute->get('searchProducer', 'webLazy\Controllers\SearchController@searchProducer');
 
 
 //admin-shop
@@ -94,9 +99,17 @@ $oRoute->get('editNews', 'webLazy\Controllers\NewsController@loadEditView');
 $oRoute->post('addNews', 'webLazy\Controllers\NewsController@addNews');
 $oRoute->post('editNews', 'webLazy\Controllers\NewsController@editNews');
 $oRoute->get('deleteNews', 'webLazy\Controllers\NewsController@deleteNews');
+//admin-cmm
+$oRoute->get('deleteAdminCMM', 'webLazy\Controllers\CMMController@deleteCMM');
+$oRoute->get('listCMM', 'webLazy\Controllers\CMMController@loadView');
 
 //dashboard--admin
 $oRoute->get('dashboard', 'webLazy\Controllers\DashboardController@loadView');
+//wishList
+$oRoute->get('wishList', 'webLazy\Controllers\WishListController@loadView');
+$oRoute->get('AllToCart', 'webLazy\Controllers\WishListController@AllToCart');
+$oRoute->get('deleteWishList', 'webLazy\Controllers\WishListController@deleteWishList');
+$oRoute->get('addWishList', 'webLazy\Controllers\WishListController@actionAddWishList');
 
 //SignIn
 $oRoute->get('signIn', 'webLazy\Controllers\SignInController@loadView');

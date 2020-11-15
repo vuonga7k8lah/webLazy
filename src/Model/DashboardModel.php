@@ -21,5 +21,18 @@ class DashboardModel
     {
         return DB::makeConnection()->query("SELECT COUNT(u.MaKH) SoKH FROM users u")->fetch_assoc();
     }
+    public static function countNews()
+    {
+        return DB::makeConnection()->query("SELECT COUNT(u.idTinTuc) SoTin FROM tintuc u")->fetch_assoc();
+    }
+    public static function countTypeNews()
+    {
+        return DB::makeConnection()->query("SELECT COUNT(u.idLoaiTin) LoaiTin FROM loaitin u")->fetch_assoc();
+    }
+    public static function countCMM()
+    {
+        return DB::makeConnection()->query("SELECT COUNT(u.idCMM) cmm FROM comments u")->fetch_assoc();
+    }
+
 
 }

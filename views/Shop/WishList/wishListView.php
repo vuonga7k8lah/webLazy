@@ -60,7 +60,7 @@ require_once 'views/Shop/header.php';
                                             </td>
                                             <td class="li-product-name"><?= $row[1] ?></td>
                                             <td class="li-product-price"><span class="amount"><?= Money($row[4]) ?> đ</span></td>
-                                            <td class="li-product-add-cart"><a href="<?=\webLazy\Core\URL::uri('AllToCart').'/'.$row[0]?>">add to cart</a></td>
+                                            <td class="li-product-add-cart"><a href="<?=\webLazy\Core\URL::uri('addWishListToCart').'/'.$row[0]?>">add to cart</a></td>
                                         </tr>
                                         <?php
                                     endforeach;

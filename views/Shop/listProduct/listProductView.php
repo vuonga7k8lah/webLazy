@@ -98,7 +98,8 @@ $row = ProductModel::selectAllHome($offset);
                                                     <div class="product_desc">
                                                         <div class="product_desc_info">
                                                             <h4><a class="product_name"
-                                                                   href="<?= URL::uri('ctsp') . '/' . $value[0] ?>"><?= $value[1] ?></a>
+                                                                   href="<?= URL::uri('ctsp') . '/' .
+			                                                       $value[0] ?>"><?= $value[1] ?></a>
                                                             </h4>
                                                             <div class="price-box">
                                                                 <span class="new-price"><?= Money($value[2]); ?> vnđ</span>
@@ -106,9 +107,22 @@ $row = ProductModel::selectAllHome($offset);
                                                         </div>
                                                         <div class="add-actions">
                                                             <ul class="add-actions-link">
-                                                                <li class="add-cart active" "><a href="<?=URL::uri('ajaxCart').'/'.$value[0]?>">Add to cart</a></li>
-                                                                <li><a class="links-details" href=""><i
-                                                                                class="fa fa-heart-o"></i></a></li>
+                                                                <li class="add-cart active">
+                                                                <button style="width: 120px;"
+                                                                        data-id="<?= $value[0] ?>"
+                                                                        onclick="const id = this.getAttribute('data-id');addToCard(id); ">
+                                                                    Add to cart
+                                                                </button>
+                                                                </li>
+                                                                <li>
+                                                                    <button style="width: 33px;"
+                                                                            class="links-details"
+                                                                            data-id="<?= $value[0] ?>"
+                                                                            onclick="const id = this.getAttribute('data-id');
+                                                                addToWishList(id); ">
+                                                                        <i class="fa fa-heart-o"></i>
+                                                                    </button>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                     </div>

@@ -107,9 +107,10 @@ $oRoute->get('listCMM', 'webLazy\Controllers\CMMController@loadView');
 $oRoute->get('dashboard', 'webLazy\Controllers\DashboardController@loadView');
 //wishList
 $oRoute->get('wishList', 'webLazy\Controllers\WishListController@loadView');
-$oRoute->get('AllToCart', 'webLazy\Controllers\WishListController@AllToCart');
+$oRoute->post('AllToCart', 'webLazy\Controllers\WishListController@AllToCartAjax');
+$oRoute->get('addWishListToCart', 'webLazy\Controllers\WishListController@addWishListToCart');
 $oRoute->get('deleteWishList', 'webLazy\Controllers\WishListController@deleteWishList');
-$oRoute->get('addWishList', 'webLazy\Controllers\WishListController@actionAddWishList');
+$oRoute->post('addWishList', 'webLazy\Controllers\WishListController@actionAddWishList');
 
 //SignIn
 $oRoute->get('signIn', 'webLazy\Controllers\SignInController@loadView');

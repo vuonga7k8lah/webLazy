@@ -111,7 +111,7 @@
                     <div class="col-lg-3">
                         <div class="logo pb-sm-30 pb-xs-30">
                             <a href="<?=\webLazy\Core\URL::uri('home')?>">
-                                <img src="./assets/upload/vuongkma.png" alt="" style="width: 250px;height: 100px;border:2px solid black;border-radius: 50%;">
+                                <img src="./assets/upload/vuongkma.png" alt="" style="width: 220px;height: 90px;border:2px solid black;border-radius: 50%;margin-top: -21px;">
                             </a>
                         </div>
                     </div>

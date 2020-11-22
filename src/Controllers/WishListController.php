@@ -10,30 +10,45 @@ use webLazy\Core\Session;
 
 class WishListController
 {
-    public function loadView()
-    {
-        require_once 'views/Shop/WishList/wishListView.php';
-    }
+	public function loadView()
+	{
+		require_once 'views/Shop/WishList/wishListView.php';
+	}
 
-    public function actionAddWishList()
-    {
-        $id = Request::uri()[1];
-        $_SESSION["wishLish"][$id] = 1;
-        Redirect::to('home');
-    }
+	public function actionAddWishList()
+	{
+		if (isset($_POST['MaSP'])) {
+			$_SESSION["wishLish"][$_POST['MaSP']] = 1;
+			$aResponse = [
+				"isValid" => "yes",
+				"msg"     => "Sản Phẩm Đã Được Thêm Vào Danh Sách Yêu Thích"
+			];
+		}
+		echo json_encode($aResponse);
+	}
 
-    public function deleteWishList()
-    {
-        $id = Request::uri()[1];
-        unset($_SESSION["wishLish"][$id]);
-        Redirect::to('wishList');
-    }
-
-    public function AllToCart()
-    {
-        $id=Request::uri()[1];
-        $_SESSION["cart"][$id] = 1;
-        unset($_SESSION["wishLish"][$id]);
-        Redirect::to('wishList');
-    }
+	public function deleteWishList()
+	{
+		$id = Request::uri()[1];
+		unset($_SESSION["wishLish"][$id]);
+		Redirect::to('wishList');
+	}
+	public function AllToCartAjax()
+	{
+		if (isset($_POST['MaSP'])) {
+			$_SESSION["cart"][$_POST['MaSP']] = 1;
+			$aResponse = [
+				"isValid" => "yes",
+				"msg"     => "Sản Phẩm Đã Được Thêm Vào Giỏ Hàng"
+			];
+		}
+		echo json_encode($aResponse);
+	}
+	public function addWishListToCart()
+	{
+		$id = Request::uri()[1];
+		$_SESSION["cart"][$id]=1;
+		unset($_SESSION["wishLish"][$id]);
+		Redirect::to('wishList');
+	}
 }

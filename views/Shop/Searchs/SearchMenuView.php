@@ -77,10 +77,21 @@ require_once 'views/Shop/header.php' ?>
                                                 <div class="col-lg-4">
                                                     <div class="shop-add-action mb-xs-30">
                                                         <ul class="add-actions-link">
-                                                            <li class="add-cart"><a href="">Add to cart</a></li>
-                                                            <li class="wishlist"><a href="wishlist.html"><i
-                                                                        class="fa fa-heart-o"></i>Add to
+                                                            <li class="add-cart">
+                                                                <button style="width: 120px;"
+                                                                        data-id="<?= $value[0] ?>"
+                                                                        onclick="const id = this.getAttribute('data-id');addToCard(id); ">
+                                                                    Add to cart
+                                                                </button>
+                                                            </li>
+                                                            <li class="wishlist">
+                                                                <button style="width: 140px;"
+                                                                        class="links-details"
+                                                                        data-id="<?= $value[0] ?>"
+                                                                        onclick="const id = this.getAttribute('data-id');
+                                                                addToWishList(id); "><i class="fa fa-heart-o"></i>Add to
                                                                     wishlist</a>
+                                                                </button>
                                                             </li>
                                                         </ul>
                                                     </div>

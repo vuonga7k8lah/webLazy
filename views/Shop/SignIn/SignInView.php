@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="col-12 mb-20">
                                     <label>Password</label>
-                                    <input class="mb-0" type="password" name="Password" placeholder="Password" >
+                                    <input class="mb-0" type="password" name="Password" placeholder="Password">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="check-box d-inline-block ml-0 ml-md-2 mt-10">
@@ -58,18 +58,23 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4 mt-10 mb-20 text-left text-md-right">
-                                    <a href="<?=\webLazy\Core\URL::uri('forgot')?>"> Forgotten pasward?</a>
+                                    <a href="<?= \webLazy\Core\URL::uri('forgot') ?>"> Forgotten pasward?</a>
                                 </div>
-<!--                                <div class="col-md-12">-->
-<!--                                    <label>Đăng Nhập Bằng Tài Khoản Xã Hội:</label>-->
-<!--                                    <div class="col-md-6">-->
-<!--                                        <a href="https://www.facebook.com/dialog/outh?client_id=353639432560596&redirect_uri=http://localhost/webLazy/loginFB&scope=public_profile"><img src="./assets/images/facebook.png" alt='facebook login' title="Facebook Login" style="height:50px;width: 250px" /></a>-->
-<!--                                    </div>-->
-<!--                                    <div class="col-md-6">-->
-<!--                                        <a href="--><?php //?><!--"><img src="./assets/images/google.png" alt='Google Login' title="Facebook Login" style="height:50px;width: 250px" /></a>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-                                <div class="col-md-12" >
+                                <div class="col-md-12">
+                                    <label>Đăng Nhập Bằng Tài Khoản Xã Hội:</label>
+                                    <div class="col-md-6">
+                                        <a href="https://www.facebook.com/dialog/outh?client_id=353639432560596&redirect_uri=http://localhost/webLazy/loginFB&scope=public_profile"><img
+                                                    src="./assets/images/facebook.png" alt='facebook login'
+                                                    title="Facebook Login" style="height:50px;width: 250px"/></a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href="https://accounts.google.com/o/oauth2/auth?response_type=code&access_type=online&client_id=1086944737913-90j2of2760o97v50bto86o2lk4dgu9nn.apps.googleusercontent.com&redirect_uri=http%3A%2F%2F127.0.0.1%2FwebLazy%2FloginAPIGoogle&state&scope=email%20profile&approval_prompt=auto"><img
+                                                    src="./assets/images/google.png" alt='Google Login'
+                                                    title="Google Login"
+                                                    style="height:50px;width: 250px"/></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
                                     <button class="register-button mt-0">Login</button>
                                 </div>
                             </div>
@@ -77,18 +82,19 @@
                     </form>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
-                    <form action="<?=\webLazy\Core\URL::uri('signInRegister')?>" method="post">
+                    <form action="<?= \webLazy\Core\URL::uri('signInRegister') ?>" method="post">
                         <div class="login-form">
-                            <?php if (isset($_SESSION['error'])){
-                                foreach ($_SESSION['error'] as $key=>$value){?>
+				            <?php if (isset($_SESSION['error'])) {
+					            foreach ($_SESSION['error'] as $key => $value) {
+						            ?>
                                     <div class="danger" style="color: red;">
-                                        <?=$value?>
+							            <?= $value ?>
                                     </div>
                                     <br>
-                                    <?php
-                                }
+						            <?php
+					            }
 
-                            } ?>
+				            } ?>
                             <div class="error" style="color:red;">
                                 <?php if (isset($_SESSION['error_validateRegister'])){
                                     foreach ($_SESSION['error_validateRegister'] as $row){

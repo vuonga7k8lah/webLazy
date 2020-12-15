@@ -28,11 +28,13 @@
                                 <ul class="hb-dropdown">
                                     <?php $aCategory = \webLazy\Model\CategoryModel::selectAll();
                                     foreach ($aCategory as $value):?>
-                                    <li class="sub-dropdown-holder"><a href=""><?= $value[1] ?></a>
+                                    <li class="sub-dropdown-holder"><a href="<?=\webLazy\Core\URL::uri('searchTypeNews').'/'.$value[0]?>"><?= $value[1] ?></a>
                                         <?php $aTypeNews = \webLazy\Model\TypeNewsModel::selectWithIdCategory($value[0]);?>
                                         <ul class="hb-dropdown hb-sub-dropdown">
                                             <?php foreach ($aTypeNews as $aValues): ?>
-                                            <li><a href=""><?= $aValues[2] ?></a></li>
+                                            <li><a href="<?=\webLazy\Core\URL::uri('searchTypeNews1').'/'
+                                                .$aValues[0]?>"><?=
+                                                    $aValues[2] ?></a></li>
                                             <?php endforeach; ?>
                                         </ul>
                                     </li>

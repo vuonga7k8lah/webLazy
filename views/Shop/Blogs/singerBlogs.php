@@ -37,7 +37,7 @@ countView($id);
                             <div class="li-blog-single-item pb-30">
                                 <div class="li-blog-banner">
                                     <?php $img = json_decode($row['Anh'], true); ?>
-                                    <a href="blog-details.html"><img class="img-full" style="width: 870px;height: 300px"
+                                    <a href=""><img class="img-full" style="width: 870px;height: 300px"
                                                                      src="./assets/upload/News/<?= $img[0] ?>"
                                                                      alt=""></a>
                                 </div>

@@ -6,13 +6,21 @@ namespace webLazy\Core;
 
 class Request
 {
-    public static function uri()
+	public static function uri()
+	{
+		return explode('/',trim(str_replace(
+			App::get('config/app')['baseURI'],
+			'',
+			$_SERVER['REQUEST_URI']
+		)));
+	}
+    public static function route11()
     {
-        return explode('/',trim(str_replace(
+        return trim(str_replace(
             App::get('config/app')['baseURI'],
             '',
-            $_SERVER['REQUEST_URI']
-        )));
+	        parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH)
+        ));
     }
     public static function method()
     {

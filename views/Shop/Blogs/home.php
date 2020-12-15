@@ -60,7 +60,7 @@ $row = NewsModel::selectAll($offset);
                                                    href="<?= URL::uri('singerBlog') . '/' . $value[0] ?>"><i
                                                             class="fa fa-comment-o"></i><?php echo (CommentModel::countComment($value[0])[0] == 0) ? '0 Comment' : CommentModel::countComment($value[0])[0] . ' Comment'; ?>
                                                 </a>
-                                                <a class="comment" href="#"><i
+                                                <a class="views" href="#"><i
                                                             class="fa fa fa-eye"></i><?php echo $value[7] == 0 ? '1' : $value[7] ?>
                                                     views</a>
                                                 <a class="post-time"

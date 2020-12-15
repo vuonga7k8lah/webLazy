@@ -105,6 +105,7 @@ $oRoute->get('listCMM', 'webLazy\Controllers\CMMController@loadView');
 
 //dashboard--admin
 $oRoute->get('dashboard', 'webLazy\Controllers\DashboardController@loadView');
+
 //wishList
 $oRoute->get('wishList', 'webLazy\Controllers\WishListController@loadView');
 $oRoute->post('AllToCart', 'webLazy\Controllers\WishListController@AllToCartAjax');
@@ -125,7 +126,13 @@ $oRoute->post('signInRegister', 'webLazy\Controllers\SignInController@actionRegi
 $oRoute->get('homeBlog', 'webLazy\Controllers\BlogController@loadView');
 $oRoute->get('deleteCMM', 'webLazy\Controllers\BlogController@deleteComment');
 $oRoute->get('singerBlog', 'webLazy\Controllers\BlogController@loadSingerView');
+$oRoute->get('singerBlog/$page', 'webLazy\Controllers\BlogController@loadSingerView');
 $oRoute->post('commentCaptcha', 'webLazy\Controllers\BlogController@isCaptchaExits');
 $oRoute->post('commentEmail', 'webLazy\Controllers\BlogController@isEmailExits');
 $oRoute->post('comment', 'webLazy\Controllers\BlogController@actionComment');
+//search-blog
+$oRoute->get('searchTypeNews', 'webLazy\Controllers\SearchController@searchTypeNews');
+$oRoute->get('searchTypeNews1', 'webLazy\Controllers\SearchController@searchTypeNews1');
 
+//Login Google
+$oRoute->get('loginAPIGoogle', 'webLazy\Controllers\LoginGoogleController@loginGoogle');

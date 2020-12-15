@@ -11,5 +11,10 @@ require_once 'function/UploadImages.php';
 
 App::bind('config/app', require_once "config/app.php");
 App::bind('MYSQL', DB::makeConnection());
-Route::load("config/router.php")
-    ->direct(Request::uri()[0], Request::method());
+if (explode('?', Request::uri()[0])[0] == 'loginAPIGoogle') {
+	Route::load("config/router.php")
+		->direct(Request::route11(), Request::method());
+} else {
+	Route::load("config/router.php")
+		->direct(Request::uri()[0], Request::method());
+}

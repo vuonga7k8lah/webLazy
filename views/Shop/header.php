@@ -8,6 +8,7 @@
     <title>SHOP MONEY</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="652963584525-0rufikmbipgvm40qu36pa60sptn18hin.apps.googleusercontent.com.apps.googleusercontent.com">
     <base href="<?=\webLazy\Core\URL::uri()?>">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="./assets/theme/images/favicon.png">

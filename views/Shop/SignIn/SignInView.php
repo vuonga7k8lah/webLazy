@@ -63,18 +63,13 @@
                                 <div class="col-md-12">
                                     <label>Đăng Nhập Bằng Tài Khoản Xã Hội:</label>
                                     <div class="col-md-6">
-                                        <a href="https://www.facebook.com/dialog/outh?client_id=353639432560596&redirect_uri=http://localhost/webLazy/loginFB&scope=public_profile"><img
-                                                    src="./assets/images/facebook.png" alt='facebook login'
-                                                    title="Facebook Login" style="height:50px;width: 250px"/></a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a href="https://accounts.google.com/o/oauth2/auth?response_type=code&access_type=online&client_id=1086944737913-90j2of2760o97v50bto86o2lk4dgu9nn.apps.googleusercontent.com&redirect_uri=http%3A%2F%2F127.0.0.1%2FwebLazy%2FloginAPIGoogle&state&scope=email%20profile&approval_prompt=auto"><img
+                                        <a href="https://accounts.google.com/o/oauth2/auth?response_type=code&access_type=online&client_id=652963584525-0rufikmbipgvm40qu36pa60sptn18hin.apps.googleusercontent.com&redirect_uri=http%3A%2F%2F127.0.0.1%2FwebLazy%2FloginAPIGoogle&state&scope=email%20profile&approval_prompt=auto"><img
                                                     src="./assets/images/google.png" alt='Google Login'
                                                     title="Google Login"
                                                     style="height:50px;width: 250px"/></a>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-12" style="margin-top: 10px;">
                                     <button class="register-button mt-0">Login</button>
                                 </div>
                             </div>

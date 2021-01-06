@@ -3,70 +3,78 @@
 
 namespace webLazy\Controllers;
 
+use webLazy\Core\Redirect;
+use webLazy\Core\Session;
+use webLazy\Database\DB;
+use webLazy\Model\SignInModel;
 
 class LoginGoogleController
 {
 	public function __construct()
 	{
-		define('GOOGLE_APP_ID', '1086944737913-90j2of2760o97v50bto86o2lk4dgu9nn.apps.googleusercontent.com');
-		define('GOOGLE_APP_SECRET', 'vv0rmfXi0mbJsd9PAjgjZGAv');
+		define('GOOGLE_APP_ID', '652963584525-0rufikmbipgvm40qu36pa60sptn18hin.apps.googleusercontent.com');
+		define('GOOGLE_APP_SECRET', 'u7kgqvt-z5W3DvRXh6fbVGeM');
 		define('GOOGLE_APP_CALLBACK_URL', 'http://127.0.0.1/webLazy/loginAPIGoogle');
+	}
+
+	/**
+	 * @var $oClient \Google_Client
+	 */
+	private $oClient;
+
+	public function getGoogleAPI()
+	{
+		if (!empty($this->oClient)) {
+			return $this->oClient;
+		}
+
+		$this->oClient = new \Google_Client();
+		$this->oClient->setClientId(GOOGLE_APP_ID);
+		$this->oClient->setClientSecret(GOOGLE_APP_SECRET);
+		$this->oClient->setRedirectUri(GOOGLE_APP_CALLBACK_URL);
+		$this->oClient->addScope('email');
+		$this->oClient->addScope('profile');
+
+		return $this->oClient;
 	}
 
 	public function loginGoogle()
 	{
-		$client =new \Google_Client();
-		$client->setClientId(GOOGLE_APP_ID);
-		$client->setClientSecret(GOOGLE_APP_SECRET);
-		$client->setRedirectUri(GOOGLE_APP_CALLBACK_URL);
-		$client->addScope("email");
-		$client->addScope("profile");
-		if(isset($_GET["code"]))
-		{
-			//It will Attempt to exchange a code for an valid authentication token.
-			$token = $client->fetchAccessTokenWithAuthCode($_GET["code"]);
-	var_dump($token);die();
-			//This condition will check there is any error occur during geting authentication token. If there is no any error occur then it will execute if block of code/
-			if(!isset($token['error']))
-			{
-				//Set the access token used for requests
-				$client->setAccessToken($token['access_token']);
-
-				//Store "access_token" value in $_SESSION variable for future use.
-				$_SESSION['access_token'] = $token['access_token'];
-
-				//Create Object of Google Service OAuth 2 class
-				$google_service = new \Google_Auth_OAuth2($client);
-
-				//Get user profile data from google
-				$data = $google_service->userinfo->get();
-				var_dump($data);die();
-				//Below you can find Get profile data and store into $_SESSION variable
-				if(!empty($data['given_name']))
-				{
-					$_SESSION['user_first_name'] = $data['given_name'];
-				}
-
-				if(!empty($data['family_name']))
-				{
-					$_SESSION['user_last_name'] = $data['family_name'];
-				}
-
-				if(!empty($data['email']))
-				{
-					$_SESSION['user_email_address'] = $data['email'];
-				}
-
-				if(!empty($data['gender']))
-				{
-					$_SESSION['user_gender'] = $data['gender'];
-				}
-
-				if(!empty($data['picture']))
-				{
-					$_SESSION['user_image'] = $data['picture'];
-				}
+		$this->getGoogleAPI();
+		$code = $_GET['code'];
+		$aToken = $this->oClient->fetchAccessTokenWithAuthCode($code);
+		$accessToken = $aToken['access_token'];
+		$this->oClient->setAccessToken([
+			'access_token' => $accessToken,
+			'expires_in'   => strtotime('+2 days')
+		]);
+		$googleAuth = new \Google_Service_Oauth2($this->oClient);
+		$accountInfo = $googleAuth->userinfo->get();
+		if (SignInModel::emailIsExist($accountInfo['email']) > 0) {
+			Session::set('MaKH', SignInModel::queryMaKHTenKHWithEmail($accountInfo['email'])['MaKH']);
+			Session::set('TenKH', SignInModel::queryMaKHTenKHWithEmail($accountInfo['email'])['TenKH']);
+			if (isset($_SESSION["cart"])){
+				Redirect::to('cart');
 			}
+			Redirect::to('home');
+		}else{
+			$this->actionRegister($accountInfo);
+			Session::set('MaKH', SignInModel::queryMaKHTenKHWithEmail($accountInfo['email'])['MaKH']);
+			Session::set('TenKH', SignInModel::queryMaKHTenKHWithEmail($accountInfo['email'])['TenKH']);
+			if (isset($_SESSION["cart"])){
+				Redirect::to('cart');
+			}
+			Redirect::to('home');
 		}
+	}
+
+	public function actionRegister($accountInfo)
+	{
+		$data['TenKH'] = $accountInfo['name'];
+		$data['DiaChi'] = '';
+		$data['SDT'] = '';
+		$data['Email'] = $accountInfo['email'];
+		$data['Password'] = md5($accountInfo['givenName']);
+		SignInModel::insertUser($data);
 	}
 }

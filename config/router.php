@@ -136,3 +136,8 @@ $oRoute->get('searchTypeNews1', 'webLazy\Controllers\SearchController@searchType
 
 //Login Google
 $oRoute->get('loginAPIGoogle', 'webLazy\Controllers\LoginGoogleController@loginGoogle');
+//Chatbot Facebook
+$oRoute->get('chatbotFB', 'webLazy\Controllers\ChatbotFBController@handleChatbot');
+//ajax view product
+$oRoute->post('viewProduct', 'webLazy\Controllers\AjaxController@handleViewProduct');
+$oRoute->post('feedback', 'webLazy\Controllers\CMMController@feedback');

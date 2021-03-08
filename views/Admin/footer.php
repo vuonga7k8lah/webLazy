@@ -17,7 +17,9 @@
 <!-- DataTables JavaScript -->
 <script src="./assets/admin/bower_components/DataTables/media/js/jquery.dataTables.min.js"></script>
 <script src="./assets/admin/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
-
+<script src="./assets/admin/js/raphael.min.js"></script>
+<script src="./assets/admin/js/morris.min.js"></script>
+<script src="./assets/admin/js/morris-data.js"></script>
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
     $(document).ready(function() {

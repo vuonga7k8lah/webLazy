@@ -1,4 +1,5 @@
-<?php require_once 'views/Shop/header.php'?>
+<?php use webLazy\Controllers\LoginFBController;
+require_once 'views/Shop/header.php'?>
 <?php //checkCookie(); ?>
     <div class="breadcrumb-area">
         <div class="container">
@@ -66,6 +67,12 @@
                                         <a href="https://accounts.google.com/o/oauth2/auth?response_type=code&access_type=online&client_id=652963584525-0rufikmbipgvm40qu36pa60sptn18hin.apps.googleusercontent.com&redirect_uri=http%3A%2F%2F127.0.0.1%2FwebLazy%2FloginAPIGoogle&state&scope=email%20profile&approval_prompt=auto"><img
                                                     src="./assets/images/google.png" alt='Google Login'
                                                     title="Google Login"
+                                                    style="height:50px;width: 250px"/></a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href="<?php echo LoginFBController::URL_FB();?>"><img
+                                                    src="./assets/images/facebook.png" alt='FaceBook Login'
+                                                    title="FaceBook Login"
                                                     style="height:50px;width: 250px"/></a>
                                     </div>
                                 </div>

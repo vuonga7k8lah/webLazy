@@ -79,7 +79,7 @@
                                     <div class="ht-setting-trigger"><span>Setting</span></div>
                                     <div class="setting ht-setting">
                                         <ul class="ht-setting-list">
-                                            <li><a href="login-register.html">My Account</a></li>
+                                            <li><a href="">My Account</a></li>
                                             <li><a href="<?=\webLazy\Core\URL::uri('logout')?>">Checkout</a></li>
                                             <li><a href="<?=\webLazy\Core\URL::uri('signIn')?>">Sign In</a></li>
                                         </ul>
@@ -113,13 +113,13 @@
                     <div class="col-lg-3">
                         <div class="logo pb-sm-30 pb-xs-30">
                             <a href="<?=\webLazy\Core\URL::uri('home')?>">
-                                <img src="./assets/upload/vuongkma.png" alt="" style="width: 220px;height: 90px;border:2px solid black;border-radius: 50%;margin-top: -21px;">
+                                <img src="./assets/upload/logo.png" alt="" style="max-width: 160px">
                             </a>
                         </div>
                     </div>
                     <!-- Header Logo Area End Here -->
                     <!-- Begin Header Middle Right Area -->
-                    <div class="col-lg-9 pl-0 ml-sm-15 ml-xs-15">
+                    <div class="col-lg-9 pl-0 ml-sm-15 ml-xs-15" style="padding-top: 30px">
                         <!-- Begin Header Middle Searchbox Area -->
                         <form action="<?=\webLazy\Core\URL::uri('search')?>" class="hm-searchbox" method="post">
                             <input type="text" name="Search" placeholder="Enter your search key ...">
@@ -127,6 +127,7 @@
                         </form>
                         <!-- Header Middle Searchbox Area End Here -->
                         <!-- Begin Header Middle Right Area -->
+
                         <div class="header-middle-right">
                             <ul class="hm-menu">
                                 <!-- Begin Header Middle Wishlist Area -->
@@ -147,6 +148,33 @@
                                     </div>
                                     <span></span>
                                     <div class="minicart">
+<!--                                        <ul class="minicart-product-list">-->
+<!--                                            <li>-->
+<!--                                                <a href="single-product.html" class="minicart-product-image">-->
+<!--                                                    <img src="images/product/small-size/5.jpg" alt="cart products">-->
+<!--                                                </a>-->
+<!--                                                <div class="minicart-product-details">-->
+<!--                                                    <h6><a href="single-product.html">Aenean eu tristique</a></h6>-->
+<!--                                                    <span>£40 x 1</span>-->
+<!--                                                </div>-->
+<!--                                                <button class="close" title="Remove">-->
+<!--                                                    <i class="fa fa-close"></i>-->
+<!--                                                </button>-->
+<!--                                            </li>-->
+<!--                                            <li>-->
+<!--                                                <a href="single-product.html" class="minicart-product-image">-->
+<!--                                                    <img src="images/product/small-size/6.jpg" alt="cart products">-->
+<!--                                                </a>-->
+<!--                                                <div class="minicart-product-details">-->
+<!--                                                    <h6><a href="single-product.html">Aenean eu tristique</a></h6>-->
+<!--                                                    <span>£40 x 1</span>-->
+<!--                                                </div>-->
+<!--                                                <button class="close" title="Remove">-->
+<!--                                                    <i class="fa fa-close"></i>-->
+<!--                                                </button>-->
+<!--                                            </li>-->
+<!--                                        </ul>-->
+<!--                                        <p class="minicart-total">SUBTOTAL: <span>£80.00</span></p>-->
                                         <div class="minicart-button">
                                             <a href="<?=\webLazy\Core\URL::uri('cart')?>" class="li-button li-button-fullwidth li-button-dark">
                                                 <span>Giỏ Hàng</span>

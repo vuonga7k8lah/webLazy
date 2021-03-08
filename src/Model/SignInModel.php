@@ -20,8 +20,9 @@ class SignInModel
 
 	public static function insertUser($data)
 	{
-		return DB::makeConnection()->query("INSERT INTO users value (null,'" . $data['TenKH'] . "','" . $data['Email'] .
-			"','" . $data['Password'] . "','" . $data['DiaChi'] . "','" . $data['SDT'] . "',null)");
+		$sql="INSERT INTO users value (null,'" . $data['TenKH'] . "','" . $data['Email'] .
+			"','" . $data['Password'] . "','" . $data['DiaChi'] . "','" . $data['SDT'] . "',null)";
+		return DB::makeConnection()->query($sql);
 	}
 
 	public static function loginUser($data)

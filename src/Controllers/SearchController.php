@@ -27,8 +27,19 @@ class SearchController
 	{
 		require_once 'views/Shop/Blogs/Seachs/seachsMenu.php';
 	}
+
 	public function searchTypeNews1()
 	{
 		require_once 'views/Shop/Blogs/Seachs/searchLoaiTin.php';
+	}
+
+	public function handleFeaturedProducts()
+	{
+		$aData=[];
+		$aID=SearchModel::searchIDFeaturedProducts();
+		foreach ($aID as $item){
+			$aData=array_merge($aData,SearchModel::FeaturedProducts($item[0]));
+		}
+		return $aData;
 	}
 }

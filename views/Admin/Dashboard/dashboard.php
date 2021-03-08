@@ -236,7 +236,6 @@ require_once 'views/Admin/navigation.php';
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
-
                     <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-8 -->

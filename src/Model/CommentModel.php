@@ -27,4 +27,13 @@ class CommentModel
     {
         return DB::makeConnection()->query("SELECT * FROM comments")->fetch_all();
     }
+	public static function insertDataProduct($data)
+	{
+		return DB::makeConnection()->query("INSERT INTO `feebackproduct`(`id`, `MaSP`, `name`, `email`, `content`, `rating`, `register_date`) VALUES (null,'" . $data['MaSP'] . "','" . $data['name'] . "','" . $data['email'] . "','" . $data['content'] . "','" . $data['rating'] . "',null)");
+	}
+	public static function countCommentProduct($idSP)
+	{
+		$sql = DB::makeConnection()->query("SELECT * FROM feebackproduct where MaSP=" . $idSP . "");
+		return [$sql->num_rows, $sql->fetch_all()];
+	}
 }

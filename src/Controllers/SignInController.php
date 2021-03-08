@@ -25,6 +25,7 @@ class SignInController
         if (SignInModel::loginUser($data)[0] > 0) {
             Session::set('MaKH', SignInModel::loginUser($data)[1]['MaKH']);
             Session::set('TenKH', SignInModel::loginUser($data)[1]['TenKH']);
+            Session::set('Email', SignInModel::loginUser($data)[1]['Email']);
             if (isset($_POST['remember_me'])){
                 setcookie('remember', SignInModel::loginUser($data)[1]['MaKH'], time() + 3600);
             }

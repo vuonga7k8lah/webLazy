@@ -1,3 +1,5 @@
+<!-- Load Facebook SDK for JavaScript -->
+
 <div class="footer">
     <!-- Begin Footer Static Top Area -->
     <div class="footer-static-top">
@@ -221,6 +223,7 @@
 </div>
 <!-- Body Wrapper End Here -->
 <!-- jQuery-V1.12.4 -->
+
 <script src="./assets/theme/js/vendor/jquery-1.12.4.min.js"></script>
 <script src="./assets/theme/jquery.js"></script>
 <script src="./assets/theme/bootstrap.js"></script>

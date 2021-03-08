@@ -32,7 +32,18 @@ class SearchModel
 
 	public static function returnIdTheLoai($id)
 	{
-		return DB::makeConnection()->query("select lt.idLoaiTin,tl.TenTheLoai from loaitin lt join theloai tl on lt.idTheLoai=tl.idTheLoai where tl.idTheLoai=".$id."")
+		return DB::makeConnection()
+			->query("select lt.idLoaiTin,tl.TenTheLoai from loaitin lt join theloai tl on lt.idTheLoai=tl.idTheLoai where tl.idTheLoai=" .
+				$id . "")
 			->fetch_assoc();
+	}
+
+	public static function searchIDFeaturedProducts()
+	{
+    	return DB::makeConnection()->query("SELECT distinct MaSP FROM donhangphu1 WHERE TrangThai='Thành Công'")->fetch_all();
+	}
+	public static function FeaturedProducts($id)
+	{
+		return DB::makeConnection()->query("SELECT MaSP,TenSP,GiaBan,ChiTiet,Anh FROM sanpham where MaSP=" . $id . "")->fetch_all();
 	}
 }

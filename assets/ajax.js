@@ -9,8 +9,8 @@ $(document).ready(function () {
       data: "captcha=" + captcha,
       success: function (response) {
         var oResponse = JSON.parse(response);
-        var msgClass = oResponse.isValid === 'yes' ? 'avai' : 'not-avai';
-        $('#available').html('<span class="' + msgClass + '">' + oResponse.msg + '</span>');
+        var msgBackground = oResponse.isValid === 'yes' ? '#d1e7dd' : '#f8d7da';
+        $('#available').html('<span style="background-color: ' + msgBackground + '">' + oResponse.msg + '</span>');
       }
     });
 
@@ -25,8 +25,8 @@ $(document).ready(function () {
       data: "email=" + email,
       success: function (response) {
         var oResponse = JSON.parse(response);
-        var msgClass = oResponse.isValid === 'yes' ? 'avai' : 'not-avai';
-        $('#availableEmail').html('<span class="' + msgClass + '">' + oResponse.msg + '</span>');
+        var msgBackground = oResponse.isValid === 'yes' ? '#d1e7dd' : '#f8d7da';
+        $('#availableEmail').html('<span style="background-color: ' + msgBackground + '">' + oResponse.msg + '</span>');
       }
     });
   });

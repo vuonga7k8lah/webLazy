@@ -150,15 +150,15 @@ require_once 'views/Shop/header.php' ?>
                                                             <i class="fa fa-heart-o"></i>
                                                         </button>
                                                     </li>
-                                                    <li>
-                                                        <button style="width: 33px;"
-                                                                class="quick-view-btn"
-                                                                data-id="<?= $value[0] ?>"
-                                                                onclick="const id = this.getAttribute('data-id');
-                                                                viewProduct(id); ">
-                                                            <i class="fa fa-eye"></i>
-                                                        </button>
-                                                    </li>
+<!--                                                    <li>-->
+<!--                                                        <button style="width: 33px;"-->
+<!--                                                                class="quick-view-btn"-->
+<!--                                                                data-id="--><?//= $value[0] ?><!--"-->
+<!--                                                                onclick="const id = this.getAttribute('data-id');-->
+<!--                                                                viewProduct(id); ">-->
+<!--                                                            <i class="fa fa-eye"></i>-->
+<!--                                                        </button>-->
+<!--                                                    </li>-->
                                                 </ul>
                                             </div>
                                         </div>
@@ -227,9 +227,9 @@ require_once 'views/Shop/header.php' ?>
                                                         <i class="fa fa-heart-o"></i>
                                                     </button>
                                                 </li>
-                                                <li><a href="#" title="quick view" class="quick-view-btn"
-                                                       data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                class="fa fa-eye"></i></a></li>
+<!--                                                <li><a href="#" title="quick view" class="quick-view-btn"-->
+<!--                                                       data-toggle="modal" data-target="#exampleModalCenter"><i-->
+<!--                                                                class="fa fa-eye"></i></a></li>-->
                                             </ul>
                                         </div>
                                     </div>
@@ -346,9 +346,9 @@ require_once 'views/Shop/header.php' ?>
                                                             <i class="fa fa-heart-o"></i>
                                                         </button>
                                                     </li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                           data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                    class="fa fa-eye"></i></a></li>
+<!--                                                    <li><a href="#" title="quick view" class="quick-view-btn"-->
+<!--                                                           data-toggle="modal" data-target="#exampleModalCenter"><i-->
+<!--                                                                    class="fa fa-eye"></i></a></li>-->
                                                 </ul>
                                             </div>
                                         </div>
@@ -431,9 +431,9 @@ require_once 'views/Shop/header.php' ?>
                                                             <i class="fa fa-heart-o"></i>
                                                         </button>
                                                     </li>
-                                                    <li><a href="#" title="quick view" class="quick-view-btn"
-                                                           data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                    class="fa fa-eye"></i></a></li>
+<!--                                                    <li><a href="#" title="quick view" class="quick-view-btn"-->
+<!--                                                           data-toggle="modal" data-target="#exampleModalCenter"><i-->
+<!--                                                                    class="fa fa-eye"></i></a></li>-->
                                                 </ul>
                                             </div>
                                         </div>
@@ -546,9 +546,9 @@ require_once 'views/Shop/header.php' ?>
                                                                     <i class="fa fa-heart-o"></i>
                                                                 </button>
                                                             </li>
-                                                            <li><a href="#" title="quick view" class="quick-view-btn"
-                                                                   data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                                            class="fa fa-eye"></i></a></li>
+<!--                                                            <li><a href="#" title="quick view" class="quick-view-btn"-->
+<!--                                                                   data-toggle="modal" data-target="#exampleModalCenter"><i-->
+<!--                                                                            class="fa fa-eye"></i></a></li>-->
                                                         </ul>
                                                     </div>
                                                 </div>

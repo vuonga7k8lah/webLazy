@@ -67,19 +67,30 @@ countView($id);
                                         <p><?= $row['NoiDung'] ?></p>
                                         <div class="li-blog-sharing text-center pt-30">
                                             <h4>share this post:</h4>
-                                            <a href="#"><i class="fa fa-facebook"></i></a>
-                                            <a href="#"><i class="fa fa-twitter"></i></a>
-                                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                                            <a href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0
+                                          .1/webLazy/singerBlog/<?= $id?>"
+                                               target="_blank"><i class="fa
+                                            fa-facebook"></i></a>
+                                            <a href="https://twitter.com/share?text=&url=http://127.0.0
+                                            .1/webLazy/singerBlog/<?= $id ?>"
+                                               target="_blank"><i class="fa fa-twitter"></i></a>
+                                            <a href="https://www.pinterest.com/pin/create/button/?url=http://127.0.0
+                                            .1/webLazy/singerBlog/<?= $id ?>"
+                                               target="_blank"><i class="fa fa-pinterest"></i></a>
                                             <a href="#"><i class="fa fa-google-plus"></i></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- Begin Li's Blog Comment Section -->
-                            <div class="li-comment-section" id="listComment">
-                                <h3><?php echo (CommentModel::countComment($id)[0]==0)?'No Comment':CommentModel::countComment($id)[0].' Comment';?></h3>
-                                <?php if (CommentModel::countComment($id)[0]==0){?> <img src="./assets/cmm.png" alt="" style=""> <?php } ?>
-                                <?php if (CommentModel::countComment($id)[0]>0){
+                            <div class="li-comment-section"
+                                 id="listComment">
+                                <h3><?php echo (CommentModel::countComment($id)[0] == 0) ? 'No Comment' :
+				                        CommentModel::countComment($id)[0] . ' Comment'; ?></h3>
+		                        <?php if (CommentModel::countComment($id)[0] == 0) { ?> <img src="./assets/cmm.png"
+                                                                                             alt=""
+                                                                                             style=""> <?php } ?>
+		                        <?php if (CommentModel::countComment($id)[0] > 0) {
                                     foreach (CommentModel::countComment($id)[1] as $item =>$value):
                                     ?>
                                     <ul>
@@ -135,15 +146,16 @@ countView($id);
                                                     } ?></textarea>
                                             </div>
                                             <div class="col-lg-6">
-                                                <label>Last Name</label>
-                                                <input name="TenKH" type="text" class="coment-field"
+                                                <label>Full Name</label>
+                                                <input name="TenKH"
+                                                       type="text"
+                                                       class="coment-field"
                                                        value="<?php if (isset($_SESSION['dataCMM']['TenKH'])) {
                                                            echo $_SESSION['dataCMM']['TenKH'];
                                                        } ?>" required placeholder="Name">
                                             </div>
                                             <div class="col-lg-6">
                                                 <label>Email</label>
-                                                <div id="availableEmail"></div>
                                                 <input name="Email" type="email"
                                                        value="<?php if (isset($_SESSION['dataCMM']['Email'])) {
                                                            echo $_SESSION['dataCMM']['Email'];

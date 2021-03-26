@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'HomeURL'    => '/webLazy/',
-    'baseURI'    => '/webLazy/',
+    'HomeURL'    => '/weblazy/',
+    'baseURI'    => '/weblazy/',
     'database'   => [
         'host'     => 'localhost',
         'username' => 'root',

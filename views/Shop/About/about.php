@@ -21,9 +21,13 @@ require_once 'views/Shop/header.php';
                 <div class="col-lg-6 order-last order-lg-first">
                     <div class="about-text-wrap">
                         <h2><span>Provide Best</span>Product For You</h2>
-                        <p>We provide the best Beard oile all over the world. We are the worldd best store in indi for Beard Oil. You can buy our product without any hegitation because they truste us and buy our product without any hagitation because they belive and always happy buy our product.</p>
-                        <p>Some of our customer say’s that they trust us and buy our product without any hagitation because they belive us and always happy to buy our product.</p>
-                        <p>We provide the beshat they trusted us and buy our product without any hagitation because they belive us and always happy to buy.</p>
+                        <span>SỨ MỆNH HOẠT ĐỘNG</span>
+                        <p>VuongDTTN được hình thành và phát triển với sứ mệnh “đưa tất cả mọi người đến gần với công
+                           nghệ”. Hiểu được mong muốn sở hữu những chiếc điện thoại thông minh, nắm bắt nhanh nhạy với thời đại công nghệ 4.0 của người dùng.
+                           Cùng với quy mô ngày càng lớn, VuongDTTN sẽ cung cấp tới quý khách hàng những trải nghiệm mua sắm tích cực, sở hữu chiếc smartphone sành điệu với giá cả hợp lý nhất, tuyệt vời nhất.</p>
+                        <span>TẦM NHÌN – MỤC TIÊU</span>
+                        <p>VuongDTTN đã, đang và sẽ trở thành đơn vị tiên phong trong lĩnh vực bán lẻ “secondhand VuongDTTN” uy tín hàng đầu, đồng thời trở thành điểm đến tin cậy của mọi khách hàng Việt Nam.
+                           VuongDTTN cam kết đưa đến quý khách hàng những sản phẩm hoàn hảo, đã vượt qua các bước kiểm tra khắt khe nhất. Bên cạnh đó, dịch vụ tư vấn trước và sau mua hàng tuyệt vời của VuongDTTN luôn làm hài lòng mọi nhu cầu của quý khách hàng.</p>
                     </div>
                 </div>
                 <!-- About Text End -->

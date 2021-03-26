@@ -39,3 +39,7 @@
     height: 500px;
     background-image: url(http://127.0.0.1/webLazy/assets/upload/vuongkma.png);
 }
+.fa-fw {
+    width: 1.8em;
+    text-align: left;
+}

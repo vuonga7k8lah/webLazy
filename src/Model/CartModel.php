@@ -45,17 +45,22 @@ class CartModel
 
     public static function insertHoaDonphu($data)
     {
-        $aValue="";
-        foreach ($data as $key => $value) {
-            $aValues = array_values($value);
-            $aValue .= '("' . implode('","', $aValues) . '")';
-            if($key != (count($data)-1)){
-                $aValue .= ",";
-            }
-        }
-        $sql = sprintf('INSERT INTO donhangphu1(quantity,id,price,MaSP) VALUES %s', $aValue);
-        $insert=DB::makeConnection()->query($sql);
-        return $insert;
+	    $aValue = "";
+	    foreach ($data as $key => $value) {
+		    $aValues = array_values($value);
+		    $aValue .= '("' . implode('","', $aValues) . '")';
+		    if ($key != (count($data) - 1)) {
+			    $aValue .= ",";
+		    }
+	    }
+	    $sql = sprintf('INSERT INTO donhangphu1(quantity,id,price,MaSP) VALUES %s', $aValue);
+	    $insert = DB::makeConnection()->query($sql);
+	    return $insert;
     }
+
+	public static function getDataUser($userId)
+	{
+		return DB::makeConnection()->query("SELECT * FROM users where MaKH=".$userId."")->fetch_all();
+	}
 
 }

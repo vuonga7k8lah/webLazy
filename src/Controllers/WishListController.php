@@ -21,7 +21,8 @@ class WishListController
 			$_SESSION["wishLish"][$_POST['MaSP']] = 1;
 			$aResponse = [
 				"isValid" => "yes",
-				"msg"     => "Sản Phẩm Đã Được Thêm Vào Danh Sách Yêu Thích"
+				"msg"     => "Sản Phẩm Đã Được Thêm Vào Danh Sách Yêu Thích",
+				'numberSP'=>count($_SESSION["wishLish"])
 			];
 		}
 		echo json_encode($aResponse);
@@ -39,7 +40,8 @@ class WishListController
 			$_SESSION["cart"][$_POST['MaSP']] = 1;
 			$aResponse = [
 				"isValid" => "yes",
-				"msg"     => "Sản Phẩm Đã Được Thêm Vào Giỏ Hàng"
+				"msg"     => "Sản Phẩm Đã Được Thêm Vào Giỏ Hàng",
+				'numberSP'=>count($_SESSION["cart"])
 			];
 		}
 		echo json_encode($aResponse);

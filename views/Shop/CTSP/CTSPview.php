@@ -33,7 +33,8 @@ $row = ProductModel::selectIdProduct($id);
                             ?>
                             <div class="lg-image">
                                 <a class="popup-img venobox vbox-item" href="./assets/upload/<?=$value?>" data-gall="myGallery">
-                                    <img src="./assets/upload/<?=$value?>" alt="product image">
+                                    <img src="./assets/upload/<?=$value?>" style="object-fit: cover;display: block" alt="product
+                                    image">
                                 </a>
                             </div>
                             <?php endforeach; ?>
@@ -41,7 +42,9 @@ $row = ProductModel::selectIdProduct($id);
                         <div class="product-details-thumbs slider-thumbs-1">
                             <?php $aImg=json_decode($row['Anh']);
                                     foreach ($aImg as $value):?>
-                            <div class="sm-image"><img src="./assets/upload/<?=$value?>" alt="product image thumb"></div>
+                            <div class="sm-image"><img src="./assets/upload/<?=$value?>" alt="product image thumb"
+                                                       style="object-fit: cover;display: block"
+                                ></div>
                             <?php endforeach; ?>
                         </div>
                     </div>

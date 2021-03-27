@@ -133,7 +133,9 @@
                                 <!-- Begin Header Middle Wishlist Area -->
                                 <li class="hm-wishlist">
                                     <a href="<?=\webLazy\Core\URL::uri('wishList')?>">
-                                        <span class="cart-item-count wishlist-item-count"></span>
+                                        <span class="cart-item-count wishlist-item-count" id="wishlishcount">
+                                            <?=(isset($_SESSION['wishLish']))?count($_SESSION['wishLish']):0;?>
+                                        </span>
                                         <i class="fa fa-heart-o"></i>
                                     </a>
                                 </li>
@@ -143,7 +145,9 @@
                                     <div class="hm-minicart-trigger">
                                         <span class="item-icon"></span>
                                         <span class="item-text">Giỏ Hàng
-                                                    <span class="cart-item-count"></span>
+                                                    <span class="cart-item-count" id="cartProduct">
+                                                        <?=(isset($_SESSION['cart']))?count($_SESSION['cart']):0;?>
+                                                    </span>
                                                 </span>
                                     </div>
                                     <span></span>

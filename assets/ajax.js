@@ -69,6 +69,7 @@ function addToCard(id) {
     success: function (response) {
       var oResponse = JSON.parse(response);
       alert(oResponse.msg);
+      document.getElementById('cartProduct').innerHTML=oResponse.numberSP;
     }
   });
 }
@@ -81,6 +82,8 @@ function addToWishList(id) {
     success: function (response) {
       var oResponse = JSON.parse(response);
       alert(oResponse.msg);
+      document.getElementById('wishlishcount').innerHTML=oResponse.numberSP;
+
     }
   });
 }

@@ -15,6 +15,7 @@ class ComposerStaticInitab7e28958abfb60f0fcc5b9ca20357c8
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
+        '1f87db08236948d07391152dccb70f04' => __DIR__ . '/..' . '/google/apiclient-services/autoload.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -47,6 +48,7 @@ class ComposerStaticInitab7e28958abfb60f0fcc5b9ca20357c8
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
+            'Google\\Service\\' => 15,
             'Google\\Auth\\' => 12,
         ),
         'F' => 
@@ -104,6 +106,10 @@ class ComposerStaticInitab7e28958abfb60f0fcc5b9ca20357c8
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
+        'Google\\Service\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/google/apiclient-services/src',
+        ),
         'Google\\Auth\\' => 
         array (
             0 => __DIR__ . '/..' . '/google/auth/src',
@@ -117,10 +123,6 @@ class ComposerStaticInitab7e28958abfb60f0fcc5b9ca20357c8
     public static $prefixesPsr0 = array (
         'G' => 
         array (
-            'Google_Service_' => 
-            array (
-                0 => __DIR__ . '/..' . '/google/apiclient-services/src',
-            ),
             'Google_' => 
             array (
                 0 => __DIR__ . '/..' . '/google/apiclient/src',
@@ -129,7 +131,6 @@ class ComposerStaticInitab7e28958abfb60f0fcc5b9ca20357c8
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Google_Service_Exception' => __DIR__ . '/..' . '/google/apiclient/src/Google/Service/Exception.php',
         'Google_Service_Resource' => __DIR__ . '/..' . '/google/apiclient/src/Google/Service/Resource.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',

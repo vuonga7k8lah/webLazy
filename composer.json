@@ -4,7 +4,14 @@
       "webLazy\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "webLazyTests\\": "tests/"
+    }
+  },
   "require": {
-    "google/apiclient": "~2.2.3"
+    "google/apiclient": "~2.2.3",
+    "phpunit/phpunit": "^7",
+    "ext-mysqli": "*"
   }
 }

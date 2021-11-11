@@ -16,7 +16,7 @@ class DB
 {
     private static $self;
 
-    public static function makeConnection()
+    public static function makeConnection(): mysqli
     {
         if (empty(self::$self)) {
             self::$self = new mysqli(
@@ -30,7 +30,7 @@ class DB
         return self::$self;
     }
 
-    public static function notInjection($val)
+    public static function notInjection($val): string
     {
         return DB::makeConnection()->real_escape_string(trim($val));
     }

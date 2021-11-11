@@ -4,6 +4,8 @@
 namespace webLazy\Controllers;
 
 
+use Exception;
+use webLazy\Core\HandleResponse;
 use webLazy\Core\Redirect;
 use webLazy\Core\Session;
 use webLazy\Database\DB;
@@ -26,41 +28,57 @@ class SignInController
             Session::set('MaKH', SignInModel::loginUser($data)[1]['MaKH']);
             Session::set('TenKH', SignInModel::loginUser($data)[1]['TenKH']);
             Session::set('Email', SignInModel::loginUser($data)[1]['Email']);
-            if (isset($_POST['remember_me'])){
+            if (isset($_POST['remember_me'])) {
                 setcookie('remember', SignInModel::loginUser($data)[1]['MaKH'], time() + 3600);
             }
-            if (isset($_SESSION["cart"])){
+            if (isset($_SESSION["cart"])) {
                 Redirect::to('cart');
             }
             Redirect::to('home');
         } else {
-            Session::set('error_login','Sai Tài Khoản Hoặc Mật Khẩu');
+            Session::set('error_login', 'Sai Tài Khoản Hoặc Mật Khẩu');
             Redirect::to('signIn');
         }
     }
 
+    /**
+     * @throws Exception
+     */
     public function actionRegister()
     {
         unset($_SESSION['error_validateLogin']);
         validateDataRegister($_POST);
-        $data['TenKH'] = DB::notInjection($_POST['TenKH']);
-        $data['DiaChi'] = DB::notInjection($_POST['DiaChi']);
-        $data['SDT'] = DB::notInjection($_POST['SDT']);
-        $data['Email'] = DB::notInjection($_POST['Email']);
-        $data['Password'] = DB::notInjection($_POST['Password']);
-        $data['cPassword'] = DB::notInjection($_POST['cPassword']);
-        validateUser($data);
-        Confirm($data);
-        validateSDT($data['SDT']);
-        if (SignInModel::emailIsExist($data['Email']) > 0) {
-            Session::set('errorEmail', 'Email ĐÃ Tồn Tại');
-            Redirect::to('signIn');
-        } else {
-            $data['Password'] = md5($data['Password']);
-            SignInModel::insertUser($data);
-            session_unset();
+        $aData['TenKH'] = DB::notInjection($_POST['TenKH']);
+        $aData['DiaChi'] = DB::notInjection($_POST['DiaChi']);
+        $aData['SDT'] = DB::notInjection($_POST['SDT']);
+        $aData['Email'] = DB::notInjection($_POST['Email']);
+        $aData['Password'] = DB::notInjection($_POST['Password']);
+        $aData['cPassword'] = DB::notInjection($_POST['cPassword']);
+        $aResponse = $this->handleRegister($aData);
+        if ($aResponse['status'] != 'error') {
             Session::set('success_Register', 'Tai Khoản Tạo Thành Công');
-            Redirect::to('signIn');
+        }
+        Redirect::to('signIn');
+    }
+
+    public function handleRegister($aData): array
+    {
+        try {
+            validateDataRegister($aData);
+            Confirm($aData);
+            validateSDT($aData['SDT']);
+            if (SignInModel::emailIsExist($aData['Email']) > 0) {
+                Session::set('errorEmail', 'Email ĐÃ Tồn Tại');
+                throw new Exception('Email ĐÃ Tồn Tại', 400);
+            }
+            $aData['Password'] = md5($aData['Password']);
+            $userID = SignInModel::insertUser($aData);
+            session_unset();
+            return HandleResponse::success('Passed', [
+                'userID' => $userID
+            ]);
+        } catch (Exception $exception) {
+            return HandleResponse::error($exception->getMessage(), $exception->getCode());
         }
     }
 }

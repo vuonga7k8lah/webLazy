@@ -6,7 +6,7 @@ use webLazy\Core\Route;
 use webLazy\Database\DB;
 
 require_once 'vendor/autoload.php';
-require_once 'function/validate.php';
+include 'function/validate.php';
 require_once 'function/UploadImages.php';
 
 App::bind('config/app', require_once "config/app.php");

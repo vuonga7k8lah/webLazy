@@ -172,19 +172,19 @@ function captcha()
 function validateDataRegister($data): bool
 {
     try {
-        if (empty($data['Email']) && isset($data['Email'])) {
-            throw new Exception('Hãy Nhập Email');
-        }
-        if (empty($data['Password']) && isset($data['Password'])) {
-            throw new Exception('Hãy Nhập Password');
-        }
         if (empty($data['TenKH']) && isset($data['TenKH'])) {
             throw new Exception('Hãy Nhập Password');
         }
         if (empty($data['DiaChi']) && isset($data['DiaChi'])) {
             throw new Exception('Hãy Nhập Password');
         }
-        if (empty($data['SDT']) && isset($data['SDT'])) {
+        if (empty($data['SDT']) && isset($data['SDT']) || !preg_match('/^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/',$data['SDT'])) {
+            throw new Exception('Hãy Nhập Password');
+        }
+        if (empty($data['Email']) && isset($data['Email'])) {
+            throw new Exception('Hãy Nhập Email');
+        }
+        if (empty($data['Password']) && isset($data['Password'])) {
             throw new Exception('Hãy Nhập Password');
         }
         if (empty($data['cPassword']) && isset($data['cPassword'])) {
@@ -226,9 +226,9 @@ function validateSDT($data): bool
 {
     if (is_numeric($data) && (strlen($data) == 10)) {
         return true;
-    }else{
+    } else {
         Session::set('error_SDT', "Hãy Nhập Đúng Định Dạng SDT");
-        throw new Exception('Hãy Nhập Đúng Định Dạng SDT',401);
+        throw new Exception('Hãy Nhập Đúng Định Dạng SDT', 401);
     }
 }
 

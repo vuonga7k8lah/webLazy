@@ -49,7 +49,7 @@ class ForgotPasswordController
         } else {
             $_SESSION['success_updatePassword'] = 'Mật Khẩu Đã Được Thay Đổi';
             SignInModel::updatePassword($data);
-            Redirect::to('home');
+            Redirect::to('signIn');
         }
     }
 

@@ -1,4 +1,6 @@
-<?php require_once 'views/Shop/header.php'?>
+<?php use webLazy\Core\Session;
+
+require_once 'views/Shop/header.php'?>
 <?php //checkCookie(); ?>
     <div class="breadcrumb-area">
         <div class="container">
@@ -15,13 +17,14 @@
     <div class="page-section mb-60">
         <div class="container">
             <div class="row">
+                <div class="col-6" style="display: block;margin: 0 auto">
                     <!-- Login Form s-->
                     <form action="<?=\webLazy\Core\URL::uri('forgot')?>" method="post">
                         <div class="error" style="color: red">
                             <?php if (isset($_SESSION['errors'])){echo$_SESSION['errors'];}?>
                         </div>
                         <div class="login-form">
-                            <h4 class="login-title">Forgot PassWord</h4>
+                            <h4 class="login-title">Forgot Password</h4>
                             <div class="row">
                                 <div class="error" style="color:red;">
                                     <?php if (isset($_SESSION['error_login'])){echo $_SESSION['error_login'];}?>
@@ -36,7 +39,15 @@
                             </div>
                         </div>
                     </form>
+                </div>
+
             </div>
         </div>
     </div>
-<?php require_once 'views/Shop/footer.php'?>
+<?php
+Session::checkReloadPage([
+    'error_login',
+    'errors'
+]);
+
+require_once 'views/Shop/footer.php'?>

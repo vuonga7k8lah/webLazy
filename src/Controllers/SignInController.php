@@ -47,18 +47,21 @@ class SignInController
     public function actionRegister()
     {
         unset($_SESSION['error_validateLogin']);
-        validateDataRegister($_POST);
-        $aData['TenKH'] = DB::notInjection($_POST['TenKH']);
-        $aData['DiaChi'] = DB::notInjection($_POST['DiaChi']);
-        $aData['SDT'] = DB::notInjection($_POST['SDT']);
-        $aData['Email'] = DB::notInjection($_POST['Email']);
-        $aData['Password'] = DB::notInjection($_POST['Password']);
-        $aData['cPassword'] = DB::notInjection($_POST['cPassword']);
-        $aResponse = $this->handleRegister($aData);
-        if ($aResponse['status'] != 'error') {
-            Session::set('success_Register', 'Tai Khoản Tạo Thành Công');
+        try {
+            validateDataRegister($_POST);
+            $aData['TenKH'] = DB::notInjection($_POST['TenKH']);
+            $aData['DiaChi'] = DB::notInjection($_POST['DiaChi']);
+            $aData['SDT'] = DB::notInjection($_POST['SDT']);
+            $aData['Email'] = DB::notInjection($_POST['Email']);
+            $aData['Password'] = DB::notInjection($_POST['Password']);
+            $aData['cPassword'] = DB::notInjection($_POST['cPassword']);
+            $aResponse = $this->handleRegister($aData);
+            if ($aResponse['status'] != 'error') {
+                Session::set('success_Register', 'Tai Khoản Tạo Thành Công');
+            }
+        } catch (Exception $exception) {
+            Redirect::to('signIn');
         }
-        Redirect::to('signIn');
     }
 
     public function handleRegister($aData): array

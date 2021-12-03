@@ -22,14 +22,14 @@ class Session
         session_destroy();
     }
 
-    public static function destroy($key)
-    {
-        unset($_SESSION[$key]);
-    }
-
     public static function logoutCurrentUser()
     {
         self::destroy('user-logged-in');
+    }
+
+    public static function destroy($key)
+    {
+        unset($_SESSION[$key]);
     }
 
     public static function getCurrentUserLoggedIn()
@@ -40,5 +40,21 @@ class Session
     public static function get($key)
     {
         return isset($_SESSION[$key]) ? $_SESSION[$key] : '';
+    }
+
+    public static function checkReloadPage($name): bool
+    {
+        $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
+
+        if ($pageWasRefreshed) {
+            if (is_array($name)) {
+                foreach ($name as $item) {
+                    Session::destroy($item);
+                }
+            } else {
+                Session::destroy($name);
+            }
+        }
+        return true;
     }
 }

@@ -1,8 +1,10 @@
 <?php
 /**
- * @var $oRoute \webLazy\Core\Route ...
+ * @var $oRoute Route ...
  */
 //home-shop
+use webLazy\Core\Route;
+
 $oRoute->get('home', 'webLazy\Controllers\HomeController@loadView');
 $oRoute->get('', 'webLazy\Controllers\HomeController@loadView');
 $oRoute->get('404', 'webLazy\Controllers\PageNotFoundController@loadView');
@@ -138,6 +140,8 @@ $oRoute->get('searchTypeNews1', 'webLazy\Controllers\SearchController@searchType
 $oRoute->get('loginAPIGoogle', 'webLazy\Controllers\LoginGoogleController@loginGoogle');
 //Chatbot Facebook
 $oRoute->get('chatbotFB', 'webLazy\Controllers\ChatbotFBController@handleChatbot');
+$oRoute->get('verifyOTP', 'webLazy\Controllers\ForgotPasswordController@getVerifyView');
+$oRoute->post('verifyOTP', 'webLazy\Controllers\ForgotPasswordController@handleVerifyOTP');
 //ajax view product
 $oRoute->post('viewProduct', 'webLazy\Controllers\AjaxController@handleViewProduct');
 $oRoute->post('feedback', 'webLazy\Controllers\CMMController@feedback');

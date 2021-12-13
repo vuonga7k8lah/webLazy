@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'HomeURL'    => 'http://127.0.0.1/webLazy/',
-    'baseURI'    => '/webLazy/',
+    'HomeURL'    => 'http://0.0.0.0:9021/',
+    'baseURI'    => '/',
     'database'   => [
-        'host'     => 'localhost',
-        'username' => 'root',
-        'password' => '',
+        'host'     => 'mysql',
+        'username' => 'vuongkma',
+        'password' => '123456',
         'database' => 'webLazy'
     ]
 ];

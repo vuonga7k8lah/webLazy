@@ -19,6 +19,13 @@ class TestLoginShopController extends TestCase
             'cPassword' => 'adminTest',
         ];
 
+    public function setUpInit(): bool
+    {
+        include getcwd() . '/function/validate.php';
+        App::bind('config/app', require_once "config/app.php");
+        return true;
+    }
+
     public function testRegisterUser()
     {
         $this->setUpInit();
@@ -26,13 +33,6 @@ class TestLoginShopController extends TestCase
 
         $this->assertEquals('success', $aResponse['status']);
         $this->assertIsNumeric($aResponse['data']['userID']);
-    }
-
-    public function setUpInit(): bool
-    {
-        include getcwd() . '/function/validate.php';
-        App::bind('config/app', require_once "config/app.php");
-        return true;
     }
 
     /**
@@ -60,7 +60,7 @@ class TestLoginShopController extends TestCase
     {
         $aData = $this->aDataUser;
         $newPassword = md5('new_password');
-        //check email user exist
+        //check email user exist`
         $aResponseEmail = SignInModel::emailIsExitsOfForgot($aData['Email']);
 
         $this->assertIsNumeric($aResponseEmail[0]);

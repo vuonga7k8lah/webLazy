@@ -10,7 +10,7 @@ class ProductModel
 {
     public static function selectAll()
     {
-        return DB::makeConnection()->query("SELECT MaSP,TenSP,GiaBan,ChiTiet,Anh FROM sanpham ")->fetch_all();
+        return DB::makeConnection()->query("SELECT MaSP,TenSP,GiaBan,ChiTiet,Anh,MaLoai FROM sanpham ")->fetch_all();
     }
     public static function selectAllHome($offset)
     {

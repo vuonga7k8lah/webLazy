@@ -1,5 +1,4 @@
-2021/12/09 15:42:06 [error] 19#19: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/html/src/Database/DB.php on line 26PHP message: PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /var/www/html/src/Database/DB.php on line 29" while reading response header from upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
-2021/12/09 15:42:06 [error] 19#19: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /var/www/html/src/Database/DB.php on line 29PHP message: PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /var/www/html/src/Model/TypeModel.php on line 13PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Model/TypeModel.php:13
+2021/12/15 03:37:26 [error] 20#20: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Model/TypeModel.php:13
 Stack trace:
 #0 /var/www/html/views/Shop/Navigation.php(13): webLazy\Model\TypeModel::selectAll()
 #1 /var/www/html/views/Shop/header.php(203): require_once('/var/www/html/v...')
@@ -11,96 +10,8 @@ Stack trace:
 #7 /var/www/html/src/Core/Bootstrap.php(20): webLazy\Core\Route->direct()
 #8 /var/www/html/index.php(9): require_once('/var/www/html/s...')
 #9 {main}
-  thrown in /var/www/html/src/Model/TypeModel.php on line 13" while reading upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
-2021/12/09 15:42:13 [error] 19#19: *1 open() "/var/www/html/favicon.ico" failed (2: No such file or directory), client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET /favicon.ico HTTP/1.1", host: "0.0.0.0:9011", referrer: "http://0.0.0.0:9011/"
-2021/12/09 15:42:14 [error] 19#19: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/html/src/Database/DB.php on line 26PHP message: PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /var/www/html/src/Database/DB.php on line 29" while reading response header from upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
-2021/12/09 15:42:14 [error] 19#19: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /var/www/html/src/Database/DB.php on line 29PHP message: PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /var/www/html/src/Model/TypeModel.php on line 13PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Model/TypeModel.php:13
-Stack trace:
-#0 /var/www/html/views/Shop/Navigation.php(13): webLazy\Model\TypeModel::selectAll()
-#1 /var/www/html/views/Shop/header.php(203): require_once('/var/www/html/v...')
-#2 /var/www/html/views/Shop/home.php(6): require_once('/var/www/html/v...')
-#3 /var/www/html/src/Controllers/HomeController.php(11): require_once('/var/www/html/v...')
-#4 [internal function]: webLazy\Controllers\HomeController->loadView()
-#5 /var/www/html/src/Core/Route.php(99): call_user_func_array()
-#6 /var/www/html/src/Core/Route.php(114): webLazy\Core\Route->callAction()
-#7 /var/www/html/src/Core/Bootstrap.php(20): webLazy\Core\Route->direct()
-#8 /var/www/html/index.php(9): require_once('/var/www/html/s...')
-#9 {main}
-  thrown in /var/www/html/src/Model/TypeModel.php on line 13" while reading upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
-2021/12/09 15:43:51 [error] 20#20: *6 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/html/src/Database/DB.php on line 26PHP message: PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /var/www/html/src/Database/DB.php on line 29" while reading response header from upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
-2021/12/09 15:43:51 [error] 20#20: *6 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /var/www/html/src/Database/DB.php on line 29PHP message: PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /var/www/html/src/Model/TypeModel.php on line 13PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Model/TypeModel.php:13
-Stack trace:
-#0 /var/www/html/views/Shop/Navigation.php(13): webLazy\Model\TypeModel::selectAll()
-#1 /var/www/html/views/Shop/header.php(203): require_once('/var/www/html/v...')
-#2 /var/www/html/views/Shop/home.php(6): require_once('/var/www/html/v...')
-#3 /var/www/html/src/Controllers/HomeController.php(11): require_once('/var/www/html/v...')
-#4 [internal function]: webLazy\Controllers\HomeController->loadView()
-#5 /var/www/html/src/Core/Route.php(99): call_user_func_array()
-#6 /var/www/html/src/Core/Route.php(114): webLazy\Core\Route->callAction()
-#7 /var/www/html/src/Core/Bootstrap.php(20): webLazy\Core\Route->direct()
-#8 /var/www/html/index.php(9): require_once('/var/www/html/s...')
-#9 {main}
-  thrown in /var/www/html/src/Model/TypeModel.php on line 13" while reading upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
-2021/12/09 15:44:22 [error] 20#20: *6 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'172.19.0.4' (using password: NO) in /var/www/html/src/Database/DB.php on line 26PHP message: PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /var/www/html/src/Database/DB.php on line 29" while reading response header from upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
-2021/12/09 15:44:22 [error] 20#20: *6 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /var/www/html/src/Database/DB.php on line 29PHP message: PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /var/www/html/src/Model/TypeModel.php on line 13PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Model/TypeModel.php:13
-Stack trace:
-#0 /var/www/html/views/Shop/Navigation.php(13): webLazy\Model\TypeModel::selectAll()
-#1 /var/www/html/views/Shop/header.php(203): require_once('/var/www/html/v...')
-#2 /var/www/html/views/Shop/home.php(6): require_once('/var/www/html/v...')
-#3 /var/www/html/src/Controllers/HomeController.php(11): require_once('/var/www/html/v...')
-#4 [internal function]: webLazy\Controllers\HomeController->loadView()
-#5 /var/www/html/src/Core/Route.php(99): call_user_func_array()
-#6 /var/www/html/src/Core/Route.php(114): webLazy\Core\Route->callAction()
-#7 /var/www/html/src/Core/Bootstrap.php(20): webLazy\Core\Route->direct()
-#8 /var/www/html/index.php(9): require_once('/var/www/html/s...')
-#9 {main}
-  thrown in /var/www/html/src/Model/TypeModel.php on line 13" while reading upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
-2021/12/09 15:44:45 [error] 20#20: *12 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /var/www/html/src/Database/DB.php on line 26PHP message: PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /var/www/html/src/Database/DB.php on line 29" while reading response header from upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
-2021/12/09 15:44:45 [error] 20#20: *12 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /var/www/html/src/Database/DB.php on line 29PHP message: PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /var/www/html/src/Model/TypeModel.php on line 13PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Model/TypeModel.php:13
-Stack trace:
-#0 /var/www/html/views/Shop/Navigation.php(13): webLazy\Model\TypeModel::selectAll()
-#1 /var/www/html/views/Shop/header.php(203): require_once('/var/www/html/v...')
-#2 /var/www/html/views/Shop/home.php(6): require_once('/var/www/html/v...')
-#3 /var/www/html/src/Controllers/HomeController.php(11): require_once('/var/www/html/v...')
-#4 [internal function]: webLazy\Controllers\HomeController->loadView()
-#5 /var/www/html/src/Core/Route.php(99): call_user_func_array()
-#6 /var/www/html/src/Core/Route.php(114): webLazy\Core\Route->callAction()
-#7 /var/www/html/src/Core/Bootstrap.php(20): webLazy\Core\Route->direct()
-#8 /var/www/html/index.php(9): require_once('/var/www/html/s...')
-#9 {main}
-  thrown in /var/www/html/src/Model/TypeModel.php on line 13" while reading upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
-2021/12/09 15:45:35 [error] 20#20: *12 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'172.19.0.4' (using password: YES) in /var/www/html/src/Database/DB.php on line 26PHP message: PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /var/www/html/src/Database/DB.php on line 29" while reading response header from upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
-2021/12/09 15:45:35 [error] 20#20: *12 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /var/www/html/src/Database/DB.php on line 29PHP message: PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /var/www/html/src/Model/TypeModel.php on line 13PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Model/TypeModel.php:13
-Stack trace:
-#0 /var/www/html/views/Shop/Navigation.php(13): webLazy\Model\TypeModel::selectAll()
-#1 /var/www/html/views/Shop/header.php(203): require_once('/var/www/html/v...')
-#2 /var/www/html/views/Shop/home.php(6): require_once('/var/www/html/v...')
-#3 /var/www/html/src/Controllers/HomeController.php(11): require_once('/var/www/html/v...')
-#4 [internal function]: webLazy\Controllers\HomeController->loadView()
-#5 /var/www/html/src/Core/Route.php(99): call_user_func_array()
-#6 /var/www/html/src/Core/Route.php(114): webLazy\Core\Route->callAction()
-#7 /var/www/html/src/Core/Bootstrap.php(20): webLazy\Core\Route->direct()
-#8 /var/www/html/index.php(9): require_once('/var/www/html/s...')
-#9 {main}
-  thrown in /var/www/html/src/Model/TypeModel.php on line 13" while reading upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
-2021/12/09 15:45:37 [error] 20#20: *12 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'172.19.0.4' (using password: YES) in /var/www/html/src/Database/DB.php on line 26PHP message: PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /var/www/html/src/Database/DB.php on line 29" while reading response header from upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
-2021/12/09 15:45:37 [error] 20#20: *12 FastCGI sent in stderr: "PHP message: PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /var/www/html/src/Database/DB.php on line 29PHP message: PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /var/www/html/src/Model/TypeModel.php on line 13PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Model/TypeModel.php:13
-Stack trace:
-#0 /var/www/html/views/Shop/Navigation.php(13): webLazy\Model\TypeModel::selectAll()
-#1 /var/www/html/views/Shop/header.php(203): require_once('/var/www/html/v...')
-#2 /var/www/html/views/Shop/home.php(6): require_once('/var/www/html/v...')
-#3 /var/www/html/src/Controllers/HomeController.php(11): require_once('/var/www/html/v...')
-#4 [internal function]: webLazy\Controllers\HomeController->loadView()
-#5 /var/www/html/src/Core/Route.php(99): call_user_func_array()
-#6 /var/www/html/src/Core/Route.php(114): webLazy\Core\Route->callAction()
-#7 /var/www/html/src/Core/Bootstrap.php(20): webLazy\Core\Route->direct()
-#8 /var/www/html/index.php(9): require_once('/var/www/html/s...')
-#9 {main}
-  thrown in /var/www/html/src/Model/TypeModel.php on line 13" while reading upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011"
-2021/12/09 15:48:34 [error] 19#19: *26 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: Email in /var/www/html/src/Controllers/SignInController.php on line 30" while reading response header from upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "POST /signInLogin HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9011", referrer: "http://0.0.0.0:9011/signIn"
-2021/12/11 14:56:04 [error] 21#21: *5 open() "/var/www/html/favicon.ico" failed (2: No such file or directory), client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET /favicon.ico HTTP/1.1", host: "0.0.0.0:9021", referrer: "http://0.0.0.0:9021/"
-2021/12/11 14:56:28 [error] 21#21: *5 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined offset: 1 in /var/www/html/views/Shop/Blogs/Seachs/searchLoaiTin.php on line 2" while reading response header from upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET /searchTypeNews/1 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9021", referrer: "http://0.0.0.0:9021/"
-2021/12/11 15:03:55 [error] 24#24: *19 FastCGI sent in stderr: "PHP message: PHP Notice:  Trying to get property 'num_rows' of non-object in /var/www/html/src/Model/CommentModel.php on line 37PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Model/CommentModel.php:37
+  thrown in /var/www/html/src/Model/TypeModel.php on line 13" while reading upstream, client: 172.21.0.1, server: vuongdttn1.local.lah, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "localhost:9021"
+2021/12/15 03:38:20 [error] 19#19: *9 FastCGI sent in stderr: "PHP message: PHP Notice:  Trying to get property 'num_rows' of non-object in /var/www/html/src/Model/CommentModel.php on line 37PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Model/CommentModel.php:37
 Stack trace:
 #0 /var/www/html/views/Shop/CTSP/CTSPview.php(182): webLazy\Model\CommentModel::countCommentProduct()
 #1 /var/www/html/src/Controllers/CTSPController.php(11): require_once('/var/www/html/v...')
@@ -110,37 +21,12 @@ Stack trace:
 #5 /var/www/html/src/Core/Bootstrap.php(20): webLazy\Core\Route->direct()
 #6 /var/www/html/index.php(9): require_once('/var/www/html/s...')
 #7 {main}
-  thrown in /var/www/html/src/Model/CommentModel.php on line 37" while reading upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET /ctsp/13 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9021", referrer: "http://0.0.0.0:9021/showProduct"
-2021/12/11 15:07:39 [error] 21#21: *30 FastCGI sent in stderr: "PHP message: PHP Notice:  Trying to get property 'num_rows' of non-object in /var/www/html/src/Model/CommentModel.php on line 37PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Model/CommentModel.php:37
+  thrown in /var/www/html/src/Model/CommentModel.php on line 37" while reading upstream, client: 172.21.0.1, server: vuongdttn1.local.lah, request: "GET /ctsp/28 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9021", referrer: "http://localhost:9021/"
+2021/12/15 04:41:05 [error] 20#20: *16 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'webLazy\API\Products/ProductsAPI' not found in /var/www/html/src/Core/Route.php:96
 Stack trace:
-#0 /var/www/html/views/Shop/CTSP/CTSPview.php(182): webLazy\Model\CommentModel::countCommentProduct()
-#1 /var/www/html/src/Controllers/CTSPController.php(11): require_once('/var/www/html/v...')
-#2 [internal function]: webLazy\Controllers\CTSPController->loadView()
-#3 /var/www/html/src/Core/Route.php(99): call_user_func_array()
-#4 /var/www/html/src/Core/Route.php(114): webLazy\Core\Route->callAction()
-#5 /var/www/html/src/Core/Bootstrap.php(20): webLazy\Core\Route->direct()
-#6 /var/www/html/index.php(9): require_once('/var/www/html/s...')
-#7 {main}
-  thrown in /var/www/html/src/Model/CommentModel.php on line 37" while reading upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET /ctsp/19 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9021", referrer: "http://0.0.0.0:9021/search/2"
-2021/12/11 15:14:34 [error] 24#24: *38 FastCGI sent in stderr: "PHP message: PHP Notice:  Trying to get property 'num_rows' of non-object in /var/www/html/src/Model/CommentModel.php on line 37PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Model/CommentModel.php:37
-Stack trace:
-#0 /var/www/html/views/Shop/CTSP/CTSPview.php(182): webLazy\Model\CommentModel::countCommentProduct()
-#1 /var/www/html/src/Controllers/CTSPController.php(11): require_once('/var/www/html/v...')
-#2 [internal function]: webLazy\Controllers\CTSPController->loadView()
-#3 /var/www/html/src/Core/Route.php(99): call_user_func_array()
-#4 /var/www/html/src/Core/Route.php(114): webLazy\Core\Route->callAction()
-#5 /var/www/html/src/Core/Bootstrap.php(20): webLazy\Core\Route->direct()
-#6 /var/www/html/index.php(9): require_once('/var/www/html/s...')
-#7 {main}
-  thrown in /var/www/html/src/Model/CommentModel.php on line 37" while reading upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET /ctsp/19 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9021", referrer: "http://0.0.0.0:9021/search/2"
-2021/12/13 13:54:33 [error] 19#19: *6 FastCGI sent in stderr: "PHP message: PHP Notice:  Trying to get property 'num_rows' of non-object in /var/www/html/src/Model/CommentModel.php on line 37PHP message: PHP Fatal error:  Uncaught Error: Call to a member function fetch_all() on bool in /var/www/html/src/Model/CommentModel.php:37
-Stack trace:
-#0 /var/www/html/views/Shop/CTSP/CTSPview.php(182): webLazy\Model\CommentModel::countCommentProduct()
-#1 /var/www/html/src/Controllers/CTSPController.php(11): require_once('/var/www/html/v...')
-#2 [internal function]: webLazy\Controllers\CTSPController->loadView()
-#3 /var/www/html/src/Core/Route.php(99): call_user_func_array()
-#4 /var/www/html/src/Core/Route.php(114): webLazy\Core\Route->callAction()
-#5 /var/www/html/src/Core/Bootstrap.php(20): webLazy\Core\Route->direct()
-#6 /var/www/html/index.php(9): require_once('/var/www/html/s...')
-#7 {main}
-  thrown in /var/www/html/src/Model/CommentModel.php on line 37" while reading upstream, client: 172.19.0.1, server: vuongdttn1.local.lah, request: "GET /ctsp/14 HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9021", referrer: "http://0.0.0.0:9021/"
+#0 /var/www/html/src/Core/Route.php(114): webLazy\Core\Route->callAction()
+#1 /var/www/html/src/Core/Bootstrap.php(28): webLazy\Core\Route->direct()
+#2 /var/www/html/index.php(9): require_once('/var/www/html/s...')
+#3 {main}
+  thrown in /var/www/html/src/Core/Route.php on line 96" while reading response header from upstream, client: 172.21.0.1, server: vuongdttn1.local.lah, request: "GET /api-products HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.4-fpm.sock:", host: "0.0.0.0:9021"
+2021/12/15 04:52:39 [error] 20#20: *30 open() "/var/www/html/favicon.ico" failed (2: No such file or directory), client: 172.21.0.1, server: vuongdttn1.local.lah, request: "GET /favicon.ico HTTP/1.1", host: "0.0.0.0:9021", referrer: "http://0.0.0.0:9021/assets/upload/19859551595fabaa2b898b67.25890727.jpg"

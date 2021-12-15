@@ -2,6 +2,7 @@
 /**
  * @var $oRoute Route ...
  */
+
 //home-shop
 use webLazy\Core\Route;
 
@@ -145,3 +146,6 @@ $oRoute->post('verifyOTP', 'webLazy\Controllers\ForgotPasswordController@handleV
 //ajax view product
 $oRoute->post('viewProduct', 'webLazy\Controllers\AjaxController@handleViewProduct');
 $oRoute->post('feedback', 'webLazy\Controllers\CMMController@feedback');
+//-----------------------------------------
+//API
+$oRoute->get('api-products', 'webLazy\API\Products\ProductsAPI@getProducts');

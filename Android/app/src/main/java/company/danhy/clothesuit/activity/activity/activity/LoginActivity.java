@@ -1,4 +1,4 @@
-package company.danhy.clothesuit.activity.activity.activity;
+age company.danhy.clothesuit.activity.activity.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;

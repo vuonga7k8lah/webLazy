@@ -24,6 +24,11 @@ if ((explode('?', Request::uri()[0])[0] == 'loginAPIGoogle') or (explode('?', Re
 	Route::load("config/router.php")
 		->direct(Request::route11(), Request::method());
 } else {
-	Route::load("config/router.php")
-		->direct(Request::uri()[0], Request::method());
+    if ((count(Request::uri())>1)&&(strpos(Request::uri()[0],'api')!==false)){
+        Route::load("config/router.php")
+            ->direct(Request::uri()[0].'/', Request::method());
+    }else{
+        Route::load("config/router.php")
+            ->direct(Request::uri()[0], Request::method());
+    }
 }

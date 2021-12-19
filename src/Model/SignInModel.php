@@ -27,9 +27,9 @@ class SignInModel
         return ($connect->query($sql)) ? $connect->insert_id : 0;
     }
 
-    public static function loginUser($data)
+    public static function loginUser($data): array
     {
-        $db = DB::makeConnection()->query("SELECT MaKH,TenKH FROM users where Email='" . $data['Email'] .
+        $db = DB::makeConnection()->query("SELECT MaKH,TenKH,token FROM users where Email='" . $data['Email'] .
             "' and Password='" . $data['Password'] . "'");
         return [$db->num_rows, $db->fetch_assoc()];
     }
@@ -51,4 +51,9 @@ class SignInModel
             $data['MaKH'] . "'");
     }
 
+    public static function getTokenWithEmail($email): string
+    {
+        $query = DB::makeConnection()->query("SELECT token FROM users where Email='" . $email . "'");
+        return !empty($query) ? $query->fetch_assoc()['token'] : '';
+    }
 }

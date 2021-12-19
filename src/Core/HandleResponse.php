@@ -6,7 +6,7 @@ class HandleResponse
 {
 	public static function error($msg, $code)
 	{
-		header(self::_build_http_header_string($code));
+		//header(self::_build_http_header_string($code));
 		header("Content-Type: application/json");
 		return json_encode([
 			'status' => 'error',
@@ -17,7 +17,7 @@ class HandleResponse
 
 	public static function success($msg, $aData = [])
 	{
-		header(self::_build_http_header_string(200));
+		//header(self::_build_http_header_string(200));
 		header("Content-Type: application/json");
 		return json_encode([
 			'status' => 'success',

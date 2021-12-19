@@ -50,4 +50,8 @@ width="270">
 - Thông tin chi tiết các sản phẩm mà khách hàng mua cũng được hệ thống cập nhật lên bảng 'chitietdonmuahang' thông qua khóa của bảng là 'madonhang'.
 - 'Id' là khóa chính trong bảng 'donhang', 'madonhang' là khóa ngoại trong bảng 'chitietdonmuahang'
 - Thông qua 'Id' và 'madonhang' chủ cửa hàng sẽ biết được khách hàng nào đặt sản phẩm nào và đưa đến đúng địa chỉ mà khách hàng đã đặt.
- 
+
+## Document WEB API
+
+##### 1.[Product API](./src/API/Products/ProductAPI.md)
+##### 2.[Sign in API](./src/API/SignIn/SignInAPI.md)

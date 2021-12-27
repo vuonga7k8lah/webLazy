@@ -152,3 +152,6 @@ $oRoute->get('api-products', 'webLazy\API\Products\ProductsAPI@getProducts');
 $oRoute->get('api-products/', 'webLazy\API\Products\ProductsAPI@getProduct');
 $oRoute->get('api-products-type/', 'webLazy\API\Products\ProductsAPI@getProductWithTypeID');
 $oRoute->post('api-login', 'webLazy\API\SignIn\SignInAPI@handleLogin');
+//QRcode
+$oRoute->get('qrcode','webLazy\Controllers\QRCodeController@qrcode');
+$oRoute->post('qrcode','webLazy\Controllers\QRCodeController@actionQRCode');

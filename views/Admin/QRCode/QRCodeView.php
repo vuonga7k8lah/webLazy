@@ -12,7 +12,7 @@ require_once 'views/Admin/header.php';
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);">
-    <div class="card" style="width: 18rem;text-align: center;display: inline-block;">
+    <div class="card" style="width: 28rem;text-align: center;display: inline-block;">
         <img src="<?= $url ?>" class="card-img-top" alt="..."
              style="text-align: center;<?= $enable ? 'display:none;' : '' ?>">
         <div class="card-body" style="text-align: center;">

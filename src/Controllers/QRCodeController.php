@@ -3,6 +3,7 @@
 namespace webLazy\Controllers;
 
 use Vectorface\GoogleAuthenticator;
+use webLazy\Core\Redirect;
 
 class QRCodeController
 {
@@ -16,6 +17,9 @@ class QRCodeController
         $this->secret = '5QAJ4SDF22A3JH2G';
     }
 
+    /**
+     * @throws \Exception
+     */
     public function qrcode()
     {
         $qrcode = $this->secret;
@@ -25,78 +29,28 @@ class QRCodeController
         if (isset($_GET['data'])) {
             $data['data'] = $_GET['data'];
         }
-        switch ($_GET['action']) {
-            case 'admin':
-                $enable = QRCodeModel::isEnable2NFadmin();
-                break;
-            case 'giangvien':
-                $enable = QRCodeModel::isEnable2NFGV($data['id']);
-                break;
-            case 'sinhvien':
-                $enable = QRCodeModel::isEnable2NFSV($data['id']);
-                break;
-        }
-        $data['action'] = $_GET['action'];
-        $data['name'] = $_GET['name'];
-        $url = $this->getQRCodeGoogleUrl($data['name']);
-        require_once 'views/QRcode.php';
+        $aUserData=json_decode(base64_decode($data['data']),true);
+        $url = $this->getQRCodeGoogleUrl($aUserData['TenKH']);
+        require_once 'views/Admin/QRCode/QRCodeView.php';
     }
 
-    public function getQRCodeGoogleUrl($data)
+    /**
+     * @throws \Exception
+     */
+    public function getQRCodeGoogleUrl($data): string
     {
-        $qrCodeUrl = $this->lib->getQRCodeUrl($data, $this->secret);
-        return $qrCodeUrl;
+        return $this->lib->getQRCodeUrl($data, $this->secret);
     }
 
     public function actionQRCode()
     {
         $qrCode = $_POST['otp'];
         $secret = $_POST['secret'];
-        $action = $_POST['action'];
         $checkResult = $this->lib->verifyCode($secret, $qrCode, 0);
         if ($checkResult) {
-            switch ($action) {
-                case 'admin':
-                    QRCodeModel::updateEnable2NFadmin();
-                    Session::set('isLogin', ['MaQL' => 1, 'TenAdmin' => 'Hello Admin']);
-                    Redirect::to('dashboardAdmin');
-                    break;
-                case 'giangvien':
-                    QRCodeModel::updateEnable2NFGV($_POST['id']);
-                    $data = json_decode(base64_decode($_POST['data']), true);
-                    Session::set('isLogin', LoginModel::loginWithGV($data)[1]);
-                    Redirect::to('dashboardGV');
-                    break;
-                case 'sinhvien':
-                    QRCodeModel::updateEnable2NFSV($_POST['id']);
-                    $data = json_decode(base64_decode($_POST['data']), true);
-                    Session::set('isLogin', LoginModel::loginWithSV($data)[1]);
-                    Redirect::to('listThongBao');
-                    break;
-            }
+                    Redirect::to('admin');
+
         } else {
-            switch ($action) {
-                case 'admin':
-                    ?>
-                    <script>
-                        let x = confirm('Hãy Nhập Lại Mã QRcode');
-                        if (x === true) {
-                            window.location = "/ThucTap/qrcode/?name=admin&action=admin;
-                        }
-                    </script>
-                    <?php
-                    break;
-                case 'giangvien':
-                    ?>
-                    <script>
-                        let x = confirm('Hãy Nhập Lại Mã QRcode');
-                        if (x === true) {
-                            window.location = '<?=$_SERVER['HTTP_REFERER'] ?>';
-                        }
-                    </script>
-                    <?php
-                    break;
-                case 'sinhvien':
                     ?>
                     <script>
                         let x = confirm('Hãy Nhập Lại Mã QRcode ');
@@ -105,12 +59,13 @@ class QRCodeController
                         }
                     </script>
                     <?php
-                    break;
             }
-        }
     }
 
-    public function getCode()
+    /**
+     * @throws \Exception
+     */
+    public function getCode(): string
     {
         return $this->lib->getCode($this->secret);
     }

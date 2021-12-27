@@ -8,6 +8,7 @@ use webLazy\Core\Redirect;
 use webLazy\Core\Session;
 use webLazy\Database\DB;
 use webLazy\Model\LoginAdminModel;
+use webLazy\Model\UserModel;
 
 class LoginAdminController
 {
@@ -18,13 +19,14 @@ class LoginAdminController
 
     public function actionLogin()
     {
-        $data['Email']=DB::makeConnection()->real_escape_string(trim($_POST['Email']));
-        $data['Password']=DB::makeConnection()->real_escape_string(trim(md5($_POST['Password'])));
-        if (LoginAdminModel::loginAdmin($data)>0){
-            Session::set('success_AdminLogin','Thành Công');
-            Redirect::to('dashboard');
-        }else{
-            Session::set('error_adminLogin','Tài Khoản Hoặc Mật Khẩu Không Đúng');
+        $data['Email'] = DB::makeConnection()->real_escape_string(trim($_POST['Email']));
+        $data['Password'] = DB::makeConnection()->real_escape_string(trim(md5($_POST['Password'])));
+        if (LoginAdminModel::loginAdmin($data) > 0) {
+            $aDataUser = UserModel::getInfoAdmin($data['Email']);
+            Session::set('success_AdminLogin', 'Thành Công');
+            Redirect::to('qrcode?data=' . base64_encode(json_encode($aDataUser)));
+        } else {
+            Session::set('error_adminLogin', 'Tài Khoản Hoặc Mật Khẩu Không Đúng');
             Redirect::to('login');
         }
     }

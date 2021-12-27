@@ -147,7 +147,7 @@ function CheckLoginAdmin()
 function Money($float)
 {
     $money = (float)$float;
-    return $subtotal = number_format($money, 2, '.', ',');
+    return number_format($money, 2, '.', ',');
 }
 
 function captcha()

@@ -87,16 +87,19 @@ require_once 'views/Shop/header.php';
                                             <input class="button" name="update_click" value="Update cart" type="submit">
                                         </div>
                                         <br>
-                                        <?php if (isset($_SESSION['MaKH']) && !empty($_SESSION['MaKH'])){
+                                        <?php
+                                        $aDataUser=[];
+                                        if (isset($_SESSION['MaKH']) && !empty($_SESSION['MaKH'])){
                                             $aDataUser=CartModel::getDataUser($_SESSION['MaKH'])[0];
                                         }?>
                                         <div>
                                             <label for="nhan">Số Điện Thoại Nhận:</label>
-                                            <input type="text" name="SDT" value="<?=($aDataUser)?$aDataUser[5]:''?>" >
+                                            <input type="text" name="SDT" value="<?=!empty($aDataUser)?$aDataUser[5]:''?>" >
                                         </div>
                                         <div>
                                             <label for="nhan">Địa Chỉ Nhận:</label>
-                                            <input type="text" name="DiaChiNhan" value="<?=($aDataUser)?$aDataUser[4]:''?>">
+                                            <input type="text" name="DiaChiNhan" value="<?=!empty($aDataUser)
+                                                ?$aDataUser[4]:''?>">
                                         </div>
                                         <div>
                                             <label>Ghi chú: </label>

@@ -5,7 +5,7 @@ $(document).ready(function () {
     var captcha = $(this).val();
     $.ajax({
       type: "post",
-      url: "http://127.0.0.1/webLazy/commentCaptcha",
+      url: "http://0.0.0.0:9021/commentCaptcha",
       data: "captcha=" + captcha,
       success: function (response) {
         var oResponse = JSON.parse(response);
@@ -21,7 +21,7 @@ $(document).ready(function () {
     var email = $(this).val();
     $.ajax({
       type: "post",
-      url: "http://127.0.0.1/webLazy/commentEmail",
+      url: "http://0.0.0.0:9021/commentEmail",
       data: "email=" + email,
       success: function (response) {
         var oResponse = JSON.parse(response);
@@ -64,7 +64,7 @@ function edenTogleModal() {
 function addToCard(id) {
   $.ajax({
     type: "post",
-    url: "http://127.0.0.1/webLazy/AllToCart",
+    url: "http://0.0.0.0:9021/AllToCart",
     data: "MaSP=" + id,
     success: function (response) {
       var oResponse = JSON.parse(response);
@@ -77,7 +77,7 @@ function addToCard(id) {
 function addToWishList(id) {
   $.ajax({
     type: "post",
-    url: "http://127.0.0.1/webLazy/addWishList",
+    url: "http://0.0.0.0:9021/addWishList",
     data: "MaSP=" + id,
     success: function (response) {
       var oResponse = JSON.parse(response);
@@ -91,7 +91,7 @@ function addToWishList(id) {
 function viewProduct(id) {
   $.ajax({
     type: "post",
-    url: "http://127.0.0.1/webLazy/viewProduct",
+    url: "http://0.0.0.0:9021/viewProduct",
     data: "MaSP=" + id,
     success: function (response) {
 
@@ -115,11 +115,11 @@ function feedBackSP() {
     let content = $('textarea[name="content"]').val();
     $.ajax({
       type: "post",
-      url: "http://127.0.0.1/webLazy/feedback",
+      url: "http://0.0.0.0:9021/feedback",
       data: {"rating": rating, "email": email, "name": name, "content": content, "MaSP": MaSP},
       success: function (response) {
         var oResponse = JSON.parse(response);
-        window.location = "http://127.0.0.1/webLazy/ctsp/"+oResponse.MaSP;
+        window.location = "http://0.0.0.0:9021/ctsp/"+oResponse.MaSP;
         alert(oResponse.Status);
       }
     })

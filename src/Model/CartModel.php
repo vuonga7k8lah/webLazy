@@ -60,7 +60,7 @@ class CartModel
 
 	public static function getDataUser($userId)
 	{
-		return DB::makeConnection()->query("SELECT * FROM users where MaKH=".$userId."")->fetch_all();
+		return DB::makeConnection()->query("SELECT * FROM users where MaKH=".$userId)->fetch_all();
 	}
 
 }

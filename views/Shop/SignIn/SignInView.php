@@ -173,7 +173,8 @@ Session::checkReloadPage([
     'error_SDT',
     'error_validateRegister',
     'error_login',
-    'success_updatePassword'
+    'success_updatePassword',
+    'isLoginCart'
 ]);
 
 require_once 'views/Shop/footer.php' ?>

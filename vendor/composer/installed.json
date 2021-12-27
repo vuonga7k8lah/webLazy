@@ -1,5 +1,101 @@
 [
     {
+        "name": "bacon/bacon-qr-code",
+        "version": "2.0.4",
+        "version_normalized": "2.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Bacon/BaconQrCode.git",
+            "reference": "f73543ac4e1def05f1a70bcd1525c8a157a1ad09"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/f73543ac4e1def05f1a70bcd1525c8a157a1ad09",
+            "reference": "f73543ac4e1def05f1a70bcd1525c8a157a1ad09",
+            "shasum": ""
+        },
+        "require": {
+            "dasprid/enum": "^1.0.3",
+            "ext-iconv": "*",
+            "php": "^7.1 || ^8.0"
+        },
+        "require-dev": {
+            "phly/keep-a-changelog": "^1.4",
+            "phpunit/phpunit": "^7 | ^8 | ^9",
+            "squizlabs/php_codesniffer": "^3.4"
+        },
+        "suggest": {
+            "ext-imagick": "to generate QR code images"
+        },
+        "time": "2021-06-18T13:26:35+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "BaconQrCode\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-2-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Ben Scholzen 'DASPRiD'",
+                "email": "mail@dasprids.de",
+                "homepage": "https://dasprids.de/",
+                "role": "Developer"
+            }
+        ],
+        "description": "BaconQrCode is a QR code generator for PHP.",
+        "homepage": "https://github.com/Bacon/BaconQrCode"
+    },
+    {
+        "name": "dasprid/enum",
+        "version": "1.0.3",
+        "version_normalized": "1.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/DASPRiD/Enum.git",
+            "reference": "5abf82f213618696dda8e3bf6f64dd042d8542b2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/DASPRiD/Enum/zipball/5abf82f213618696dda8e3bf6f64dd042d8542b2",
+            "reference": "5abf82f213618696dda8e3bf6f64dd042d8542b2",
+            "shasum": ""
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^7 | ^8 | ^9",
+            "squizlabs/php_codesniffer": "^3.4"
+        },
+        "time": "2020-10-02T16:03:48+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "DASPRiD\\Enum\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-2-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Ben Scholzen 'DASPRiD'",
+                "email": "mail@dasprids.de",
+                "homepage": "https://dasprids.de/",
+                "role": "Developer"
+            }
+        ],
+        "description": "PHP 7.1 enum implementation",
+        "keywords": [
+            "enum",
+            "map"
+        ]
+    },
+    {
         "name": "doctrine/instantiator",
         "version": "1.4.0",
         "version_normalized": "1.4.0.0",
@@ -63,6 +159,79 @@
             {
                 "url": "https://tidelift.com/funding/github/packagist/doctrine%2Finstantiator",
                 "type": "tidelift"
+            }
+        ]
+    },
+    {
+        "name": "endroid/qr-code",
+        "version": "3.9.7",
+        "version_normalized": "3.9.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/endroid/qr-code.git",
+            "reference": "94563d7b3105288e6ac53a67ae720e3669fac1f6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/endroid/qr-code/zipball/94563d7b3105288e6ac53a67ae720e3669fac1f6",
+            "reference": "94563d7b3105288e6ac53a67ae720e3669fac1f6",
+            "shasum": ""
+        },
+        "require": {
+            "bacon/bacon-qr-code": "^2.0",
+            "khanamiryan/qrcode-detector-decoder": "^1.0.5",
+            "myclabs/php-enum": "^1.5",
+            "php": "^7.3||^8.0",
+            "symfony/options-resolver": "^3.4||^4.4||^5.0",
+            "symfony/property-access": "^3.4||^4.4||^5.0"
+        },
+        "require-dev": {
+            "endroid/quality": "^1.5.2",
+            "setasign/fpdf": "^1.8"
+        },
+        "suggest": {
+            "ext-gd": "Required for generating PNG images",
+            "roave/security-advisories": "Avoids installation of package versions with vulnerabilities",
+            "setasign/fpdf": "Required to use the FPDF writer.",
+            "symfony/security-checker": "Checks your composer.lock for vulnerabilities"
+        },
+        "time": "2021-04-20T19:10:54+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Endroid\\QrCode\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jeroen van den Enden",
+                "email": "info@endroid.nl"
+            }
+        ],
+        "description": "Endroid QR Code",
+        "homepage": "https://github.com/endroid/qr-code",
+        "keywords": [
+            "bundle",
+            "code",
+            "endroid",
+            "php",
+            "qr",
+            "qrcode"
+        ],
+        "funding": [
+            {
+                "url": "https://github.com/endroid",
+                "type": "github"
             }
         ]
     },
@@ -186,17 +355,17 @@
     },
     {
         "name": "google/apiclient-services",
-        "version": "v0.221.0",
-        "version_normalized": "0.221.0.0",
+        "version": "v0.226.0",
+        "version_normalized": "0.226.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/googleapis/google-api-php-client-services.git",
-            "reference": "55fb77c4dcb7ec2b41128d41815b3aac65ddfadb"
+            "reference": "c67839c96bc821b202c6737c9ae1ba6fd4626653"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/55fb77c4dcb7ec2b41128d41815b3aac65ddfadb",
-            "reference": "55fb77c4dcb7ec2b41128d41815b3aac65ddfadb",
+            "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/c67839c96bc821b202c6737c9ae1ba6fd4626653",
+            "reference": "c67839c96bc821b202c6737c9ae1ba6fd4626653",
             "shasum": ""
         },
         "require": {
@@ -205,7 +374,7 @@
         "require-dev": {
             "phpunit/phpunit": "^5.7||^8.5.13"
         },
-        "time": "2021-11-06T11:26:11+00:00",
+        "time": "2021-12-18T12:26:19+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -539,6 +708,59 @@
         ]
     },
     {
+        "name": "khanamiryan/qrcode-detector-decoder",
+        "version": "1.0.5.2",
+        "version_normalized": "1.0.5.2",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/khanamiryan/php-qrcode-detector-decoder.git",
+            "reference": "04fdd58d86a387065f707dc6d3cc304c719910c1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/khanamiryan/php-qrcode-detector-decoder/zipball/04fdd58d86a387065f707dc6d3cc304c719910c1",
+            "reference": "04fdd58d86a387065f707dc6d3cc304c719910c1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^5.7 | ^7.5 | ^8.0 | ^9.0"
+        },
+        "time": "2021-07-13T18:46:38+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Zxing\\": "lib/"
+            },
+            "files": [
+                "lib/Common/customFunctions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT",
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "Ashot Khanamiryan",
+                "email": "a.khanamiryan@gmail.com",
+                "homepage": "https://github.com/khanamiryan",
+                "role": "Developer"
+            }
+        ],
+        "description": "QR code decoder / reader",
+        "homepage": "https://github.com/khanamiryan/php-qrcode-detector-decoder/",
+        "keywords": [
+            "barcode",
+            "qr",
+            "zxing"
+        ]
+    },
+    {
         "name": "monolog/monolog",
         "version": "1.26.1",
         "version_normalized": "1.26.1.0",
@@ -674,6 +896,64 @@
         "funding": [
             {
                 "url": "https://tidelift.com/funding/github/packagist/myclabs/deep-copy",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
+        "name": "myclabs/php-enum",
+        "version": "1.8.3",
+        "version_normalized": "1.8.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/myclabs/php-enum.git",
+            "reference": "b942d263c641ddb5190929ff840c68f78713e937"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/myclabs/php-enum/zipball/b942d263c641ddb5190929ff840c68f78713e937",
+            "reference": "b942d263c641ddb5190929ff840c68f78713e937",
+            "shasum": ""
+        },
+        "require": {
+            "ext-json": "*",
+            "php": "^7.3 || ^8.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^9.5",
+            "squizlabs/php_codesniffer": "1.*",
+            "vimeo/psalm": "^4.6.2"
+        },
+        "time": "2021-07-05T08:18:36+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "MyCLabs\\Enum\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP Enum contributors",
+                "homepage": "https://github.com/myclabs/php-enum/graphs/contributors"
+            }
+        ],
+        "description": "PHP Enum implementation",
+        "homepage": "http://github.com/myclabs/php-enum",
+        "keywords": [
+            "enum"
+        ],
+        "funding": [
+            {
+                "url": "https://github.com/mnapoli",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/myclabs/php-enum",
                 "type": "tidelift"
             }
         ]
@@ -939,18 +1219,94 @@
         "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names"
     },
     {
-        "name": "phpseclib/phpseclib",
-        "version": "2.0.34",
-        "version_normalized": "2.0.34.0",
+        "name": "phpmailer/phpmailer",
+        "version": "v6.5.3",
+        "version_normalized": "6.5.3.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/phpseclib/phpseclib.git",
-            "reference": "98a6fe587f3481aea319eef7e656d02cfe1675ec"
+            "url": "https://github.com/PHPMailer/PHPMailer.git",
+            "reference": "baeb7cde6b60b1286912690ab0693c7789a31e71"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/98a6fe587f3481aea319eef7e656d02cfe1675ec",
-            "reference": "98a6fe587f3481aea319eef7e656d02cfe1675ec",
+            "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/baeb7cde6b60b1286912690ab0693c7789a31e71",
+            "reference": "baeb7cde6b60b1286912690ab0693c7789a31e71",
+            "shasum": ""
+        },
+        "require": {
+            "ext-ctype": "*",
+            "ext-filter": "*",
+            "ext-hash": "*",
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+            "doctrine/annotations": "^1.2",
+            "php-parallel-lint/php-console-highlighter": "^0.5.0",
+            "php-parallel-lint/php-parallel-lint": "^1.3",
+            "phpcompatibility/php-compatibility": "^9.3.5",
+            "roave/security-advisories": "dev-latest",
+            "squizlabs/php_codesniffer": "^3.6.0",
+            "yoast/phpunit-polyfills": "^1.0.0"
+        },
+        "suggest": {
+            "ext-mbstring": "Needed to send email in multibyte encoding charset or decode encoded addresses",
+            "hayageek/oauth2-yahoo": "Needed for Yahoo XOAUTH2 authentication",
+            "league/oauth2-google": "Needed for Google XOAUTH2 authentication",
+            "psr/log": "For optional PSR-3 debug logging",
+            "stevenmaguire/oauth2-microsoft": "Needed for Microsoft XOAUTH2 authentication",
+            "symfony/polyfill-mbstring": "To support UTF-8 if the Mbstring PHP extension is not enabled (^1.2)"
+        },
+        "time": "2021-11-25T16:34:11+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "PHPMailer\\PHPMailer\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL-2.1-only"
+        ],
+        "authors": [
+            {
+                "name": "Marcus Bointon",
+                "email": "phpmailer@synchromedia.co.uk"
+            },
+            {
+                "name": "Jim Jagielski",
+                "email": "jimjag@gmail.com"
+            },
+            {
+                "name": "Andy Prevost",
+                "email": "codeworxtech@users.sourceforge.net"
+            },
+            {
+                "name": "Brent R. Matzelle"
+            }
+        ],
+        "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
+        "funding": [
+            {
+                "url": "https://github.com/Synchro",
+                "type": "github"
+            }
+        ]
+    },
+    {
+        "name": "phpseclib/phpseclib",
+        "version": "2.0.35",
+        "version_normalized": "2.0.35.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phpseclib/phpseclib.git",
+            "reference": "4e16cf3f5f927a7d3f5317820af795c0366c0420"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/4e16cf3f5f927a7d3f5317820af795c0366c0420",
+            "reference": "4e16cf3f5f927a7d3f5317820af795c0366c0420",
             "shasum": ""
         },
         "require": {
@@ -967,7 +1323,7 @@
             "ext-mcrypt": "Install the Mcrypt extension in order to speed up a few other cryptographic operations.",
             "ext-openssl": "Install the OpenSSL extension in order to speed up a wide variety of cryptographic operations."
         },
-        "time": "2021-10-27T02:46:30+00:00",
+        "time": "2021-11-28T23:30:39+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1047,17 +1403,17 @@
     },
     {
         "name": "phpspec/prophecy",
-        "version": "1.14.0",
-        "version_normalized": "1.14.0.0",
+        "version": "v1.15.0",
+        "version_normalized": "1.15.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/phpspec/prophecy.git",
-            "reference": "d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e"
+            "reference": "bbcd7380b0ebf3961ee21409db7b38bc31d69a13"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/phpspec/prophecy/zipball/d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e",
-            "reference": "d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e",
+            "url": "https://api.github.com/repos/phpspec/prophecy/zipball/bbcd7380b0ebf3961ee21409db7b38bc31d69a13",
+            "reference": "bbcd7380b0ebf3961ee21409db7b38bc31d69a13",
             "shasum": ""
         },
         "require": {
@@ -1071,7 +1427,7 @@
             "phpspec/phpspec": "^6.0 || ^7.0",
             "phpunit/phpunit": "^8.0 || ^9.0"
         },
-        "time": "2021-09-10T09:02:12+00:00",
+        "time": "2021-12-08T12:19:24+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1177,17 +1533,17 @@
     },
     {
         "name": "phpunit/php-file-iterator",
-        "version": "2.0.4",
-        "version_normalized": "2.0.4.0",
+        "version": "2.0.5",
+        "version_normalized": "2.0.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
-            "reference": "28af674ff175d0768a5a978e6de83f697d4a7f05"
+            "reference": "42c5ba5220e6904cbfe8b1a1bda7c0cfdc8c12f5"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/28af674ff175d0768a5a978e6de83f697d4a7f05",
-            "reference": "28af674ff175d0768a5a978e6de83f697d4a7f05",
+            "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/42c5ba5220e6904cbfe8b1a1bda7c0cfdc8c12f5",
+            "reference": "42c5ba5220e6904cbfe8b1a1bda7c0cfdc8c12f5",
             "shasum": ""
         },
         "require": {
@@ -1196,7 +1552,7 @@
         "require-dev": {
             "phpunit/phpunit": "^8.5"
         },
-        "time": "2021-07-19T06:46:01+00:00",
+        "time": "2021-12-02T12:42:26+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1920,17 +2276,17 @@
     },
     {
         "name": "sebastian/exporter",
-        "version": "3.1.3",
-        "version_normalized": "3.1.3.0",
+        "version": "3.1.4",
+        "version_normalized": "3.1.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/sebastianbergmann/exporter.git",
-            "reference": "6b853149eab67d4da22291d36f5b0631c0fd856e"
+            "reference": "0c32ea2e40dbf59de29f3b49bf375176ce7dd8db"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/6b853149eab67d4da22291d36f5b0631c0fd856e",
-            "reference": "6b853149eab67d4da22291d36f5b0631c0fd856e",
+            "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/0c32ea2e40dbf59de29f3b49bf375176ce7dd8db",
+            "reference": "0c32ea2e40dbf59de29f3b49bf375176ce7dd8db",
             "shasum": ""
         },
         "require": {
@@ -1939,9 +2295,9 @@
         },
         "require-dev": {
             "ext-mbstring": "*",
-            "phpunit/phpunit": "^6.0"
+            "phpunit/phpunit": "^8.5"
         },
-        "time": "2020-11-30T07:47:53+00:00",
+        "time": "2021-11-11T13:51:24+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2311,6 +2667,140 @@
         "homepage": "https://github.com/sebastianbergmann/version"
     },
     {
+        "name": "symfony/deprecation-contracts",
+        "version": "v2.5.0",
+        "version_normalized": "2.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/deprecation-contracts.git",
+            "reference": "6f981ee24cf69ee7ce9736146d1c57c2780598a8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/6f981ee24cf69ee7ce9736146d1c57c2780598a8",
+            "reference": "6f981ee24cf69ee7ce9736146d1c57c2780598a8",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.1"
+        },
+        "time": "2021-07-12T14:48:14+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-main": "2.5-dev"
+            },
+            "thanks": {
+                "name": "symfony/contracts",
+                "url": "https://github.com/symfony/contracts"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "function.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "A generic function and convention to trigger deprecation notices",
+        "homepage": "https://symfony.com",
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
+        "name": "symfony/options-resolver",
+        "version": "v5.4.0",
+        "version_normalized": "5.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/options-resolver.git",
+            "reference": "b0fb78576487af19c500aaddb269fd36701d4847"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/options-resolver/zipball/b0fb78576487af19c500aaddb269fd36701d4847",
+            "reference": "b0fb78576487af19c500aaddb269fd36701d4847",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.2.5",
+            "symfony/deprecation-contracts": "^2.1|^3",
+            "symfony/polyfill-php73": "~1.0",
+            "symfony/polyfill-php80": "^1.16"
+        },
+        "time": "2021-11-23T10:19:22+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\OptionsResolver\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Provides an improved replacement for the array_replace PHP function",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "config",
+            "configuration",
+            "options"
+        ],
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
         "name": "symfony/polyfill-ctype",
         "version": "v1.23.0",
         "version_normalized": "1.23.0.0",
@@ -2372,6 +2862,86 @@
             "ctype",
             "polyfill",
             "portable"
+        ],
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
+        "name": "symfony/polyfill-intl-grapheme",
+        "version": "v1.23.1",
+        "version_normalized": "1.23.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
+            "reference": "16880ba9c5ebe3642d1995ab866db29270b36535"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/16880ba9c5ebe3642d1995ab866db29270b36535",
+            "reference": "16880ba9c5ebe3642d1995ab866db29270b36535",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.1"
+        },
+        "suggest": {
+            "ext-intl": "For best performance"
+        },
+        "time": "2021-05-27T12:26:48+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-main": "1.23-dev"
+            },
+            "thanks": {
+                "name": "symfony/polyfill",
+                "url": "https://github.com/symfony/polyfill"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Intl\\Grapheme\\": ""
+            },
+            "files": [
+                "bootstrap.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony polyfill for intl's grapheme_* functions",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compatibility",
+            "grapheme",
+            "intl",
+            "polyfill",
+            "portable",
+            "shim"
         ],
         "funding": [
             {
@@ -2558,6 +3128,85 @@
         ]
     },
     {
+        "name": "symfony/polyfill-mbstring",
+        "version": "v1.23.1",
+        "version_normalized": "1.23.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/polyfill-mbstring.git",
+            "reference": "9174a3d80210dca8daa7f31fec659150bbeabfc6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/9174a3d80210dca8daa7f31fec659150bbeabfc6",
+            "reference": "9174a3d80210dca8daa7f31fec659150bbeabfc6",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.1"
+        },
+        "suggest": {
+            "ext-mbstring": "For best performance"
+        },
+        "time": "2021-05-27T12:26:48+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-main": "1.23-dev"
+            },
+            "thanks": {
+                "name": "symfony/polyfill",
+                "url": "https://github.com/symfony/polyfill"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Mbstring\\": ""
+            },
+            "files": [
+                "bootstrap.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony polyfill for the Mbstring extension",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compatibility",
+            "mbstring",
+            "polyfill",
+            "portable",
+            "shim"
+        ],
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
         "name": "symfony/polyfill-php72",
         "version": "v1.23.0",
         "version_normalized": "1.23.0.0",
@@ -2633,6 +3282,421 @@
         ]
     },
     {
+        "name": "symfony/polyfill-php73",
+        "version": "v1.23.0",
+        "version_normalized": "1.23.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/polyfill-php73.git",
+            "reference": "fba8933c384d6476ab14fb7b8526e5287ca7e010"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/fba8933c384d6476ab14fb7b8526e5287ca7e010",
+            "reference": "fba8933c384d6476ab14fb7b8526e5287ca7e010",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.1"
+        },
+        "time": "2021-02-19T12:13:01+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-main": "1.23-dev"
+            },
+            "thanks": {
+                "name": "symfony/polyfill",
+                "url": "https://github.com/symfony/polyfill"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Php73\\": ""
+            },
+            "files": [
+                "bootstrap.php"
+            ],
+            "classmap": [
+                "Resources/stubs"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compatibility",
+            "polyfill",
+            "portable",
+            "shim"
+        ],
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
+        "name": "symfony/polyfill-php80",
+        "version": "v1.23.1",
+        "version_normalized": "1.23.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/polyfill-php80.git",
+            "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/1100343ed1a92e3a38f9ae122fc0eb21602547be",
+            "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.1"
+        },
+        "time": "2021-07-28T13:41:28+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-main": "1.23-dev"
+            },
+            "thanks": {
+                "name": "symfony/polyfill",
+                "url": "https://github.com/symfony/polyfill"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Php80\\": ""
+            },
+            "files": [
+                "bootstrap.php"
+            ],
+            "classmap": [
+                "Resources/stubs"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ion Bazan",
+                "email": "ion.bazan@gmail.com"
+            },
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compatibility",
+            "polyfill",
+            "portable",
+            "shim"
+        ],
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
+        "name": "symfony/property-access",
+        "version": "v5.4.0",
+        "version_normalized": "5.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/property-access.git",
+            "reference": "07db4e9d1f0bf4b8a0c60a25b2672f20ab8f3562"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/property-access/zipball/07db4e9d1f0bf4b8a0c60a25b2672f20ab8f3562",
+            "reference": "07db4e9d1f0bf4b8a0c60a25b2672f20ab8f3562",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.2.5",
+            "symfony/deprecation-contracts": "^2.1|^3",
+            "symfony/polyfill-php80": "^1.16",
+            "symfony/property-info": "^5.2|^6.0"
+        },
+        "require-dev": {
+            "symfony/cache": "^4.4|^5.0|^6.0"
+        },
+        "suggest": {
+            "psr/cache-implementation": "To cache access methods."
+        },
+        "time": "2021-11-28T15:25:38+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\PropertyAccess\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Provides functions to read and write from/to an object or array using a simple string notation",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "access",
+            "array",
+            "extraction",
+            "index",
+            "injection",
+            "object",
+            "property",
+            "property path",
+            "reflection"
+        ],
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
+        "name": "symfony/property-info",
+        "version": "v5.4.0",
+        "version_normalized": "5.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/property-info.git",
+            "reference": "c21b4221522779537e9693d51536d8174579b1fd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/property-info/zipball/c21b4221522779537e9693d51536d8174579b1fd",
+            "reference": "c21b4221522779537e9693d51536d8174579b1fd",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.2.5",
+            "symfony/deprecation-contracts": "^2.1|^3",
+            "symfony/polyfill-php80": "^1.16",
+            "symfony/string": "^5.1|^6.0"
+        },
+        "conflict": {
+            "phpdocumentor/reflection-docblock": "<3.2.2",
+            "phpdocumentor/type-resolver": "<1.4.0",
+            "symfony/dependency-injection": "<4.4"
+        },
+        "require-dev": {
+            "doctrine/annotations": "^1.10.4",
+            "phpdocumentor/reflection-docblock": "^3.0|^4.0|^5.0",
+            "phpstan/phpdoc-parser": "^1.0",
+            "symfony/cache": "^4.4|^5.0|^6.0",
+            "symfony/dependency-injection": "^4.4|^5.0|^6.0",
+            "symfony/serializer": "^4.4|^5.0|^6.0"
+        },
+        "suggest": {
+            "phpdocumentor/reflection-docblock": "To use the PHPDoc",
+            "psr/cache-implementation": "To cache results",
+            "symfony/doctrine-bridge": "To use Doctrine metadata",
+            "symfony/serializer": "To use Serializer metadata"
+        },
+        "time": "2021-11-23T10:19:22+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\PropertyInfo\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Kévin Dunglas",
+                "email": "dunglas@gmail.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Extracts information about PHP class' properties using metadata of popular sources",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "doctrine",
+            "phpdoc",
+            "property",
+            "symfony",
+            "type",
+            "validator"
+        ],
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
+        "name": "symfony/string",
+        "version": "v5.4.0",
+        "version_normalized": "5.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/string.git",
+            "reference": "9ffaaba53c61ba75a3c7a3a779051d1e9ec4fd2d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/string/zipball/9ffaaba53c61ba75a3c7a3a779051d1e9ec4fd2d",
+            "reference": "9ffaaba53c61ba75a3c7a3a779051d1e9ec4fd2d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.2.5",
+            "symfony/polyfill-ctype": "~1.8",
+            "symfony/polyfill-intl-grapheme": "~1.0",
+            "symfony/polyfill-intl-normalizer": "~1.0",
+            "symfony/polyfill-mbstring": "~1.0",
+            "symfony/polyfill-php80": "~1.15"
+        },
+        "conflict": {
+            "symfony/translation-contracts": ">=3.0"
+        },
+        "require-dev": {
+            "symfony/error-handler": "^4.4|^5.0|^6.0",
+            "symfony/http-client": "^4.4|^5.0|^6.0",
+            "symfony/translation-contracts": "^1.1|^2",
+            "symfony/var-exporter": "^4.4|^5.0|^6.0"
+        },
+        "time": "2021-11-24T10:02:00+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\String\\": ""
+            },
+            "files": [
+                "Resources/functions.php"
+            ],
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Provides an object-oriented API to strings and deals with bytes, UTF-8 code points and grapheme clusters in a unified way",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "grapheme",
+            "i18n",
+            "string",
+            "unicode",
+            "utf-8",
+            "utf8"
+        ],
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
         "name": "theseer/tokenizer",
         "version": "1.2.1",
         "version_normalized": "1.2.1.0",
@@ -2678,6 +3742,61 @@
                 "url": "https://github.com/theseer",
                 "type": "github"
             }
+        ]
+    },
+    {
+        "name": "vectorface/googleauthenticator",
+        "version": "v2.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Vectorface/GoogleAuthenticator.git",
+            "reference": "380b0f8de7fdc24811bf39dc42932104648a44d5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Vectorface/GoogleAuthenticator/zipball/380b0f8de7fdc24811bf39dc42932104648a44d5",
+            "reference": "380b0f8de7fdc24811bf39dc42932104648a44d5",
+            "shasum": ""
+        },
+        "require": {
+            "endroid/qr-code": "^3.9.3",
+            "php": ">=7.2"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^8"
+        },
+        "time": "2020-10-13T22:02:00+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Vectorface\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-2-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Michael Kliewe",
+                "email": "info@phpgangsta.de",
+                "homepage": "http://www.phpgangsta.de/",
+                "role": "Developer"
+            },
+            {
+                "name": "Francis Lavoie",
+                "email": "francis@vectorface.com",
+                "homepage": "http://vectorface.com/",
+                "role": "Developer"
+            }
+        ],
+        "description": "Google Authenticator 2-factor authentication",
+        "keywords": [
+            "googleauthenticator",
+            "rfc6238",
+            "totp"
         ]
     },
     {

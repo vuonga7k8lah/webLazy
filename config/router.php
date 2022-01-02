@@ -78,6 +78,7 @@ $oRoute->get('deleteOrderAdmin', 'webLazy\Controllers\OrderAdminController@delet
 $oRoute->get('statusOrderAdmin', 'webLazy\Controllers\OrderAdminController@statusOrderAdmin');
 //Login-admin
 $oRoute->get('login', 'webLazy\Controllers\LoginAdminController@loadView');
+$oRoute->get('unlock-Login', 'webLazy\Controllers\LoginAdminController@getViewUnlockLogin');
 $oRoute->post('login', 'webLazy\Controllers\LoginAdminController@actionLogin');
 
 //admin-thể loại
@@ -122,6 +123,8 @@ $oRoute->get('loginFB', 'webLazy\Controllers\LoginFBController@FBcallback');
 $oRoute->get('forgot', 'webLazy\Controllers\ForgotPasswordController@loadView');
 $oRoute->get('repass', 'webLazy\Controllers\ForgotPasswordController@loadViewRepass');
 $oRoute->post('repass', 'webLazy\Controllers\ForgotPasswordController@updatePassword');
+$oRoute->post('repass-admin', 'webLazy\Controllers\ForgotPasswordController@handleAdminUpdatePassword');
+$oRoute->get('repass-admin', 'webLazy\Controllers\ForgotPasswordController@viewAdminUpdatePassword');
 $oRoute->post('forgot', 'webLazy\Controllers\ForgotPasswordController@checkEmail');
 $oRoute->post('signInLogin', 'webLazy\Controllers\SignInController@actionLogin');
 $oRoute->post('signInRegister', 'webLazy\Controllers\SignInController@actionRegister');

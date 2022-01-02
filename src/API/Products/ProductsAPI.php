@@ -21,14 +21,10 @@ class ProductsAPI
                 'id'             => $aItem[0],
                 'tenSanPham'     => $aItem[1],
                 'giaSanPham'     => $aItem[2],
-                'hinhAnhSanPham' => App::get('config/app')['HomeURL'] . 'assets/upload/' . $imgURL,
+                'hinhAnhSanPham' => "http://192.168.1.12:9021/" . 'assets/upload/' . $imgURL,
                 'moTaSanPham'    => the_excerpt($aItem[3]),
                 'idLoaiSanPham'  => $aItem[5],
             ];
-            if ($i > 4) {
-                break;
-            }
-            $i++;
         }
 
         echo HandleResponse::success('list product', $aData);

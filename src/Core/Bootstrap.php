@@ -3,6 +3,7 @@
 use webLazy\Core\Request;
 use webLazy\Core\App;
 use webLazy\Core\Route;
+use webLazy\Core\TraitPHPMailer;
 use webLazy\Database\DB;
 
 require_once 'vendor/autoload.php';
@@ -20,15 +21,14 @@ header("Access-Control-Allow-Methods: OPTIONS,GET,POST,PUT,DELETE");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-if ((explode('?', Request::uri()[0])[0] == 'loginAPIGoogle') or (explode('?', Request::uri()[0])[0] == 'loginFB') or
-    (explode('?', Request::uri()[0])[0] == 'qrcode')) {
-	Route::load("config/router.php")
-		->direct(Request::route11(), Request::method());
+if (in_array(explode('?', Request::uri()[0])[0], ['loginAPIGoogle', 'qrcode', 'repass-admin', 'loginFB'])) {
+    Route::load("config/router.php")
+        ->direct(Request::route11(), Request::method());
 } else {
-    if ((count(Request::uri())>1)&&(strpos(Request::uri()[0],'api')!==false)){
+    if ((count(Request::uri()) > 1) && (strpos(Request::uri()[0], 'api') !== false)) {
         Route::load("config/router.php")
-            ->direct(Request::uri()[0].'/', Request::method());
-    }else{
+            ->direct(Request::uri()[0] . '/', Request::method());
+    } else {
         Route::load("config/router.php")
             ->direct(Request::uri()[0], Request::method());
     }

@@ -56,4 +56,10 @@ class SignInModel
         $query = DB::makeConnection()->query("SELECT token FROM users where Email='" . $email . "'");
         return !empty($query) ? $query->fetch_assoc()['token'] : '';
     }
+
+    public static function updatePasswordAdmin($data)
+    {
+        return DB::makeConnection()->query("UPDATE admin set Password='" . $data['Password'] . "' where id='" .
+            $data['id'] . "'");
+    }
 }

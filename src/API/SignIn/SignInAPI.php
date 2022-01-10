@@ -20,8 +20,8 @@ class SignInAPI
             if (!isset($aData['Email']) || (!isset($aData['Password']))) {
                 throw new Exception('the param username or password is required');
             }
-            $aData['Email'] = DB::makeConnection()->real_escape_string(trim($_POST['Email']));
-            $aData['Password'] = DB::makeConnection()->real_escape_string(trim(sha1($_POST['Password'])));
+            $aData['Email'] = DB::notInjection(trim($_POST['Email']));
+            $aData['Password'] = DB::notInjection(trim(sha1($_POST['Password'])));
             if (SignInModel::loginUser($aData)[0] > 0) {
                 echo HandleResponse::success('Passed', [
                     'token' => SignInModel::loginUser($aData)[1]['token']

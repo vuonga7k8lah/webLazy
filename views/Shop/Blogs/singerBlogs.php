@@ -193,5 +193,10 @@ countView($id);
         </div>
     </div>
 <?php
+\webLazy\Core\Session::checkReloadPage([
+        'errorCMM_email',
+        'errorCMM_captcha',
+        'dataCMM'
+]);
 require_once 'views/Shop/footer.php';
 

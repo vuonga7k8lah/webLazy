@@ -21,7 +21,7 @@ class ProductsAPI
                 'id'             => $aItem[0],
                 'tenSanPham'     => $aItem[1],
                 'giaSanPham'     => $aItem[2],
-                'hinhAnhSanPham' => "http://192.168.1.12:9021/" . 'assets/upload/' . $imgURL,
+                'hinhAnhSanPham' => App::get('config/app')['urlIPV4'] . 'assets/upload/' . $imgURL,
                 'moTaSanPham'    => the_excerpt($aItem[3]),
                 'idLoaiSanPham'  => $aItem[5],
             ];
@@ -40,7 +40,7 @@ class ProductsAPI
                 'id'             => $aProducts['MaSP'],
                 'tenSanPham'     => $aProducts['TenSP'],
                 'giaSanPham'     => $aProducts['GiaBan'],
-                'hinhAnhSanPham' => App::get('config/app')['HomeURL'] . 'assets/upload/' . $imgURL,
+                'hinhAnhSanPham' => App::get('config/app')['urlIPV4'] . 'assets/upload/' . $imgURL,
                 'moTaSanPham'    => $aProducts['ChiTiet'],
                 'idLoaiSanPham'  => $aProducts['MaLoai'],
             ];

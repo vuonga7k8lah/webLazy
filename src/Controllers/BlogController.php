@@ -4,6 +4,7 @@
 namespace webLazy\Controllers;
 
 
+use webLazy\Core\AntiXSS;
 use webLazy\Core\Redirect;
 use webLazy\Core\Request;
 use webLazy\Core\Session;
@@ -31,12 +32,12 @@ class BlogController
             if (trim($_POST['captcha']) == $_SESSION['q']['answer']) {
                 $aResponse = [
                     "isValid" => "yes",
-                    "msg" => "captcha đúng"
+                    "msg"     => "captcha đúng"
                 ];
             } else {
                 $aResponse = [
                     "isValid" => "no",
-                    "msg" => "captcha sai nhập lại"
+                    "msg"     => "captcha sai nhập lại"
                 ];
             }
 
@@ -51,16 +52,19 @@ class BlogController
             if (SignInModel::emailIsExist(trim($_POST['email'])) > 0) {
                 $aResponse = [
                     "isValid" => "yes",
-                    "msg" => "email đã tồn tại"
+                    "msg"     => "email đã tồn tại"
                 ];
             } else {
                 $aResponse = [
                     "isValid" => "no",
-                    "msg" => "Bạn có thể sử dụng email này"
+                    "msg"     => "Bạn có thể sử dụng email này"
                 ];
             }
 
-            echo json_encode($aResponse);
+            echo json_encode([
+                "isValid" => "no",
+                "msg"     => "Bạn có thể sử dụng email này"
+            ]);
         }
     }
 
@@ -68,7 +72,14 @@ class BlogController
     {
         unset($_SESSION['errorCMM_email']);
         unset($_SESSION['errorCMM_captcha']);
-        $data = $_POST;
+        $data=[];
+        if (!empty($_POST)) {
+            foreach ($_POST as $key=>$item) {
+                if (!empty($item)){
+                    $data[$key]=AntiXSS::xssClear($item);
+                }
+            }
+        }
         Session::set('dataCMM', $data);
         if (SignInModel::emailIsExist(trim($data['Email'])) > 0) {
             Session::set('errorCMM_email', 'Email ĐÃ Tồn Tại');
@@ -83,7 +94,6 @@ class BlogController
             header('location:' . URL::uri('singerBlog') . '/' . $data['idtinTuc'] . '#listComment');
         }
     }
-
 
 
 }

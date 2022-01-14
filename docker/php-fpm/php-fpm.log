@@ -770,3 +770,36 @@
 [09-Jan-2022 13:57:40] WARNING: [pool www] child 25 said into stderr: "#6 /var/www/html/index.php(9): require_once('/var/www/html/s...')"
 [09-Jan-2022 13:57:40] WARNING: [pool www] child 25 said into stderr: "#7 {main}"
 [09-Jan-2022 13:57:40] WARNING: [pool www] child 25 said into stderr: "  thrown in /var/www/html/src/Model/CommentModel.php on line 19"
+[10-Jan-2022 12:12:38] NOTICE: fpm is running, pid 17
+[10-Jan-2022 12:12:38] NOTICE: ready to handle connections
+[10-Jan-2022 12:12:38] NOTICE: systemd monitor interval set to 10000ms
+[10-Jan-2022 14:41:50] WARNING: [pool www] child 25 said into stderr: "NOTICE: PHP message: PHP Notice:  Undefined variable: enable in /var/www/html/views/Admin/QRCode/QRCodeView.php on line 17"
+[10-Jan-2022 14:41:50] WARNING: [pool www] child 25 said into stderr: "NOTICE: PHP message: PHP Notice:  Undefined index: action in /var/www/html/views/Admin/QRCode/QRCodeView.php on line 28"
+[10-Jan-2022 14:41:50] WARNING: [pool www] child 25 said into stderr: "NOTICE: PHP message: PHP Notice:  Undefined index: id in /var/www/html/views/Admin/QRCode/QRCodeView.php on line 29"
+[10-Jan-2022 16:16:52] WARNING: [pool www] child 25 said into stderr: "NOTICE: PHP message: PHP Notice:  Undefined index: Email in /var/www/html/src/Controllers/SignInController.php on line 30"
+[11-Jan-2022 00:18:07] NOTICE: fpm is running, pid 18
+[11-Jan-2022 00:18:07] NOTICE: ready to handle connections
+[11-Jan-2022 00:18:07] NOTICE: systemd monitor interval set to 10000ms
+[11-Jan-2022 00:51:07] WARNING: [pool www] child 24 said into stderr: "NOTICE: PHP message: PHP Notice:  Undefined variable: enable in /var/www/html/views/Admin/QRCode/QRCodeView.php on line 17"
+[11-Jan-2022 00:51:07] WARNING: [pool www] child 24 said into stderr: "NOTICE: PHP message: PHP Notice:  Undefined index: action in /var/www/html/views/Admin/QRCode/QRCodeView.php on line 28"
+[11-Jan-2022 00:51:07] WARNING: [pool www] child 24 said into stderr: "NOTICE: PHP message: PHP Notice:  Undefined index: id in /var/www/html/views/Admin/QRCode/QRCodeView.php on line 29"
+[11-Jan-2022 00:51:19] WARNING: [pool www] child 26 said into stderr: "NOTICE: PHP message: PHP Notice:  Undefined variable: enable in /var/www/html/views/Admin/QRCode/QRCodeView.php on line 17"
+[11-Jan-2022 00:51:19] WARNING: [pool www] child 26 said into stderr: "NOTICE: PHP message: PHP Notice:  Undefined index: action in /var/www/html/views/Admin/QRCode/QRCodeView.php on line 28"
+[11-Jan-2022 00:51:19] WARNING: [pool www] child 26 said into stderr: "NOTICE: PHP message: PHP Notice:  Undefined index: id in /var/www/html/views/Admin/QRCode/QRCodeView.php on line 29"
+[11-Jan-2022 00:57:07] WARNING: [pool www] child 26 said into stderr: "NOTICE: PHP message: PHP Fatal error:  Uncaught Error: Class 'webLazy\API\Products\OrderAPI' not found in /var/www/html/src/Core/Route.php:96"
+[11-Jan-2022 00:57:07] WARNING: [pool www] child 26 said into stderr: "Stack trace:"
+[11-Jan-2022 00:57:07] WARNING: [pool www] child 26 said into stderr: "#0 /var/www/html/src/Core/Route.php(114): webLazy\Core\Route->callAction()"
+[11-Jan-2022 00:57:07] WARNING: [pool www] child 26 said into stderr: "#1 /var/www/html/src/Core/Bootstrap.php(30): webLazy\Core\Route->direct()"
+[11-Jan-2022 00:57:07] WARNING: [pool www] child 26 said into stderr: "#2 /var/www/html/index.php(9): require_once('/var/www/html/s...')"
+[11-Jan-2022 00:57:07] WARNING: [pool www] child 26 said into stderr: "#3 {main}"
+[11-Jan-2022 00:57:07] WARNING: [pool www] child 26 said into stderr: "  thrown in /var/www/html/src/Core/Route.php on line 96"
+[11-Jan-2022 01:47:47] NOTICE: fpm is running, pid 17
+[11-Jan-2022 01:47:47] NOTICE: ready to handle connections
+[11-Jan-2022 01:47:47] NOTICE: systemd monitor interval set to 10000ms
+[11-Jan-2022 06:39:37] WARNING: [pool www] child 26 said into stderr: "NOTICE: PHP message: PHP Notice:  Undefined variable: enable in /var/www/html/views/Admin/QRCode/QRCodeView.php on line 17"
+[11-Jan-2022 06:39:37] WARNING: [pool www] child 26 said into stderr: "NOTICE: PHP message: PHP Notice:  Undefined index: action in /var/www/html/views/Admin/QRCode/QRCodeView.php on line 28"
+[11-Jan-2022 06:39:37] WARNING: [pool www] child 26 said into stderr: "NOTICE: PHP message: PHP Notice:  Undefined index: id in /var/www/html/views/Admin/QRCode/QRCodeView.php on line 29"
+[11-Jan-2022 06:40:13] WARNING: [pool www] child 24 said into stderr: "NOTICE: PHP message: PHP Notice:  Undefined variable: enable in /var/www/html/views/Admin/QRCode/QRCodeView.php on line 17"
+[11-Jan-2022 06:40:13] WARNING: [pool www] child 24 said into stderr: "NOTICE: PHP message: PHP Notice:  Undefined index: action in /var/www/html/views/Admin/QRCode/QRCodeView.php on line 28"
+[11-Jan-2022 06:40:13] WARNING: [pool www] child 24 said into stderr: "NOTICE: PHP message: PHP Notice:  Undefined index: id in /var/www/html/views/Admin/QRCode/QRCodeView.php on line 29"
+[11-Jan-2022 06:40:47] WARNING: [pool www] child 26 said into stderr: "NOTICE: PHP message: PHP Notice:  Undefined variable: enable in /var/www/html/views/Admin/UnlockLogin/viewUnlockLogin.php on line 18"

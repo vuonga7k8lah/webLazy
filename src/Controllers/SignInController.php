@@ -23,7 +23,7 @@ class SignInController
         unset($_SESSION['error_validateRegister']);
         validateDataLogin($_POST);
         $data['Email'] = DB::notInjection($_POST['Email']);
-        $data['Password'] = md5(DB::notInjection($_POST['Password']));
+        $data['Password'] = sha1(DB::notInjection($_POST['Password']));
         if (SignInModel::loginUser($data)[0] > 0) {
             Session::set('MaKH', SignInModel::loginUser($data)[1]['MaKH']);
             Session::set('TenKH', SignInModel::loginUser($data)[1]['TenKH']);
@@ -74,9 +74,8 @@ class SignInController
                 Session::set('errorEmail', 'Email ĐÃ Tồn Tại');
                 throw new Exception('Email ĐÃ Tồn Tại', 400);
             }
-            $aData['Password'] = md5($aData['Password']);
+            $aData['Password'] = sha1($aData['Password']);
             $userID = SignInModel::insertUser($aData);
-            session_unset();
             return HandleResponse::success('Passed', [
                 'userID' => $userID
             ]);

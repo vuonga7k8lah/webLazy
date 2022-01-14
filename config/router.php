@@ -153,6 +153,7 @@ $oRoute->post('feedback', 'webLazy\Controllers\CMMController@feedback');
 //API
 $oRoute->get('api-products', 'webLazy\API\Products\ProductsAPI@getProducts');
 $oRoute->get('api-products/', 'webLazy\API\Products\ProductsAPI@getProduct');
+$oRoute->get('api-orders/', 'webLazy\API\Order\OrderAPI@getOrder');
 $oRoute->get('api-products-type/', 'webLazy\API\Products\ProductsAPI@getProductWithTypeID');
 $oRoute->post('api-login', 'webLazy\API\SignIn\SignInAPI@handleLogin');
 //QRcode

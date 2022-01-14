@@ -4,6 +4,7 @@ namespace webLazy\Controllers;
 
 use Vectorface\GoogleAuthenticator;
 use webLazy\Core\Redirect;
+use webLazy\Core\Session;
 
 class QRCodeController
 {
@@ -13,8 +14,10 @@ class QRCodeController
 
     public function __construct()
     {
-        $this->lib = new GoogleAuthenticator();
         $this->secret = '5QAJ4SDF22A3JH2G';
+
+
+        $this->lib = new GoogleAuthenticator();
     }
 
     /**
@@ -48,12 +51,19 @@ class QRCodeController
         $secret = $_POST['secret'];
         $checkResult = $this->lib->verifyCode($secret, $qrCode, 0);
         if ($checkResult) {
+                    Session::destroy('countLoginQRCodeError');
                     Redirect::to('admin');
 
         } else {
+            if (isset($_SESSION['countLoginQRCodeError']) && !empty($_SESSION['countLoginQRCodeError'])) {
+                $_SESSION['countLoginQRCodeError']++;
+            } else {
+                Session::set('countLoginQRCodeError', 1);
+            }
+            $message=sprintf("Hãy nhập lại mã OTP QRCODE và bạn còn lại %s lần đăng nhập",(3-$_SESSION['countLoginQRCodeError']));
                     ?>
                     <script>
-                        let x = confirm('Hãy Nhập Lại Mã QRcode ');
+                        let x = confirm('<?=$message?>');
                         if (x === true) {
                             window.location = '<?=$_SERVER['HTTP_REFERER'] ?>';
                         }

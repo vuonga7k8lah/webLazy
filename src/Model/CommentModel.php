@@ -10,7 +10,7 @@ class CommentModel
 {
     public static function insertData($data)
     {
-        return DB::makeConnection()->query("INSERT INTO `comments`(`idCMM`, `idTinTuc`, `TenKH`, `Email`, `NoiDung`, `register_date`) VALUES (null,'" . $data['idtinTuc'] . "','" . $data['TenKH'] . "','" . $data['Email'] . "','" . $data['comment'] . "',null)");
+        return DB::makeConnection()->query("INSERT INTO `comments`(`idCMM`, `idTinTuc`, `TenKH`, `Email`, `NoiDung`, `register_date`) VALUES (null,'" . $data['idtinTuc'] . "','" . DB::notInjection($data['TenKH']) . "','" . DB::notInjection($data['Email']) . "','" . DB::notInjection($data['comment']) . "',null)");
     }
 
     public static function countComment($idtintuc)

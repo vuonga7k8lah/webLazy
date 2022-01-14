@@ -81,10 +81,6 @@ class BlogController
             }
         }
         Session::set('dataCMM', $data);
-        if (SignInModel::emailIsExist(trim($data['Email'])) > 0) {
-            Session::set('errorCMM_email', 'Email ĐÃ Tồn Tại');
-            header('location:' . URL::uri('singerBlog') . '/' . $data['idtinTuc'] . '#comment');
-        }
         if (trim($data['captcha']) != $_SESSION['q']['answer']) {
             Session::set('errorCMM_captcha', 'Sai Mã Captcha');
             header('location:' . URL::uri('singerBlog') . '/' . $data['idtinTuc'] . '#comment');

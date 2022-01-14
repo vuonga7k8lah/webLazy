@@ -26,7 +26,10 @@ class OrderModel
         return $db->fetch_all();
     }
 
-    public static function updateProductDaBan()
+    public static function getOrderWithUserID($id,$orderID)
     {
+        $db = DB::makeConnection()->query("SELECT kh.TenKH,kh.DiaChi,kh.Sdt,sp.TenSP,dhp.quantity,dh.total,dh.note  FROM donhang dh JOIN users kh ON kh.MaKH=dh.MaKH JOIN donhangphu1 dhp ON dhp.id=dh.id JOIN sanpham sp on sp.MaSP=dhp.MaSP WHERE kh.MaKH='" . $id . "' AND dh.id='" . $orderID . "'");
+
+        return (!empty($db))?$db->fetch_all():[];
     }
 }

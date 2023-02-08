@@ -31,11 +31,12 @@ use Google\Service\HangoutsChat\Membership;
 class SpacesMembers extends \Google\Service\Resource
 {
   /**
-   * Returns a membership. (members.get)
+   * Returns a membership. Requires [service account
+   * authentication](https://developers.google.com/chat/api/guides/auth/service-
+   * accounts). (members.get)
    *
-   * @param string $name Required. Resource name of the membership to be
-   * retrieved, in the form "spaces/members". Example:
-   * spaces/AAAAAAAAAAAA/members/111111111111111111111
+   * @param string $name Required. Resource name of the membership to retrieve.
+   * Format: spaces/{space}/members/{member}
    * @param array $optParams Optional parameters.
    * @return Membership
    */
@@ -46,18 +47,22 @@ class SpacesMembers extends \Google\Service\Resource
     return $this->call('get', [$params], Membership::class);
   }
   /**
-   * Lists human memberships in a space. (members.listSpacesMembers)
+   * Lists human memberships in a space for joined members. Requires [service
+   * account authentication](https://developers.google.com/chat/api/guides/auth
+   * /service-accounts). (members.listSpacesMembers)
    *
-   * @param string $parent Required. The resource name of the space for which
-   * membership list is to be fetched, in the form "spaces". Example:
-   * spaces/AAAAAAAAAAAA
+   * @param string $parent Required. The resource name of the space for which to
+   * fetch a membership list. Format: spaces/{space}
    * @param array $optParams Optional parameters.
    *
-   * @opt_param int pageSize Requested page size. The value is capped at 1000.
-   * Server may return fewer results than requested. If unspecified, server will
-   * default to 100.
-   * @opt_param string pageToken A token identifying a page of results the server
-   * should return.
+   * @opt_param int pageSize The maximum number of memberships to return. The
+   * service may return fewer than this value. If unspecified, at most 100
+   * memberships are returned. The maximum value is 1000; values above 1000 are
+   * coerced to 1000. Negative values return an INVALID_ARGUMENT error.
+   * @opt_param string pageToken A page token, received from a previous list
+   * memberships call. Provide this to retrieve the subsequent page. When
+   * paginating, all other parameters provided must match the call that provided
+   * the page token.
    * @return ListMembershipsResponse
    */
   public function listSpacesMembers($parent, $optParams = [])

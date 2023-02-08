@@ -26,6 +26,8 @@ class BuildTrigger extends \Google\Collection
    * @var bool
    */
   public $autodetect;
+  protected $bitbucketServerTriggerConfigType = BitbucketServerTriggerConfig::class;
+  protected $bitbucketServerTriggerConfigDataType = '';
   protected $buildType = Build::class;
   protected $buildDataType = '';
   /**
@@ -56,6 +58,8 @@ class BuildTrigger extends \Google\Collection
   protected $gitFileSourceDataType = '';
   protected $githubType = GitHubEventsConfig::class;
   protected $githubDataType = '';
+  protected $gitlabEnterpriseEventsConfigType = GitLabEventsConfig::class;
+  protected $gitlabEnterpriseEventsConfigDataType = '';
   /**
    * @var string
    */
@@ -64,6 +68,10 @@ class BuildTrigger extends \Google\Collection
    * @var string[]
    */
   public $ignoredFiles;
+  /**
+   * @var string
+   */
+  public $includeBuildLogs;
   /**
    * @var string[]
    */
@@ -124,6 +132,20 @@ class BuildTrigger extends \Google\Collection
   public function getAutodetect()
   {
     return $this->autodetect;
+  }
+  /**
+   * @param BitbucketServerTriggerConfig
+   */
+  public function setBitbucketServerTriggerConfig(BitbucketServerTriggerConfig $bitbucketServerTriggerConfig)
+  {
+    $this->bitbucketServerTriggerConfig = $bitbucketServerTriggerConfig;
+  }
+  /**
+   * @return BitbucketServerTriggerConfig
+   */
+  public function getBitbucketServerTriggerConfig()
+  {
+    return $this->bitbucketServerTriggerConfig;
   }
   /**
    * @param Build
@@ -252,6 +274,20 @@ class BuildTrigger extends \Google\Collection
     return $this->github;
   }
   /**
+   * @param GitLabEventsConfig
+   */
+  public function setGitlabEnterpriseEventsConfig(GitLabEventsConfig $gitlabEnterpriseEventsConfig)
+  {
+    $this->gitlabEnterpriseEventsConfig = $gitlabEnterpriseEventsConfig;
+  }
+  /**
+   * @return GitLabEventsConfig
+   */
+  public function getGitlabEnterpriseEventsConfig()
+  {
+    return $this->gitlabEnterpriseEventsConfig;
+  }
+  /**
    * @param string
    */
   public function setId($id)
@@ -278,6 +314,20 @@ class BuildTrigger extends \Google\Collection
   public function getIgnoredFiles()
   {
     return $this->ignoredFiles;
+  }
+  /**
+   * @param string
+   */
+  public function setIncludeBuildLogs($includeBuildLogs)
+  {
+    $this->includeBuildLogs = $includeBuildLogs;
+  }
+  /**
+   * @return string
+   */
+  public function getIncludeBuildLogs()
+  {
+    return $this->includeBuildLogs;
   }
   /**
    * @param string[]

@@ -26,8 +26,7 @@ require_once 'views/Admin/header.php';
                            name="otp">
                     <input type="hidden" name="secret" value="<?= $qrcode ?>">
                     <input type="hidden" name="action" value="<?= $data['action'] ?>">
-                    <input type="hidden" name="id" value="<?= $data['id'] ?>">
-                    <input type="hidden" name="data" value='<?php echo $data['data'] ?>'>
+
                 </div>
                 <div class="col-auto">
                     <button type="submit" class="btn btn-primary mb-3" style="margin-top: 5px; ">Gửi</button>

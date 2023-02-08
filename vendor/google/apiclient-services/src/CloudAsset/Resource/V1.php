@@ -84,13 +84,18 @@ class V1 extends \Google\Service\Resource
    * another IAM policy states service account SA has permission P to the GCP
    * folder F, then user A potentially has access to the GCP folder F. And those
    * advanced analysis results will be included in
-   * AnalyzeIamPolicyResponse.service_account_impersonation_analysis. Default is
-   * false.
+   * AnalyzeIamPolicyResponse.service_account_impersonation_analysis. Only the
+   * following permissions are considered in this analysis: *
+   * `iam.serviceAccounts.actAs` * `iam.serviceAccounts.signBlob` *
+   * `iam.serviceAccounts.signJwt` * `iam.serviceAccounts.getAccessToken` *
+   * `iam.serviceAccounts.getOpenIdToken` *
+   * `iam.serviceAccounts.implicitDelegation` Default is false.
    * @opt_param bool analysisQuery.options.expandGroups Optional. If true, the
    * identities section of the result will expand any Google groups appearing in
    * an IAM policy binding. If IamPolicyAnalysisQuery.identity_selector is
    * specified, the identity in the result will be determined by the selector, and
-   * this flag is not allowed to set. Default is false.
+   * this flag is not allowed to set. If true, the default max expansion per group
+   * is 1000 for AssetService.AnalyzeIamPolicy][]. Default is false.
    * @opt_param bool analysisQuery.options.expandResources Optional. If true and
    * IamPolicyAnalysisQuery.resource_selector is not specified, the resource
    * section of the result will expand any resource attached to an IAM policy to
@@ -104,7 +109,9 @@ class V1 extends \Google\Service\Resource
    * Folder and organization resource cannot be used together with this option.
    * For example, if the request analyzes for which users have permission P on a
    * GCP project with this option enabled, the results will include all users who
-   * have permission P on that project or any lower resource. Default is false.
+   * have permission P on that project or any lower resource. If true, the default
+   * max expansion per resource is 1000 for AssetService.AnalyzeIamPolicy][] and
+   * 100000 for AssetService.AnalyzeIamPolicyLongrunning][]. Default is false.
    * @opt_param bool analysisQuery.options.expandRoles Optional. If true, the
    * access section of result will expand any roles appearing in IAM policy
    * bindings to include their permissions. If
@@ -331,12 +338,12 @@ class V1 extends \Google\Service\Resource
    * that the query string is compared against each Cloud IAM policy binding,
    * including its principals, roles, and Cloud IAM conditions. The returned Cloud
    * IAM policies will only contain the bindings that match your query. To learn
-   * more about the IAM policy structure, see [IAM policy
-   * doc](https://cloud.google.com/iam/docs/policies#structure). Examples: *
-   * `policy:amy@gmail.com` to find IAM policy bindings that specify user
-   * "amy@gmail.com". * `policy:roles/compute.admin` to find IAM policy bindings
-   * that specify the Compute Admin role. * `policy:comp*` to find IAM policy
-   * bindings that contain "comp" as a prefix of any word in the binding. *
+   * more about the IAM policy structure, see the [IAM policy
+   * documentation](https://cloud.google.com/iam/help/allow-policies/structure).
+   * Examples: * `policy:amy@gmail.com` to find IAM policy bindings that specify
+   * user "amy@gmail.com". * `policy:roles/compute.admin` to find IAM policy
+   * bindings that specify the Compute Admin role. * `policy:comp*` to find IAM
+   * policy bindings that contain "comp" as a prefix of any word in the binding. *
    * `policy.role.permissions:storage.buckets.update` to find IAM policy bindings
    * that specify a role containing "storage.buckets.update" permission. Note that
    * if callers don't have `iam.roles.get` access to a role's included
@@ -397,10 +404,10 @@ class V1 extends \Google\Service\Resource
    * Add " DESC" after the field name to indicate descending order. Redundant
    * space characters are ignored. Example: "location DESC, name". Only singular
    * primitive fields in the response are sortable: * name * assetType * project *
-   * displayName * description * location * kmsKey * createTime * updateTime *
-   * state * parentFullResourceName * parentAssetType All the other fields such as
-   * repeated fields (e.g., `networkTags`), map fields (e.g., `labels`) and struct
-   * fields (e.g., `additionalAttributes`) are not supported.
+   * displayName * description * location * createTime * updateTime * state *
+   * parentFullResourceName * parentAssetType All the other fields such as
+   * repeated fields (e.g., `networkTags`, `kmsKeys`), map fields (e.g., `labels`)
+   * and struct fields (e.g., `additionalAttributes`) are not supported.
    * @opt_param int pageSize Optional. The page size for search result pagination.
    * Page size is capped at 500 even if a larger value is given. If set to zero,
    * server will pick an appropriate default. Returned results may be fewer than
@@ -424,28 +431,41 @@ class V1 extends \Google\Service\Resource
    * that have a label "env" and its value is "prod". * `labels.env:*` to find
    * Cloud resources that have a label "env". * `kmsKey:key` to find Cloud
    * resources encrypted with a customer-managed encryption key whose name
-   * contains the word "key". * `state:ACTIVE` to find Cloud resources whose state
-   * contains "ACTIVE" as a word. * `NOT state:ACTIVE` to find Cloud resources
-   * whose state doesn't contain "ACTIVE" as a word. * `createTime<1609459200` to
-   * find Cloud resources that were created before "2021-01-01 00:00:00 UTC".
-   * 1609459200 is the epoch timestamp of "2021-01-01 00:00:00 UTC" in seconds. *
-   * `updateTime>1609459200` to find Cloud resources that were updated after
+   * contains "key" as a word. This field is deprecated. Please use the `kmsKeys`
+   * field to retrieve KMS key information. * `kmsKeys:key` to find Cloud
+   * resources encrypted with customer-managed encryption keys whose name contains
+   * the word "key". * `relationships:instance-group-1` to find Cloud resources
+   * that have relationships with "instance-group-1" in the related resource name.
+   * * `relationships:INSTANCE_TO_INSTANCEGROUP` to find compute instances that
+   * have relationships of type "INSTANCE_TO_INSTANCEGROUP". *
+   * `relationships.INSTANCE_TO_INSTANCEGROUP:instance-group-1` to find compute
+   * instances that have relationships with "instance-group-1" in the compute
+   * instance group resource name, for relationship type
+   * "INSTANCE_TO_INSTANCEGROUP". * `state:ACTIVE` to find Cloud resources whose
+   * state contains "ACTIVE" as a word. * `NOT state:ACTIVE` to find Cloud
+   * resources whose state doesn't contain "ACTIVE" as a word. *
+   * `createTime<1609459200` to find Cloud resources that were created before
    * "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of "2021-01-01
-   * 00:00:00 UTC" in seconds. * `Important` to find Cloud resources that contain
-   * "Important" as a word in any of the searchable fields. * `Impor*` to find
-   * Cloud resources that contain "Impor" as a prefix of any word in any of the
-   * searchable fields. * `Important location:(us-west1 OR global)` to find Cloud
-   * resources that contain "Important" as a word in any of the searchable fields
-   * and are also located in the "us-west1" region or the "global" location.
+   * 00:00:00 UTC" in seconds. * `updateTime>1609459200` to find Cloud resources
+   * that were updated after "2021-01-01 00:00:00 UTC". 1609459200 is the epoch
+   * timestamp of "2021-01-01 00:00:00 UTC" in seconds. * `Important` to find
+   * Cloud resources that contain "Important" as a word in any of the searchable
+   * fields. * `Impor*` to find Cloud resources that contain "Impor" as a prefix
+   * of any word in any of the searchable fields. * `Important location:(us-west1
+   * OR global)` to find Cloud resources that contain "Important" as a word in any
+   * of the searchable fields and are also located in the "us-west1" region or the
+   * "global" location.
    * @opt_param string readMask Optional. A comma-separated list of fields
    * specifying which fields to be returned in ResourceSearchResult. Only '*' or
    * combination of top level fields can be specified. Field names of both
    * snake_case and camelCase are supported. Examples: `"*"`, `"name,location"`,
    * `"name,versionedResources"`. The read_mask paths must be valid field paths
    * listed but not limited to (both snake_case and camelCase are supported): *
-   * name * assetType * project * displayName * description * location * labels *
-   * networkTags * kmsKey * createTime * updateTime * state * additionalAttributes
-   * * versionedResources If read_mask is not specified, all fields except
+   * name * assetType * project * displayName * description * location * tagKeys *
+   * tagValues * tagValueIds * labels * networkTags * kmsKey (This field is
+   * deprecated. Please use the `kmsKeys` field to retrieve KMS key information.)
+   * * kmsKeys * createTime * updateTime * state * additionalAttributes *
+   * versionedResources If read_mask is not specified, all fields except
    * versionedResources will be returned. If only '*' is specified, all fields
    * including versionedResources will be returned. Any invalid field path will
    * trigger INVALID_ARGUMENT error.

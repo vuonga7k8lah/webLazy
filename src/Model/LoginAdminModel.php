@@ -10,7 +10,8 @@ class LoginAdminModel
 {
     public static function loginAdmin($data)
     {
-        return DB::makeConnection()->query("SELECT * FROM admin where (Email='".$data['Email']."' and Password='".$data['Password']."')")->num_rows;
+        return DB::makeConnection()->query("SELECT * FROM users where (Email='".$data['Email']."' and Password='"
+	        .$data['Password']."')")->num_rows;
     }
 
 }

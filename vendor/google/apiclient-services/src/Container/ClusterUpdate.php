@@ -28,6 +28,8 @@ class ClusterUpdate extends \Google\Collection
   protected $desiredBinaryAuthorizationDataType = '';
   protected $desiredClusterAutoscalingType = ClusterAutoscaling::class;
   protected $desiredClusterAutoscalingDataType = '';
+  protected $desiredCostManagementConfigType = CostManagementConfig::class;
+  protected $desiredCostManagementConfigDataType = '';
   protected $desiredDatabaseEncryptionType = DatabaseEncryption::class;
   protected $desiredDatabaseEncryptionDataType = '';
   /**
@@ -40,6 +42,8 @@ class ClusterUpdate extends \Google\Collection
   protected $desiredDnsConfigDataType = '';
   protected $desiredGcfsConfigType = GcfsConfig::class;
   protected $desiredGcfsConfigDataType = '';
+  protected $desiredIdentityServiceConfigType = IdentityServiceConfig::class;
+  protected $desiredIdentityServiceConfigDataType = '';
   /**
    * @var string
    */
@@ -72,12 +76,16 @@ class ClusterUpdate extends \Google\Collection
    * @var string
    */
   public $desiredMonitoringService;
+  protected $desiredNodePoolAutoConfigNetworkTagsType = NetworkTags::class;
+  protected $desiredNodePoolAutoConfigNetworkTagsDataType = '';
   protected $desiredNodePoolAutoscalingType = NodePoolAutoscaling::class;
   protected $desiredNodePoolAutoscalingDataType = '';
   /**
    * @var string
    */
   public $desiredNodePoolId;
+  protected $desiredNodePoolLoggingConfigType = NodePoolLoggingConfig::class;
+  protected $desiredNodePoolLoggingConfigDataType = '';
   /**
    * @var string
    */
@@ -160,6 +168,20 @@ class ClusterUpdate extends \Google\Collection
     return $this->desiredClusterAutoscaling;
   }
   /**
+   * @param CostManagementConfig
+   */
+  public function setDesiredCostManagementConfig(CostManagementConfig $desiredCostManagementConfig)
+  {
+    $this->desiredCostManagementConfig = $desiredCostManagementConfig;
+  }
+  /**
+   * @return CostManagementConfig
+   */
+  public function getDesiredCostManagementConfig()
+  {
+    return $this->desiredCostManagementConfig;
+  }
+  /**
    * @param DatabaseEncryption
    */
   public function setDesiredDatabaseEncryption(DatabaseEncryption $desiredDatabaseEncryption)
@@ -228,6 +250,20 @@ class ClusterUpdate extends \Google\Collection
   public function getDesiredGcfsConfig()
   {
     return $this->desiredGcfsConfig;
+  }
+  /**
+   * @param IdentityServiceConfig
+   */
+  public function setDesiredIdentityServiceConfig(IdentityServiceConfig $desiredIdentityServiceConfig)
+  {
+    $this->desiredIdentityServiceConfig = $desiredIdentityServiceConfig;
+  }
+  /**
+   * @return IdentityServiceConfig
+   */
+  public function getDesiredIdentityServiceConfig()
+  {
+    return $this->desiredIdentityServiceConfig;
   }
   /**
    * @param string
@@ -384,6 +420,20 @@ class ClusterUpdate extends \Google\Collection
     return $this->desiredMonitoringService;
   }
   /**
+   * @param NetworkTags
+   */
+  public function setDesiredNodePoolAutoConfigNetworkTags(NetworkTags $desiredNodePoolAutoConfigNetworkTags)
+  {
+    $this->desiredNodePoolAutoConfigNetworkTags = $desiredNodePoolAutoConfigNetworkTags;
+  }
+  /**
+   * @return NetworkTags
+   */
+  public function getDesiredNodePoolAutoConfigNetworkTags()
+  {
+    return $this->desiredNodePoolAutoConfigNetworkTags;
+  }
+  /**
    * @param NodePoolAutoscaling
    */
   public function setDesiredNodePoolAutoscaling(NodePoolAutoscaling $desiredNodePoolAutoscaling)
@@ -410,6 +460,20 @@ class ClusterUpdate extends \Google\Collection
   public function getDesiredNodePoolId()
   {
     return $this->desiredNodePoolId;
+  }
+  /**
+   * @param NodePoolLoggingConfig
+   */
+  public function setDesiredNodePoolLoggingConfig(NodePoolLoggingConfig $desiredNodePoolLoggingConfig)
+  {
+    $this->desiredNodePoolLoggingConfig = $desiredNodePoolLoggingConfig;
+  }
+  /**
+   * @return NodePoolLoggingConfig
+   */
+  public function getDesiredNodePoolLoggingConfig()
+  {
+    return $this->desiredNodePoolLoggingConfig;
   }
   /**
    * @param string

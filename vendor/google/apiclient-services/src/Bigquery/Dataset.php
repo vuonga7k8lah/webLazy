@@ -19,7 +19,7 @@ namespace Google\Service\Bigquery;
 
 class Dataset extends \Google\Collection
 {
-  protected $collection_key = 'access';
+  protected $collection_key = 'tags';
   protected $accessType = DatasetAccess::class;
   protected $accessDataType = 'array';
   /**
@@ -79,13 +79,23 @@ class Dataset extends \Google\Collection
    */
   public $location;
   /**
+   * @var string
+   */
+  public $maxTimeTravelHours;
+  /**
    * @var bool
    */
-  public $satisfiesPZS;
+  public $satisfiesPzs;
   /**
    * @var string
    */
   public $selfLink;
+  /**
+   * @var string
+   */
+  public $storageBillingModel;
+  protected $tagsType = DatasetTags::class;
+  protected $tagsDataType = 'array';
 
   /**
    * @param DatasetAccess[]
@@ -312,18 +322,32 @@ class Dataset extends \Google\Collection
     return $this->location;
   }
   /**
+   * @param string
+   */
+  public function setMaxTimeTravelHours($maxTimeTravelHours)
+  {
+    $this->maxTimeTravelHours = $maxTimeTravelHours;
+  }
+  /**
+   * @return string
+   */
+  public function getMaxTimeTravelHours()
+  {
+    return $this->maxTimeTravelHours;
+  }
+  /**
    * @param bool
    */
-  public function setSatisfiesPZS($satisfiesPZS)
+  public function setSatisfiesPzs($satisfiesPzs)
   {
-    $this->satisfiesPZS = $satisfiesPZS;
+    $this->satisfiesPzs = $satisfiesPzs;
   }
   /**
    * @return bool
    */
-  public function getSatisfiesPZS()
+  public function getSatisfiesPzs()
   {
-    return $this->satisfiesPZS;
+    return $this->satisfiesPzs;
   }
   /**
    * @param string
@@ -338,6 +362,34 @@ class Dataset extends \Google\Collection
   public function getSelfLink()
   {
     return $this->selfLink;
+  }
+  /**
+   * @param string
+   */
+  public function setStorageBillingModel($storageBillingModel)
+  {
+    $this->storageBillingModel = $storageBillingModel;
+  }
+  /**
+   * @return string
+   */
+  public function getStorageBillingModel()
+  {
+    return $this->storageBillingModel;
+  }
+  /**
+   * @param DatasetTags[]
+   */
+  public function setTags($tags)
+  {
+    $this->tags = $tags;
+  }
+  /**
+   * @return DatasetTags[]
+   */
+  public function getTags()
+  {
+    return $this->tags;
   }
 }
 

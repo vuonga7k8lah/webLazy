@@ -19,9 +19,31 @@ namespace Google\Service\GKEHub;
 
 class MembershipFeatureSpec extends \Google\Model
 {
+  protected $anthosvmType = AnthosVMMembershipSpec::class;
+  protected $anthosvmDataType = '';
   protected $configmanagementType = ConfigManagementMembershipSpec::class;
   protected $configmanagementDataType = '';
+  protected $fleetobservabilityType = FleetObservabilityMembershipSpec::class;
+  protected $fleetobservabilityDataType = '';
+  protected $identityserviceType = IdentityServiceMembershipSpec::class;
+  protected $identityserviceDataType = '';
+  protected $meshType = ServiceMeshMembershipSpec::class;
+  protected $meshDataType = '';
 
+  /**
+   * @param AnthosVMMembershipSpec
+   */
+  public function setAnthosvm(AnthosVMMembershipSpec $anthosvm)
+  {
+    $this->anthosvm = $anthosvm;
+  }
+  /**
+   * @return AnthosVMMembershipSpec
+   */
+  public function getAnthosvm()
+  {
+    return $this->anthosvm;
+  }
   /**
    * @param ConfigManagementMembershipSpec
    */
@@ -35,6 +57,48 @@ class MembershipFeatureSpec extends \Google\Model
   public function getConfigmanagement()
   {
     return $this->configmanagement;
+  }
+  /**
+   * @param FleetObservabilityMembershipSpec
+   */
+  public function setFleetobservability(FleetObservabilityMembershipSpec $fleetobservability)
+  {
+    $this->fleetobservability = $fleetobservability;
+  }
+  /**
+   * @return FleetObservabilityMembershipSpec
+   */
+  public function getFleetobservability()
+  {
+    return $this->fleetobservability;
+  }
+  /**
+   * @param IdentityServiceMembershipSpec
+   */
+  public function setIdentityservice(IdentityServiceMembershipSpec $identityservice)
+  {
+    $this->identityservice = $identityservice;
+  }
+  /**
+   * @return IdentityServiceMembershipSpec
+   */
+  public function getIdentityservice()
+  {
+    return $this->identityservice;
+  }
+  /**
+   * @param ServiceMeshMembershipSpec
+   */
+  public function setMesh(ServiceMeshMembershipSpec $mesh)
+  {
+    $this->mesh = $mesh;
+  }
+  /**
+   * @return ServiceMeshMembershipSpec
+   */
+  public function getMesh()
+  {
+    return $this->mesh;
   }
 }
 

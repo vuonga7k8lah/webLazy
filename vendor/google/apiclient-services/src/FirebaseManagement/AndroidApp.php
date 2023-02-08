@@ -17,8 +17,13 @@
 
 namespace Google\Service\FirebaseManagement;
 
-class AndroidApp extends \Google\Model
+class AndroidApp extends \Google\Collection
 {
+  protected $collection_key = 'sha256Hashes';
+  /**
+   * @var string
+   */
+  public $apiKeyId;
   /**
    * @var string
    */
@@ -39,7 +44,33 @@ class AndroidApp extends \Google\Model
    * @var string
    */
   public $projectId;
+  /**
+   * @var string[]
+   */
+  public $sha1Hashes;
+  /**
+   * @var string[]
+   */
+  public $sha256Hashes;
+  /**
+   * @var string
+   */
+  public $state;
 
+  /**
+   * @param string
+   */
+  public function setApiKeyId($apiKeyId)
+  {
+    $this->apiKeyId = $apiKeyId;
+  }
+  /**
+   * @return string
+   */
+  public function getApiKeyId()
+  {
+    return $this->apiKeyId;
+  }
   /**
    * @param string
    */
@@ -109,6 +140,48 @@ class AndroidApp extends \Google\Model
   public function getProjectId()
   {
     return $this->projectId;
+  }
+  /**
+   * @param string[]
+   */
+  public function setSha1Hashes($sha1Hashes)
+  {
+    $this->sha1Hashes = $sha1Hashes;
+  }
+  /**
+   * @return string[]
+   */
+  public function getSha1Hashes()
+  {
+    return $this->sha1Hashes;
+  }
+  /**
+   * @param string[]
+   */
+  public function setSha256Hashes($sha256Hashes)
+  {
+    $this->sha256Hashes = $sha256Hashes;
+  }
+  /**
+   * @return string[]
+   */
+  public function getSha256Hashes()
+  {
+    return $this->sha256Hashes;
+  }
+  /**
+   * @param string
+   */
+  public function setState($state)
+  {
+    $this->state = $state;
+  }
+  /**
+   * @return string
+   */
+  public function getState()
+  {
+    return $this->state;
   }
 }
 

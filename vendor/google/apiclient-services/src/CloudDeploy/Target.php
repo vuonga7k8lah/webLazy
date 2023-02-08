@@ -24,6 +24,8 @@ class Target extends \Google\Collection
    * @var string[]
    */
   public $annotations;
+  protected $anthosClusterType = AnthosCluster::class;
+  protected $anthosClusterDataType = '';
   /**
    * @var string
    */
@@ -52,6 +54,8 @@ class Target extends \Google\Collection
    * @var bool
    */
   public $requireApproval;
+  protected $runType = CloudRunLocation::class;
+  protected $runDataType = '';
   /**
    * @var string
    */
@@ -78,6 +82,20 @@ class Target extends \Google\Collection
   public function getAnnotations()
   {
     return $this->annotations;
+  }
+  /**
+   * @param AnthosCluster
+   */
+  public function setAnthosCluster(AnthosCluster $anthosCluster)
+  {
+    $this->anthosCluster = $anthosCluster;
+  }
+  /**
+   * @return AnthosCluster
+   */
+  public function getAnthosCluster()
+  {
+    return $this->anthosCluster;
   }
   /**
    * @param string
@@ -190,6 +208,20 @@ class Target extends \Google\Collection
   public function getRequireApproval()
   {
     return $this->requireApproval;
+  }
+  /**
+   * @param CloudRunLocation
+   */
+  public function setRun(CloudRunLocation $run)
+  {
+    $this->run = $run;
+  }
+  /**
+   * @return CloudRunLocation
+   */
+  public function getRun()
+  {
+    return $this->run;
   }
   /**
    * @param string

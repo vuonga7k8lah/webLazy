@@ -22,6 +22,7 @@ class LoginAdminController
     {
         $data['Email'] = DB::notInjection(trim($_POST['Email']));
         $data['Password'] = DB::notInjection(trim(sha1($_POST['Password'])));
+
         if (LoginAdminModel::loginAdmin($data) > 0) {
             Session::destroy('countLoginError');
             $aDataUser = UserModel::getInfoAdmin($data['Email']);

@@ -8,7 +8,12 @@ class Request
 {
 	public static function uri()
 	{
-		return explode('/',trim(preg_replace('/^\//', '', $_SERVER['REQUEST_URI'])));
+		if (strpos($_SERVER['REQUEST_URI'],'weblazy')!== false){
+			return explode('/',self::route11());
+		}else{
+			return explode('/',trim(preg_replace('/^\//', '', $_SERVER['REQUEST_URI'])));
+		}
+
 	}
     public static function route11()
     {

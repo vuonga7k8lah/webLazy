@@ -34,6 +34,7 @@ class QRCodeController
         }
         $aUserData=json_decode(base64_decode($data['data']),true);
         $url = $this->getQRCodeGoogleUrl($aUserData['TenKH']);
+
         require_once 'views/Admin/QRCode/QRCodeView.php';
     }
 

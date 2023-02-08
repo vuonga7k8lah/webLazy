@@ -35,7 +35,8 @@ class ProductModel
 
     public static function selectIdProduct($id): ?array
     {
-        return DB::makeConnection()->query("SELECT * FROM sanpham where MaSP=" . $id . "")->fetch_assoc();
+	    $query = DB::makeConnection()->query("SELECT * FROM sanpham where MaSP=" . $id . "");
+	    return !empty($query) ? $query->fetch_assoc() : [];
     }
 
     public static function getProductsWithTypeID($productTypeID)

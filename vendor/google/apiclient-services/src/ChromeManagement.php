@@ -171,7 +171,65 @@ class ChromeManagement extends \Google\Service
         'reports',
         [
           'methods' => [
-            'countChromeVersions' => [
+            'countChromeDevicesReachingAutoExpirationDate' => [
+              'path' => 'v1/{+customer}/reports:countChromeDevicesReachingAutoExpirationDate',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'customer' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'maxAueDate' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+                'minAueDate' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+                'orgUnitId' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],'countChromeDevicesThatNeedAttention' => [
+              'path' => 'v1/{+customer}/reports:countChromeDevicesThatNeedAttention',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'customer' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'orgUnitId' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+                'readMask' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],'countChromeHardwareFleetDevices' => [
+              'path' => 'v1/{+customer}/reports:countChromeHardwareFleetDevices',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'customer' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'orgUnitId' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+                'readMask' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],'countChromeVersions' => [
               'path' => 'v1/{+customer}/reports:countChromeVersions',
               'httpMethod' => 'GET',
               'parameters' => [
@@ -275,7 +333,21 @@ class ChromeManagement extends \Google\Service
         'devices',
         [
           'methods' => [
-            'list' => [
+            'get' => [
+              'path' => 'v1/{+name}',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'name' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'readMask' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+              ],
+            ],'list' => [
               'path' => 'v1/{+parent}/telemetry/devices',
               'httpMethod' => 'GET',
               'parameters' => [
